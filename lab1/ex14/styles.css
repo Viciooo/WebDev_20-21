@@ -1,0 +1,38 @@
+form {
+  background-color: rgb(181, 184, 187);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: 1.5px black solid;
+}
+
+.container {
+  padding: 30px;
+}
+
+.center {
+  position: relative;
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+  top: 300px;
+}
+
+#submit {
+  border-radius: 5px;
+  width: 100px;
+  height: auto;
+  font-weight: bold;
+  background-color: rgb(230, 231, 235);
+}
+
+body {
+  background-color: rgb(241, 242, 243);
+}
+
+input {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  background-color: rgb(230, 231, 235);
+  text-align: center;
+}

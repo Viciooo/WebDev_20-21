@@ -1,0 +1,40 @@
+.container img {
+  position: relative;
+  display: flex;
+  width: 400px;
+  height: 300px;
+  margin: 5px;
+  border: solid rgb(107, 107, 107) 2px;
+  border-radius: 8px;
+  left: 15px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+  margin: 40px;
+}
+
+figure {
+  border: solid black 3px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px;
+  background-color: rgb(188, 200, 211);
+}
+
+figcaption {
+  background-color: rgb(84, 88, 88);
+  color: rgb(248, 247, 247);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  border: dashed black 1px;
+  margin-top: 15px;
+}
+
+body {
+  background-color: rgb(235, 233, 229);
+}

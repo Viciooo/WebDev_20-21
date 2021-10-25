@@ -1,0 +1,14 @@
+#first {
+  float: left;
+}
+
+#second {
+  float: right;
+}
+
+.img {
+  width: 200px;
+  height: 150px;
+  border-radius: 20px;
+  margin: 20px;
+}

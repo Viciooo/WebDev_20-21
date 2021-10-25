@@ -1,0 +1,45 @@
+#mainNav li {
+  display: block;
+  float: inline-end;
+  width: 250px;
+}
+
+#mainNav a {
+  color: #000000;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  border: 1px dashed #999999;
+  display: block;
+  padding: 7px 5px 7px 30px;
+  background: rgb(228, 224, 224) url(images/link.png) no-repeat left center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a#homeLink {
+  background: rgb(228, 224, 224) url(images/home.png) no-repeat 5px 52%;
+}
+
+a#featureLink {
+  background: url(images/bg_here.png) no-repeat 5px 52%;
+}
+
+a#featureLink:hover,
+a#homeLink:hover,
+a#expertLink:hover,
+a#projectLink:hover,
+a#quizLink:hover,
+a#horoscopeLink:hover {
+  background: #b2f511 url(images/go.png) no-repeat 5px 50%;
+  padding-right: 15px;
+  padding-left: 30px;
+  font-weight: bold;
+}
+a#featureLink:hover {
+  background: url(images/bg_here.png) no-repeat 5px 52%;
+  color: #b2f511;
+}
+
+a#homeLink:hover {
+  background: #b2f511 url(images/home.png) no-repeat 5px 52%;
+}

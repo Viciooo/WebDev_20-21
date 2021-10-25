@@ -1,0 +1,73 @@
+.first {
+  width: 100px;
+  height: 100px;
+  overflow: auto;
+  border: solid 1rem black;
+  padding: 15px;
+  margin: 50px;
+}
+
+.second {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin-top: 200px;
+  margin-left: 30px;
+  border: dotted red 2px;
+  padding: 20px;
+}
+
+#table-one {
+  text-align: center;
+  border-spacing: 0;
+}
+
+.td-one,
+.th-one {
+  width: 120px;
+  border: solid white 2px;
+}
+
+/* .odd {
+  background-color: rgb(142, 180, 212);
+}
+.even {
+  background-color: rgb(221, 221, 221);
+} */
+
+/* its the same thing but more elegant and less universal */
+
+tr:nth-child(even) {
+  background-color: rgb(221, 221, 221);
+}
+tr:nth-child(odd) {
+  background-color: rgb(142, 180, 212);
+}
+.th-one {
+  background-color: rgb(25, 93, 170);
+}
+
+#table-two {
+  text-align: right;
+  margin: 0;
+  border-spacing: 0;
+  position: relative;
+  left: 500px;
+  bottom: 350px;
+}
+
+.th-two {
+  background-color: rgb(53, 51, 51);
+  height: 20px;
+}
+
+.td-two {
+  background-color: rgb(161, 162, 163);
+  height: 30px;
+}
+
+.td-two,
+.th-two {
+  width: 150px;
+  border: solid black 1px;
+}

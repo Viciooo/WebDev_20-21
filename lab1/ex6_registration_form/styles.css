@@ -1,0 +1,50 @@
+.form-header {
+  text-align: center;
+  padding-top: 1px;
+  height: 0px;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form {
+  z-index: 1;
+  width: 25%;
+  border: 1px solid black;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  background-color: darkslateblue;
+  color: orange;
+  border-bottom-color: orange;
+  border-bottom-width: 2rem;
+  border-top-color: orange;
+  border-top-width: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+}
+
+.btn {
+  border-radius: 12px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: black;
+}
+
+.cancel {
+  background-color: red;
+}
+
+.send {
+  background-color: lightgreen;
+}
+
+.input {
+  text-transform: lowercase;
+}
+
+.option {
+  color: blue;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: medium;
+}

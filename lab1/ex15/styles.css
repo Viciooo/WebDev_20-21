@@ -1,0 +1,17 @@
+video {
+  width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.video-container {
+  background-color: rgb(213, 216, 218);
+  border: solid rgb(21, 77, 37) 3px;
+  padding: 50px;
+  margin: auto;
+  width: 50%;
+  height: auto;
+  margin-top: 200px;
+  border-radius: 15px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" scontent="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-header">Sign Up</div>
+    <div class="form">
+      <label for="first-name">first name: </label>
+      <input class="input" type="text" name="first-name" value="First Name" />
+
+      <br /><br />
+
+      <label for="second-name">second name: </label>
+      <input class="input" type="text" name="second-name" value="Second Name" />
+
+      <br /><br />
+
+      <label for="Date">Date: </label>
+      <input class="input" type="date" />
+
+      <br /><br />
+
+      <input class="input" type="radio" id="Male" name="Gender" value="Male" />
+      <label for="Male">Male</label>
+
+      <input
+        class="input"
+        type="radio"
+        id="Female"
+        name="Gender"
+        value="Female"
+      />
+      <label for="Female">Female</label>
+
+      <br /><br />
+
+      <label for="Country">Country</label>
+      <select class="select" name="Country" id="Country">
+        <option class="option" value="Poland">Poland</option>
+        <option class="option" value="England">England</option>
+        <option class="option" value="China">China</option>
+      </select>
+
+      <br /><br />
+
+      <label for="E-mail">E-mail: </label>
+      <input
+        class="input"
+        type="text"
+        name="E-mail"
+        id="E-mail"
+        value="myMail@funnymail.com"
+      />
+
+      <br /><br />
+
+      <label for="Phone">Phone: </label>
+      <input
+        class="input"
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="123-456-789"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        required
+      />
+
+      <br /><br />
+
+      <label for="Password">Password: </label>
+      <input
+        class="input"
+        type="password"
+        id="pass"
+        name="password"
+        minlength="8"
+        required
+        placeholder="password"
+      />
+
+      <br /><br />
+
+      <label for="Confirm-Password">Confirm Password: </label>
+      <input
+        class="input"
+        type="Confirm-Password"
+        id="pass"
+        name="Confirm-Password"
+        minlength="8"
+        required
+        placeholder="confirm password"
+      />
+      <br /><br />
+
+      <label class="terms" for="terms">I agree to the terms of use</label>
+      <input type="checkbox" />
+
+      <br /><br />
+
+      <button class="send btn">Send</button>
+      <button class="cancel btn">Cancel</button>
+    </div>
+  </body>
+</html>

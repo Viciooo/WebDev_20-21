@@ -1,0 +1,31 @@
+#euro {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2rem;
+  background-color: rgb(32, 76, 148);
+  color: rgb(209, 225, 240);
+  border-radius: 15px;
+  position: relative;
+  top: 100px;
+  left: 200px;
+}
+
+#asia {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2rem;
+  background-color: rgb(165, 38, 49);
+  color: rgb(209, 225, 240);
+  border-radius: 15px;
+  position: relative;
+}
+
+select {
+  cursor: pointer;
+}
