@@ -1,0 +1,21 @@
+p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 90%;
+  padding: 0.5vw;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Teko", sans-serif;
+  font-size: 15vw;
+  background-color: white;
+  color: black;
+  margin: 1vw;
+}
+
+h1 span {
+  font-weight: 5;
+  color: white;
+  background-color: black;
+}

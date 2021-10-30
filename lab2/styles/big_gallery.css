@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  background-color: white;
+}
+
+.photo-box img {
+  width: 100%;
+  padding: 2%;
+  height: auto;
+  border-radius: 1vw;
+}
+
+.photo-box {
+  width: 100%;
+  height: auto;
+  background-color: rgb(236, 239, 240);
+  border-radius: 2%;
+  border: solid black 0.125vw;
+  box-shadow: 5px 5px 3px grey;
+  margin: 2vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#gallery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
+  margin: 0vw 6vw 0vw 3vw;
+  justify-content: center;
+}

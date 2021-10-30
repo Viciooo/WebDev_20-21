@@ -1,0 +1,14 @@
+@media (max-width: 480px) {
+  .photo-box img {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  #gallery-container {
+    grid-template-columns: 100%;
+    row-gap: 0;
+  }
+  .photo-box {
+    margin-bottom: 10vw;
+  }
+}

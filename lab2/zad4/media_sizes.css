@@ -1,0 +1,76 @@
+@media (max-width: 1024px) {
+  #gallery-container {
+    grid-template-columns: 100%;
+    row-gap: 0;
+  }
+  .photo-box {
+    width: 100%;
+    display: flex;
+  }
+  .photo-box img {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 6vw;
+  }
+
+  h2 {
+    font-size: 3vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+
+  .text-box {
+    margin-top: 5%;
+  }
+
+  .footer .btn button {
+    padding: 2vw;
+    border-radius: 4vw;
+    font-size: 3vw;
+  }
+
+  .footer .likes-comments i {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 550px) {
+  #gallery-container {
+    grid-template-columns: 100%;
+    row-gap: 0;
+  }
+  .photo-box {
+    display: grid;
+    width: 100%;
+  }
+  .photo-box img {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 10vw;
+  }
+
+  h2,
+  p {
+    font-size: 5vw;
+  }
+
+  .text-box {
+    margin-top: 0;
+  }
+
+  .footer .btn button {
+    padding: 5vw;
+    border-radius: 7vw;
+    font-size: 5vw;
+  }
+
+  .footer .likes-comments i {
+    font-size: 5vw;
+  }
+}

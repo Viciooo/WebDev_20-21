@@ -1,0 +1,42 @@
+.text-box {
+  padding: 1vw;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(56, 55, 53);
+  margin: 0;
+}
+
+h2 {
+  color: rgb(168, 26, 26);
+}
+
+p {
+  color: rgb(56, 55, 53);
+}
+
+.footer {
+  display: flex;
+}
+
+.footer button {
+  background-color: rgb(168, 26, 26);
+  border-radius: 0.8vw;
+  padding: 0.7vw;
+  font-size: 1vw;
+  color: rgb(224, 229, 231);
+  font-weight: 600;
+  margin: 0.75vw;
+  box-shadow: 0.25vw 0.25vw 0.25vw rgb(51, 46, 46);
+  margin-right: 3vw;
+}
+
+.likes-comments {
+  padding-top: 1vw;
+}
+
+.photo-box {
+  width: 25vw;
+}
