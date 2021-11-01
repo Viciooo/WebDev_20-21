@@ -1,0 +1,138 @@
+.nav-bar {
+  background-color: var(--background);
+  text-align: right;
+  font-family: "Teko", sans-serif;
+  height: 10vw;
+}
+
+.nav-options a {
+  clear: right;
+  text-decoration: none;
+  margin-right: 5vw;
+  line-height: 5vw;
+  color: var(--font);
+  font-size: 4vw;
+  text-transform: uppercase;
+}
+
+.nav-bar .logo {
+  color: var(--background);
+  background-color: rgba(129, 196, 101, 1);
+  border-radius: 50%;
+  padding: 2vw;
+  font-size: 3vw;
+  display: block;
+  float: left;
+  margin: 1vw;
+  text-transform: uppercase;
+}
+
+.nav-options {
+  padding-top: 3vw;
+}
+
+.nav-options a:hover {
+  color: white;
+}
+
+/* hamburger menu */
+label {
+  color: var(--font);
+  padding: 1vw;
+  display: none;
+  background-color: var(--background);
+}
+
+#toggle {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.icon {
+  margin-top: 3vw;
+  position: relative;
+}
+.icon,
+.icon::before,
+.icon::after {
+  width: 8vw;
+  height: 0.5vw;
+  background-color: var(--font);
+  display: inline-block;
+}
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.icon::before {
+  top: -3vw;
+}
+.icon::after {
+  top: 3vw;
+}
+
+.nav-btn:hover .icon::before {
+  top: -2vw;
+}
+
+.nav-btn:hover .icon::after {
+  top: 2vw;
+}
+
+.checkbox:checked + .nav-btn .icon {
+  background-color: transparent;
+}
+
+.checkbox:checked + .nav-btn .icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.checkbox:checked + .nav-btn .icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+/* end of hamburger menu */
+
+/* media */
+@media (max-width: 800px) {
+  label {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-options {
+    background-color: var(--background);
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-options a {
+    display: block;
+    border-top: solid var(--font) 0.5vw;
+    margin: 0;
+    font-size: 5vw;
+    padding: 2vw;
+    transform: translateY();
+  }
+  .nav-options:last-child {
+    border-bottom: solid var(--font) 0.5vw;
+  }
+
+  #toggle:checked ~ .nav-options {
+    display: block;
+  }
+
+  .nav-options a:hover {
+    background-color: rgb(89, 94, 98);
+  }
+}
+
+/* end of media */

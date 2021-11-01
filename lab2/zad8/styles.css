@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: "Teko", sans-serif;
+  --green: rgb(56, 182, 6);
+  --background: rgb(239, 241, 243);
+  --font: rgb(46, 44, 40);
+  color: var(--font);
+  background-color: var(--background);
+}
+
+.container {
+  display: flex;
+  background-color: var(--background);
+  height: 0;
+}
+
+.text-box,
+.photos-container {
+  width: 40vw;
+}
+
+.text-box,
+h1 {
+  padding-left: 1vw;
+}
+
+.photos-container img {
+  width: 15vw;
+}
+
+.container h2 {
+  font-size: 3vw;
+  margin: 0.125vw;
+}
+
+h1 {
+  font-size: 4vw;
+  margin: 0.125vw;
+}
+
+.container p,
+a {
+  font-size: 2vw;
+  color: rgb(122, 118, 113);
+  margin: 0.125vw;
+}
+
+.container a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.container a:hover {
+  color: rgb(119, 151, 115);
+}
+
+/* img layout */
+.photo-box:nth-child(1) {
+  position: relative;
+  left: 5vw;
+  top: 3vw;
+}
+.photo-box:nth-child(2) {
+  position: relative;
+  left: 12vw;
+  top: -10vw;
+}
+
+.photo-box:nth-child(3) {
+  position: relative;
+  left: 18vw;
+  top: -25vw;
+}
+
+.photo-box:hover {
+  z-index: 1;
+  transition: 3000ms;
+  transform: translateY();
+}
+
+.photo-box img:hover {
+  width: 18vw;
+}
+
+.photo-box img {
+  box-shadow: 0vw 0vw 2vw 0.125vw var(--font);
+}
+
+.photo-box img:hover {
+  border: var(--green) solid 1vw;
+  padding: 1vw;
+  border-radius: 3vw;
+}
+
+.photos-container {
+  position: relative;
+  left: 5vw;
+}
+
+/* img layout end */
+
+/* media */
+@media (max-width: 800px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .photos-container {
+    height: 0;
+  }
+  .text-box {
+    width: 100%;
+    margin-right: 5vw;
+  }
+
+  h1 {
+    font-size: 10vw;
+  }
+
+  .text-box h2 {
+    font-size: 6vw;
+  }
+
+  .text-box p,
+  h3 {
+    font-size: 3.5vw;
+  }
+
+  /* img layout */
+
+  .photos-container img {
+    width: 35vw;
+  }
+  .photo-box:nth-child(1) {
+    left: 15vw;
+    top: 3vw;
+  }
+  .photo-box:nth-child(2) {
+    left: 25vw;
+    top: -18vw;
+  }
+
+  .photo-box:nth-child(3) {
+    left: 40vw;
+    top: -53vw;
+  }
+
+  .photo-box:hover {
+    z-index: 1;
+  }
+
+  .photo-box img:hover {
+    width: 40vw;
+  }
+
+  /* img layout end */
+}
+
+/* media end*/

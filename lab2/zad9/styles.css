@@ -1,0 +1,120 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  --nav-text: rgb(43, 47, 49);
+  --nav-background: rgb(64, 144, 84);
+  --nav-text-light: rgb(209, 209, 209);
+}
+
+/* nav styling */
+.nav-bar {
+  display: flex;
+  background-color: var(--nav-background);
+  padding: 1vw;
+}
+
+.nav-options {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.nav-other {
+  display: flex;
+  justify-content: right;
+  margin-left: 25vw;
+}
+
+.nav-other .option {
+  margin-left: 2vw;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: var(--nav-text);
+  font-size: 2vw;
+}
+
+.nav-bar a:hover {
+  color: var(--nav-text-light);
+  font-size: 2.2vw;
+}
+
+.nav-bar .option {
+  background-color: rgba(28, 36, 29, 0.322);
+  padding: 0.2vw;
+  border-radius: 1vw;
+  margin-top: 1vw;
+}
+
+.nav-bar {
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+}
+/* nav styling end */
+
+/* sections */
+section h1 {
+  color: var(--nav-text);
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2vw;
+}
+
+section p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5vw;
+}
+
+section img {
+  width: 100%;
+}
+/* 
+.content-container {
+  margin: 1vw;
+} */
+
+section:nth-child(1) {
+  background-color: rgb(216, 222, 226);
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+section:nth-child(2) {
+  background-color: rgb(185, 191, 195);
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+section:nth-child(3) {
+  background-color: rgb(140, 144, 146);
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+section:nth-child(4) {
+  background-color: rgb(66, 70, 71);
+  color: var(--nav-text-light);
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+#last {
+  color: var(--nav-text-light);
+}
+
+section {
+  margin-bottom: 1vw;
+}
+
+/* sections end*/
+
+/* sticky nav &stuff */
+.nav-bar {
+  position: sticky;
+  top: 0;
+}
+
+/* sticky nav &stuff end*/

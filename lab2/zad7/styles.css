@@ -1,0 +1,12 @@
+body {
+  --font: rgb(204, 201, 197);
+  --background: rgb(46, 48, 49);
+
+  background: rgb(215, 235, 13);
+  background: linear-gradient(
+    90deg,
+    rgba(215, 235, 13, 1) 0%,
+    rgba(129, 196, 101, 1) 99%
+  );
+  margin: 0;
+}
