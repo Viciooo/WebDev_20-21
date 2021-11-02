@@ -1,8 +1,9 @@
 .nav-bar {
   background-color: var(--background);
-  text-align: right;
   font-family: "Teko", sans-serif;
-  height: 10vw;
+  display: flex;
+  align-items: center;
+  height: 10vh;
 }
 
 .nav-options a {
@@ -16,19 +17,22 @@
 }
 
 .nav-bar .logo {
+  height: 9vh;
+  width: 9vh;
   color: var(--background);
   background-color: rgba(129, 196, 101, 1);
   border-radius: 50%;
-  padding: 2vw;
-  font-size: 3vw;
-  display: block;
-  float: left;
-  margin: 1vw;
+  font-size: 100%;
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-transform: uppercase;
 }
 
 .nav-options {
-  padding-top: 3vw;
+  transition: 0.7s;
+  margin-left: 25vw;
 }
 
 .nav-options a:hover {
@@ -103,6 +107,14 @@ label {
 
 /* media */
 @media (max-width: 800px) {
+  .nav-options {
+    padding-top: 0vh;
+    margin-left: 0vw;
+  }
+  .nav-bar .logo {
+    display: none;
+  }
+
   label {
     display: block;
     cursor: pointer;
@@ -111,7 +123,9 @@ label {
     background-color: var(--background);
     text-align: center;
     width: 100%;
-    display: none;
+    top: -100%;
+    opacity: 0;
+    position: fixed;
   }
 
   .nav-options a {
@@ -119,15 +133,15 @@ label {
     border-top: solid var(--font) 0.5vw;
     margin: 0;
     font-size: 5vw;
-    padding: 2vw;
-    transform: translateY();
+    /* padding: 2vw; */
   }
   .nav-options:last-child {
     border-bottom: solid var(--font) 0.5vw;
   }
 
   #toggle:checked ~ .nav-options {
-    display: block;
+    opacity: 1;
+    top: 10vh;
   }
 
   .nav-options a:hover {

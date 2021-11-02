@@ -79,7 +79,7 @@ a {
 }
 
 .photo-box img:hover {
-  width: 18vw;
+  box-shadow: 0.25vw 0.25vw 0.25vw 0.25vw;
 }
 
 .photo-box img {
@@ -148,9 +148,9 @@ a {
     z-index: 1;
   }
 
-  .photo-box img:hover {
-    width: 40vw;
-  }
+  /* .photo-box img:hover {
+    box-shadow: 0.5vw 0.5vw 0.5vw 0.5vw;
+  } */
 
   /* img layout end */
 }
