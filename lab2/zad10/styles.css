@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  text-decoration: none;
+  font-family: "BioRhyme", serif;
+  box-sizing: border-box;
+  font-family: "Zen Kurenaido", sans-serif;
+  --green-gradient: linear-gradient(
+    to right bottom,
+    #24a135,
+    #208c31,
+    #1c782c,
+    #196527,
+    #165221
+  );
+  --orange-gradient: linear-gradient(
+    to right bottom,
+    #e37520,
+    #ed9308,
+    #f0b200,
+    #edd200,
+    #e3f200
+  );
+}
+
+.section-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background: rgb(255, 255, 255);
+}
+
+.card {
+  position: relative;
+  top: 10vh;
+  cursor: pointer;
+  width: 25vw;
+  height: 75vh;
+  box-shadow: rgba(78, 80, 82, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.card:first-child {
+  margin-right: 10vw;
+}
+
+/* desc */
+.description {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: flex-end;
+  top: 7rem;
+  right: 0;
+  margin-right: 12px;
+  font-size: 3vw;
+}
+
+.description p {
+  left: -100%;
+  color: white;
+  opacity: 0.8;
+}
+/* desc end*/
+
+.front,
+.back {
+  width: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.6s linear;
+}
+
+/* front */
+
+/* img */
+.card .front .photo-box {
+  width: 100%;
+}
+
+.card .photo-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-box {
+  height: 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 89%, 63% 91%, 0 100%, 0% 50%);
+}
+.photo-box .overlay {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  opacity: 0.5;
+}
+/* img end */
+
+.front {
+  background-color: white;
+  height: 100%;
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vw;
+}
+
+.card .content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  border-bottom: 1px rgb(206, 199, 199) solid;
+  font-size: 1.5vw;
+}
+/* front end*/
+
+/* back */
+.back {
+  height: 100%;
+  transform: perspective(600px) rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.back-content {
+  color: #2c3e50;
+  text-align: center;
+}
+
+.back-content h1 {
+  font-size: 1rem;
+}
+
+.back-content h2 {
+  font-size: 3rem;
+  padding-bottom: 4rem;
+}
+
+.back-content a {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding: 1rem;
+  background-color: white;
+  color: rgb(107, 107, 106);
+  border-radius: 1.5rem;
+}
+
+.back-content a:hover {
+  color: rgb(146, 146, 139);
+  background-color: #e6e7e6;
+}
+/* back end */
+
+/* hover */
+.card:hover > .front {
+  transform: perspective(2000px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+  transform: perspective(2000px) rotateY(0deg);
+}
+/* hover end*/
+
+/* one */
+#one .description p {
+  background-image: var(--green-gradient);
+}
+#one .overlay {
+  background-image: var(--green-gradient);
+}
+#one .back {
+  background-image: var(--green-gradient);
+}
+/* one end */
+
+/* two */
+#two .description p {
+  background-image: var(--orange-gradient);
+}
+#two .overlay {
+  background-image: var(--orange-gradient);
+}
+#two .back {
+  background-image: var(--orange-gradient);
+}
+/* two end */
