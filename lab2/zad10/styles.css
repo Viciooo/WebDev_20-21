@@ -194,3 +194,58 @@ body {
   background-image: var(--orange-gradient);
 }
 /* two end */
+
+/* media */
+@media (max-width: 1000px) {
+  .description {
+    top: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .section-cards {
+    flex-direction: column;
+  }
+
+  .card:first-child {
+    margin-right: 0;
+    margin-bottom: 5vh;
+  }
+
+  .description {
+    top: 10rem;
+  }
+
+  .card {
+    width: 50vw;
+  }
+
+  .content div p {
+    font-size: 3vw;
+  }
+
+  .description p {
+    font-size: 4vw;
+  }
+  .card .content div {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 80vw;
+    /* height: 75vh; */
+  }
+
+  .content div p {
+    font-size: 5vw;
+  }
+
+  .description p {
+    font-size: 7vw;
+  }
+  .card .content div {
+    width: 80%;
+  }
+}
+/* media end */
