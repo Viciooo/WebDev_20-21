@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/684cb8f14a.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <input
+          type="radio"
+          id="blue"
+          class="blue"
+          name="color"
+          value="blue"
+          checked
+        />
+
+        <input type="radio" id="red" class="red" name="color" value="red" />
+
+        <input
+          type="radio"
+          id="green"
+          class="green"
+          name="color"
+          value="green"
+        />
+
+        <input
+          type="radio"
+          id="orange"
+          class="orange"
+          name="color"
+          value="orange"
+        />
+
+        <input type="radio" id="grey" class="grey" name="color" value="grey" />
+        <div class="left side">
+          <img id="nike" src="./img/nike_logo.png" alt="nike_logo" />
+          <img id="share" src="./img/share.png" alt="share" />
+
+          <img id="shoe" src="./img/blue.png" alt="blue" />
+          <div class="nike-overlay">NIKE</div>
+        </div>
+
+        <div class="right side">
+          <div class="header">
+            <h1>Nike Zoom KD 12 <span>NEW</span></h1>
+            <h2>Men's Running Shoes</h2>
+          </div>
+          <div class="info">
+            <h3>PRODUCT INFO</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              iste cum omnis molestiae quod reiciendis velit ipsum a totam.
+              Beatae natus accusamus voluptates dignissimos delectus sed debitis
+              possimus mollitia nam!
+            </p>
+          </div>
+          <h3>COLOR</h3>
+          <div class="color">
+            <label for="blue" id="blue">
+              <div class="color-dot"></div>
+            </label>
+
+            <label for="red" id="red">
+              <div class="color-dot"></div>
+            </label>
+
+            <label for="green" id="green">
+              <div class="color-dot"></div>
+            </label>
+
+            <label for="orange" id="orange">
+              <div class="color-dot"></div>
+            </label>
+
+            <label for="grey" id="grey">
+              <div class="color-dot"></div>
+            </label>
+          </div>
+          <h3>SIZE</h3>
+          <div class="size">
+            <div class="size-btn">7</div>
+            <div class="size-btn">8</div>
+            <div class="size-btn selected">9</div>
+            <div class="size-btn">10</div>
+            <div class="size-btn">11</div>
+          </div>
+
+          <div class="buy">
+            <div class="to-cart">
+              <i class="fas fa-shopping-cart"></i>
+              <p>ADD TO CARD</p>
+            </div>
+            <div class="price">$189.99</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
