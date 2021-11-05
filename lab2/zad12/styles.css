@@ -62,7 +62,6 @@
   top: 12vh;
   right: 0;
   transform: rotate(340deg);
-  z-index: 1;
 }
 
 .nike-overlay {
@@ -72,6 +71,7 @@
   color: white;
   top: 20vh;
   left: 7vw;
+  font-weight: 700;
 }
 
 #nike {
@@ -261,13 +261,15 @@
   }
   #shoe {
     width: 100%;
-    top: 5vh;
+    top: 0vh;
     left: 7vw;
+    z-index: 1;
   }
 
   .nike-overlay {
     font-size: 25vw;
     top: 4vh;
+    z-index: 2;
   }
 
   .side {
@@ -283,9 +285,9 @@
     min-height: 240px;
   }
 }
-@media (max-width: 300px) {
+@media (max-width: 350px) {
   .left {
-    min-height: 180px;
+    min-height: 150px;
   }
 }
 /* media end*/
