@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.nav-bar {
+  position: relative;
+  top: 1vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border: red solid 1px;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  border-top: blue solid 1px;
+  border-bottom: blue solid 1px;
+  background-color: red;
+  padding: 1vw;
+  margin-right: 6vw;
+}
+
+.option a {
+  color: white;
+}
+
+.option:nth-child(3) {
+  margin-right: 42vw;
+}
+.option:nth-child(4) {
+  margin-right: 0;
+  border-right: blue solid 1px;
+}
+.option:nth-child(5) {
+  margin-right: 0;
+}

@@ -1,6 +1,9 @@
-body {
+* {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  text-decoration: none;
+
   --nav-text: rgb(43, 47, 49);
   --nav-background: rgb(64, 144, 84);
   --nav-text-light: rgb(209, 209, 209);
@@ -9,50 +12,78 @@ body {
 /* nav styling */
 .nav-bar {
   display: flex;
-  background-color: var(--nav-background);
-  padding: 1vw;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10vh;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.5px rgb(211, 205, 205) solid;
+  background-color: white;
 }
 
-.nav-options {
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
+.option {
+  margin-right: 5vw;
 }
 
-.nav-other {
-  display: flex;
-  justify-content: right;
-  margin-left: 25vw;
-}
-
-.nav-other .option {
-  margin-left: 2vw;
-}
-
-.nav-bar a {
-  text-decoration: none;
-  text-transform: capitalize;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: var(--nav-text);
-  font-size: 2vw;
-}
-
-.nav-bar a:hover {
-  color: var(--nav-text-light);
-  font-size: 2.2vw;
-}
-
-.nav-bar .option {
-  background-color: rgba(28, 36, 29, 0.322);
-  padding: 0.2vw;
-  border-radius: 1vw;
-  margin-top: 1vw;
-}
-
-.nav-bar {
+.option a {
+  font-size: 1.5vw;
+  color: grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-top: 1vw;
-  padding-bottom: 2vw;
+  padding-bottom: 1vw;
 }
+
+.logo {
+  position: relative;
+  display: flex;
+  left: -10vw;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(49, 59, 141);
+}
+
+.logo .icon-part {
+  width: 0.5vw;
+  height: 4vh;
+  transform: skew(-32deg, 0deg);
+  margin-left: 3px;
+}
+
+.logo {
+  position: relative;
+  left: -3vw;
+}
+
+.logo .name {
+  margin-bottom: 1.5vh;
+  margin-left: 0.5vw;
+  font-weight: 800;
+}
+.logo .icon-part:nth-child(1) {
+  background-color: rgb(45, 109, 59);
+}
+.logo .icon-part:nth-child(2) {
+  background-color: rgb(108, 177, 124);
+}
+.logo .icon-part:nth-child(3) {
+  background-color: rgb(194, 207, 197);
+}
+
+.option:last-child {
+  padding: 1vw;
+  border-radius: 2vw;
+  background: linear-gradient(
+    63deg,
+    rgba(54, 224, 110, 1) 12%,
+    rgba(25, 172, 195, 0.9587185215883228) 70%
+  );
+}
+.option:last-child a {
+  color: white;
+}
+
 /* nav styling end */
 
 /* sections */
@@ -114,7 +145,7 @@ section {
 /* sticky nav &stuff */
 .nav-bar {
   position: sticky;
-  top: 0;
+  top: 5vh;
 }
 
 /* sticky nav &stuff end*/
