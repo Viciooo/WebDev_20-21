@@ -56,6 +56,10 @@
 
 /* left */
 
+.left {
+  background: var(--blue);
+}
+
 #shoe {
   width: 150%;
   position: absolute;
@@ -175,8 +179,9 @@
 .card input[type="radio"] {
   display: none;
 }
+/* radio button on*/
 
-.blue:checked ~ .left {
+/* .blue:checked ~ .left {
   background: var(--blue);
 }
 .red:checked ~ .left {
@@ -190,8 +195,27 @@
 }
 .grey:checked ~ .left {
   background: var(--grey);
-}
+} */
 
+/* radio button on*/
+
+/* radio button off*/
+.blue:hover ~ .left {
+  background: var(--blue);
+}
+.red:hover ~ .left {
+  background: var(--red);
+}
+.green:hover ~ .left {
+  background: var(--green);
+}
+.orange:hover ~ .left {
+  background: var(--orange);
+}
+.grey:hover ~ .left {
+  background: var(--grey);
+}
+/* radio button off*/
 /* color end*/
 
 /* size */
