@@ -286,7 +286,7 @@
   #shoe {
     width: 100%;
     top: 0vh;
-    left: 7vw;
+    left: -7vw;
     z-index: 1;
   }
 
