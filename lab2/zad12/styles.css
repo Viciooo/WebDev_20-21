@@ -181,7 +181,7 @@
 }
 /* radio button on*/
 
-/* .blue:checked ~ .left {
+.blue:checked ~ .left {
   background: var(--blue);
 }
 .red:checked ~ .left {
@@ -195,7 +195,7 @@
 }
 .grey:checked ~ .left {
   background: var(--grey);
-} */
+}
 
 /* radio button on*/
 

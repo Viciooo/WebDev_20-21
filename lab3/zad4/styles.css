@@ -1,0 +1,12 @@
+.cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  border: 3px black solid;
+  padding: 10px;
+  border-radius: 3px;
+  width: fit-content;
+  margin: 20px;
+  color: red;
+}
