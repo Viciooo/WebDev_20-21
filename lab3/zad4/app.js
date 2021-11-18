@@ -5,8 +5,13 @@ let flag = 0;
 
 eve.addEventListener("click", incrState);
 function incrState() {
-  if (flag == 0) addEvent();
-  else removeEvent();
+  if (flag == 0) {
+    addEvent();
+    eve.innerHTML = "Stop";
+  } else {
+    eve.innerHTML = "Start";
+    removeEvent();
+  }
 }
 
 function increment() {

@@ -4,6 +4,7 @@ const inner = document.querySelector(".inner");
 const counter = document.querySelector(".counter");
 const propagation = document.querySelector(".propagation");
 const reset = document.querySelector(".reset");
+const msgBox = document.querySelector(".message-box");
 let prop = 0;
 
 function blue(e) {
@@ -27,7 +28,13 @@ function yellow(e) {
 
 function add(val, name) {
   let curr = parseInt(counter.innerHTML) + val;
-  alert(`U pressed ${name} btn adding ${val}`);
+
+  // nie wiedziałem dokładnie jak mają wyglądać te wiadomości w sekcji dlatego w propagacji włączonej wyświetla się zawsze ostatni
+  msgBox.innerHTML = `U pressed ${name} btn adding ${val}`;
+
+  // chyba lepiej widać przy alertach:
+  // alert(`U pressed ${name} btn adding ${val}`);
+
   counter.innerHTML = curr;
   if (middle.style.backgroundColor !== "rgb(204, 204, 202)" && curr > 30) {
     middle.removeEventListener("click", red);

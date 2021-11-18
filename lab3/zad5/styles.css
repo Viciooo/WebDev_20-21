@@ -58,3 +58,8 @@ button {
 .btn-container {
   border: none;
 }
+
+.message-box {
+  min-height: 8vh;
+  min-width: 10vw;
+}

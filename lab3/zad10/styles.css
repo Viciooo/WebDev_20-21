@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+}
+
+.center {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.center div {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.left,
+.right {
+  min-height: 80vh;
+}
+
+.items {
+  margin-bottom: 0.5vh;
+  display: none;
+}
+
+h6 {
+  display: none;
+}

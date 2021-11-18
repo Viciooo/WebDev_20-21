@@ -1,0 +1,34 @@
+{
+  "Products": [
+    { "Marki odzieżowe": [{ "nazwa": "adidas" }, { "nazwa": "nike" }] },
+    {
+      "Samochody": [
+        {
+          "nazwa": "BMW"
+        },
+        {
+          "nazwa": "Skoda"
+        },
+        {
+          "nazwa": "Audi"
+        },
+        {
+          "nazwa": "Fiat"
+        }
+      ]
+    },
+    {
+      "Hulajnogi": []
+    },
+    {
+      "Słodycze": [
+        {
+          "nazwa": "Czekolada"
+        },
+        {
+          "nazwa": "Cukierki"
+        }
+      ]
+    }
+  ]
+}

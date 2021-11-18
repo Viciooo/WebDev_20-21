@@ -1,0 +1,23 @@
+{
+  "Products": [
+    {
+      "Hulajnogi": [
+        {
+          "nazwa": "Manual"
+        }
+      ]
+    },
+    {
+      "Słodycze": [
+        {
+          "nazwa": "Mercie"
+        },
+        {
+          "nazwa": "Sezamki <3"
+        }
+      ]
+    },
+    { "Samochody": [] },
+    { "Skutery": [{ "nazwa": "Yamaha" }, { "nazwa": "Peugeot" }] }
+  ]
+}

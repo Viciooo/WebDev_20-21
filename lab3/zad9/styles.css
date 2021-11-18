@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --font: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+  --grey: rgb(246, 246, 246);
+  --blue: rgb(37, 113, 199);
+  --grey-font: rgb(104, 104, 104);
+  --blue-hvr: rgb(108, 137, 170);
+  --box-hvr: rgb(240, 241, 243);
+  --border-grey: rgb(240, 237, 237);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--grey);
+  color: var(--grey-font);
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.underline {
+  height: 0.25rem;
+  background: var(--blue);
+  margin-left: auto;
+  margin-right: auto;
+  width: 15rem;
+  margin-top: 1rem;
+}
+
+.container {
+  height: 80vh;
+  width: 40vw;
+}
+
+.review {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+.review:hover {
+  box-shadow: var(--dark-shadow);
+}
+
+.img-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+#info {
+  margin-bottom: 0.75rem;
+}
+
+#penguin {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: var(--dark-shadow);
+}
+
+#name {
+  margin-bottom: 0.3rem;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+#role {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-size: 0.85rem;
+}
+
+.random-btn {
+  margin-top: 0.5rem;
+  background: var(--grey);
+  color: var(--blue);
+  transition: var(--transition);
+  border-color: var(--border-grey);
+  box-shadow: var(--dark-shadow);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.random-btn:hover {
+  background: var(--box-hvr);
+  color: var(--blue-hvr);
+}
+
+.prev-btn,
+.next-btn {
+  color: var(--blue);
+  font-size: 1.25rem;
+  background: transparent;
+  border-color: transparent;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: var(--blue-hvr);
+}

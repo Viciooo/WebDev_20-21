@@ -1,0 +1,35 @@
+{
+  "Products": [
+    { "Soki": [{ "nazwa": "Capiro" }, { "nazwa": "Cappy" }] },
+    {
+      "Samochody": [
+        {
+          "nazwa": "Ford"
+        },
+        {
+          "nazwa": "Subaru"
+        },
+        {
+          "nazwa": "Audi"
+        }
+      ]
+    },
+    {
+      "Słodycze": [
+        {
+          "nazwa": "Pawełek"
+        },
+        {
+          "nazwa": "Krówki"
+        }
+      ]
+    },
+    {
+      "Hulajnogi": [
+        {
+          "nazwa": "Elekryczna"
+        }
+      ]
+    }
+  ]
+}

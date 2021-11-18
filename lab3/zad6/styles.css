@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  --green: linear-gradient(
+    63deg,
+    rgba(14, 93, 30, 1) 17%,
+    rgba(39, 154, 69, 1) 78%
+  );
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 1000;
+}
+.phone-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.block {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  width: 60%;
+  margin-bottom: 5vh;
+  padding: 2vh;
+  border-radius: 5px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5vw;
+}
+
+.btn-submit {
+  font-size: 1.5vw;
+  border-radius: 10px;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  background: var(--green);
+  color: rgb(220, 224, 220);
+  padding: 0.5vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  cursor: pointer;
+}
+
+input {
+  width: 20vw;
+}
+
+.content {
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 1vw;
+  position: relative;
+  margin-bottom: 5vh;
+  border-radius: 5px;
+}
+
+.trash {
+  position: absolute;
+  left: 92%;
+  background: var(--green);
+  padding: 10px;
+  border-radius: 12px;
+  color: aliceblue;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 1.2vw;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}

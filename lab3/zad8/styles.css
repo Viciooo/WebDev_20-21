@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  position: relative;
+  top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  cursor: pointer;
+  font-size: 10rem;
+}
+
+#content {
+  border: 2px solid black;
+  font-size: 3rem;
+  display: none;
+}
