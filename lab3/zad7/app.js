@@ -1,9 +1,3 @@
-// http://localhost:3000/cities
-// npm i -g json-server
-// npx json-server --watch db.json
-
-// a). wyświetli na stronie tylko miasta z województwa małopolskiego
-
 function addElement(data, parent) {
   const container = document.createElement("div");
   container.classList.add("table");
@@ -77,34 +71,47 @@ function addElementTaskD(data, parent) {
   });
   parent.append(container);
 }
-
-fetch("http://localhost:3000/cities?province=małopolskie").then((resp) => {
+fetch("db.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.cities.filter((value) => {
+      return value.province === "małopolskie";
+    });
     const parent = document.querySelector("#a");
     addElement(data, parent);
   });
 });
 
-fetch("http://localhost:3000/cities?name_like=.*a.*a.*").then((resp) => {
+fetch("db.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.cities;
+    const newData = data.filter((obj) => {
+      const str = obj["name"];
+      let cnt = 0;
+      [...str].forEach((c) => {
+        if (c === "a") cnt++;
+      });
+      return cnt >= 2;
+    });
+
     const parent = document.querySelector("#b");
-    addElement(data, parent);
+    addElement(newData, parent);
   });
 });
 
-fetch("http://localhost:3000/cities?_sort=dentensity&_order=desc").then(
-  (resp) => {
-    resp.json().then((data) => {
-      const parent = document.querySelector("#c");
-      let tmp = data[4];
-      let obj = { tmp };
-      addElement(obj, parent);
-    });
-  }
-);
-
-fetch("http://localhost:3000/cities?").then((resp) => {
+fetch("db.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.cities;
+    const parent = document.querySelector("#c");
+    data.sort((a, b) => (a.dentensity > b.dentensity ? -1 : 1));
+    let tmp = data[4];
+    let obj = { tmp };
+    addElement(obj, parent);
+  });
+});
+
+fetch("db.json").then((resp) => {
+  resp.json().then((data) => {
+    data = data.cities;
     const parent = document.querySelector("#d");
 
     addElementTaskD(
@@ -114,8 +121,9 @@ fetch("http://localhost:3000/cities?").then((resp) => {
   });
 });
 
-fetch("http://localhost:3000/cities?").then((resp) => {
+fetch("db.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.cities;
     const parent = document.querySelector("#e");
     const moreThan80k = data.filter((item) => item.people > 80000).length;
     const lessThan80k = data.filter((item) => item.people < 80000).length;
@@ -130,8 +138,9 @@ fetch("http://localhost:3000/cities?").then((resp) => {
   });
 });
 
-fetch("http://localhost:3000/cities?").then((resp) => {
+fetch("db.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.cities;
     const parent = document.querySelector("#f");
     const newData = data.filter((d) => d.township.startsWith("P"));
     let mean = newData.reduce((xs, x) => xs + x["area"], 0) / newData.length;

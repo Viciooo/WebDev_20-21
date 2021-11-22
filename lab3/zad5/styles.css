@@ -4,12 +4,14 @@
   --yellow: rgb(220, 226, 171);
 }
 
-div {
+.inner,
+.middle,
+.outer,
+.counter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
   border: solid black 3px;
   padding-right: 10px;
   font-size: 40px;
@@ -62,4 +64,12 @@ button {
 .message-box {
   min-height: 8vh;
   min-width: 10vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 1vw;
+  font-weight: 600;
+  background-color: rgb(83, 76, 76);
+  border: solid black 3px;
+  margin-left: 30px;
+  padding: 10px;
 }

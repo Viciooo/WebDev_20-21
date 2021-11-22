@@ -29,9 +29,3 @@ container.addEventListener("click", (el) => {
     el.target.parentElement.remove();
   }
 });
-
-// walidacja nr telefonu (chyba patternami + type:tel)
-
-// walidacja name - imie zaczyna się z dużej i potem małe nazwisko tak samo (chyba patternami)
-
-// używanie local storage

@@ -1,16 +1,8 @@
-// npm i -g json-server
-// Odpalam plik json równolegle podając różne porty, aby port się nie nadpisywał
-
-// Ważne, aby być w dobrym folderze inaczej stworzy pliki i zahostuje je tam gdzie podaliśmy
-
-// npx json-server --watch dbA.json -p 3000
-// npx json-server --watch dbB.json -p 4000
-// npx json-server --watch dbC.json -p 5000
-
 let uniqProducts = [];
 let cnt = 0;
-fetch("http://localhost:3000/Products").then((resp) => {
+fetch("dbA.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.Products;
     data.forEach((el) => {
       Object.entries(el).map((item) => {
         addUniqList(uniqProducts, item);
@@ -21,8 +13,9 @@ fetch("http://localhost:3000/Products").then((resp) => {
   });
 });
 
-fetch("http://localhost:4000/Products").then((resp) => {
+fetch("dbB.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.Products;
     data.forEach((el) => {
       Object.entries(el).map((item) => {
         addUniqList(uniqProducts, item);
@@ -33,8 +26,9 @@ fetch("http://localhost:4000/Products").then((resp) => {
   });
 });
 
-fetch("http://localhost:5000/Products").then((resp) => {
+fetch("dbC.json").then((resp) => {
   resp.json().then((data) => {
+    data = data.Products;
     data.forEach((el) => {
       Object.entries(el).map((item) => {
         addUniqList(uniqProducts, item);

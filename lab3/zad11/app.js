@@ -1,3 +1,9 @@
+do {
+  input = prompt("I will not close untill u give me your name ");
+} while (input === null || input === "");
+
+console.log(input);
+
 document.addEventListener("DOMContentLoaded", function () {
   let score = 0;
   const minPos = 20;
@@ -15,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let scoreValue = document.querySelector(".score");
   const board = document.querySelector(".board");
+  const userName = document.querySelector(".name");
+  userName.innerText += ` ${input}`;
   board.addEventListener("click", takePoints);
 
   const intervalId = setInterval(function () {
