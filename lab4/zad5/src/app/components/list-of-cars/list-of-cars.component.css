@@ -1,0 +1,76 @@
+main {
+  margin: auto;
+  text-align: center;
+  display: grid;
+  width: 100vw;
+  grid-template-areas: "brands models colors";
+}
+
+.brands {
+  width: 100%;
+  grid-area: brands;
+  background-color: rgb(207, 204, 204);
+}
+
+.models {
+  width: 100%;
+  background-color: rgb(207, 204, 204);
+  grid-area: models;
+}
+
+.colors {
+  background-color: rgb(207, 204, 204);
+  grid-area: colors;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+li {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 0;
+  padding-left: none;
+  text-transform: capitalize;
+  height: 50px;
+}
+
+li:hover {
+  background-color: black;
+  color: white;
+}
+
+.active {
+  background-color: gray;
+  color: white;
+}
+
+.info {
+  font-size: 25px;
+  color: white;
+  background-color: gray;
+  font-weight: bold;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorName {
+  text-align: left;
+  width: 30%;
+}
+
+.colorPallet {
+  border: 1px solid black;
+  margin-left: 10px;
+  display: inline-block;
+  width: 30%;
+  height: 80%;
+}

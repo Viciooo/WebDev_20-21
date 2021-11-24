@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Fav actor data</h1>
+  <form #data="ngForm" (ngSubmit)="submit(data)">
+    <div class="form-group">
+      <label for="firstname">firstname: </label>
+      <input type="text" name="firstname" class="form-control" ngModel />
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">lastname: </label>
+      <input type="text" name="lastname" class="form-control" ngModel />
+    </div>
+
+    <div class="form-group">
+      <label for="movie">movie: </label>
+      <input type="text" name="movie" class="form-control" ngModel />
+    </div>
+    <button type="submit">submit</button>
+  </form>
+</div>
+
+<div class="displayer">
+  <div>Name: {{ this.firstname }}</div>
+  <div>Surname :{{ this.lastname }}</div>
+  <div>Movie :{{ this.movie }}</div>
+  <div>2 + 2 is {{ 2 + 2 }}</div>
+  <div>Name has {{ firstname.length }} chars</div>
+  <div>Uppercased movie {{ movie.toUpperCase() }}</div>
+</div>
