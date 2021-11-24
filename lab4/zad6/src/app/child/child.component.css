@@ -1,0 +1,21 @@
+button {
+  background: green;
+  padding: 1vw;
+  border: none;
+  border-radius: 10px;
+  color: #eae5e5;
+  box-shadow: 2px 2px 5px 0px rgba(66, 68, 90, 1);
+  font-size: 3rem;
+  font-family: "Agency FB", serif;
+}
+
+button:disabled{
+  background: red;
+}
+
+.container{
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+}

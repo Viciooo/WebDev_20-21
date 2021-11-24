@@ -1,0 +1,11 @@
+app-child{
+  display: block;
+  position: relative;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-family: "Agency FB", serif;
+}

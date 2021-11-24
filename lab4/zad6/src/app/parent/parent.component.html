@@ -1,0 +1,5 @@
+<h2>{{myCnt}}</h2>
+<app-child [cnt]="myCnt" [criticVal]="criticVal"  (passToParent)="updateCnt($event)"
+(reset)="resetAll($event)"
+></app-child>
+
