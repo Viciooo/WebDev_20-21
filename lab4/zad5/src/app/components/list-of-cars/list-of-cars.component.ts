@@ -79,7 +79,7 @@ export class ListOfCarsComponent {
     this.isColorChosen = false;
     this.currentColor = undefined;
 
-    // this.currentModel = model;
+    this.currentModel = model;
     // @ts-ignore
     this.currentColors = this.colors[model];
   }

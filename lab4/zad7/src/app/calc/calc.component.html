@@ -1,0 +1,6 @@
+<div>
+  <input [(ngModel)]="value"  type="text" disabled>
+  <button (click)="calc($event)" *ngFor="let btn of btns" [disabled]="!running">{{btn}}</button>
+  <button (click)="calc($event)" *ngFor="let ctrl of ctrls">{{ctrl}}</button>
+</div>
+

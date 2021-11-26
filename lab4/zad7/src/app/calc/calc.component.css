@@ -1,0 +1,19 @@
+div{
+  display: flex;
+  flex-wrap: wrap;
+  width: 40vw;
+}
+
+button{
+  width: 33.3333333%;
+  font-size: 2rem;
+  padding: 3px;
+}
+
+input{
+  width: 100%;
+  height: 20vh;
+  background: #514a4a;
+  color: white;
+  font-size: 2rem;
+}
