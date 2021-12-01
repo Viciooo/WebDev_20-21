@@ -1,0 +1,56 @@
+<form [formGroup]="dishForm" (ngSubmit)="onSubmit()" >
+  <h1><span>Formularz</span> na <span>twoje</span> danie</h1>
+  <label for="imgPath" >Adres URL: </label>
+  <input formControlName="imgPath" type="text" name="imgPath" id="imgPath" class="form-control">
+  <span *ngIf="!dishForm.get('imgPath')?.valid && dishForm.get('imgPath')?.touched">
+    Enter a valid value
+  </span>
+  <label for="name">Nazwa: </label>
+  <input formControlName="name" type="text" name="name" id="name">
+  <span *ngIf="!dishForm.get('name')?.valid && dishForm.get('name')?.touched">
+    Enter a valid value
+  </span>
+  <label for="cuisine">Kuchnia: </label>
+  <input formControlName="cuisine" type="text" name="cuisine" id="cuisine" class="form-control" >
+  <span *ngIf="!dishForm.get('cuisine')?.valid && dishForm.get('cuisine')?.touched">
+    Enter a valid value
+  </span>
+  <label for="dishType">Typ dania: </label>
+  <input formControlName="dishType" type="text" name="dishType" id="dishType" class="form-control" >
+  <span *ngIf="!dishForm.get('dishType')?.valid && dishForm.get('dishType')?.touched">
+    Enter a valid value
+  </span>
+
+  <label for="description">Opis: </label>
+  <input formControlName="description" type="text" name="description" id="description" class="form-control" >
+  <span *ngIf="!dishForm.get('description')?.valid && dishForm.get('description')?.touched">
+    Enter a valid value
+  </span>
+  <label for="maxAmt">Dostępna ilość: </label>
+  <input type="number" name="maxAmt" id="maxAmt" class="form-control" formControlName="maxAmt">
+  <span *ngIf="!dishForm.get('maxAmt')?.valid && dishForm.get('maxAmt')?.touched">
+    Enter a valid value
+  </span>
+  <label for="price">Cena: </label>
+  <input type="number" name="price" id="price" class="form-control" formControlName="price">
+  <span *ngIf="!dishForm.get('price')?.valid && dishForm.get('price')?.touched">
+    Enter a valid value
+  </span>
+
+  <div formArrayName="ingredients" class="ingredients">
+    <label>List of ingredients (min two)</label>
+    <button type="button" class="add-ingredient" (click)="addIngredient()"><span>Add</span> new</button>
+    <div *ngFor="let i of getControls();let j = index" class="ingredient">
+      <div class="item">
+        <input type="text" [formControlName]="j">
+        <button type="button" class="delete-ingredient" (click)="deleteIngredient(j)">-</button>
+      </div>
+
+      <span class="validator" *ngIf="!getControlAtIndex(j)?.valid && getControlAtIndex(j)?.touched">
+    Enter a valid value
+  </span>
+
+    </div>
+  </div>
+  <button type="submit" class="submit" [disabled]="!dishForm.valid" >Dodaj</button>
+</form>

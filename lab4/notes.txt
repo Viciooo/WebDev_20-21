@@ -1,17 +1,10 @@
-1.obsługa przycisku + - :
--zmienianie w górę i w dół ilości
--zapisanie limitów górnych
--zmiana koloru ilości funkcją: domyślnie zielony, 10 lub mniej żółty, 3 i mniej czerwony
+7.filtrowanie dania
+- po cenie
+- po dishType
+- po ilości (?)
 
-2.navbar:
--miejsce do przełączania walut:
-    *wybrana przygaszona
-    *niewybrana normalnie
-    *fajne tła
--wyświetlanie ile itemu o tej nazwie w koszyku
-
-3.ceny:
--wsadzić ceny do array i posortować
--jeśli cena mniejsz od 1/3 elementów to zielony
--1/3 do 2/3 żółty
--2/3 do 3/3 czerwony
+8.Koszyk
+-przycisk do checkout
+-drop-down menu z przyciskami + i - i licznik danego dania i nazwa
+    *jeśli licznik 0 to znika z listy
+-możliwość zwinięcia i rozwinięcia listy

@@ -1,0 +1,95 @@
+form{
+  background: var(--background-dark);
+  color: var(--background-light);
+  border-radius: var(--small-border-radious);
+  box-shadow: var(--box-shadow);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input,label{
+  font-family: var(--main-font);
+  width: 70%;
+  font-size: var(--font-size-medium);
+  margin: 2px 30px 2px 30px;
+}
+
+
+h1{
+  text-transform: uppercase;
+  position: relative;
+}
+
+.submit{
+  font-family: var(--main-font);
+  font-size: var(--font-size-big);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--span-color);
+  border-radius: var(---medium-border-radious);
+  margin: 2%;
+}
+
+h1 {
+  text-align: center;
+  font-size: var(--font-size-big);
+}
+
+h2{
+  font-size:var(--font-size-medium);
+  width: fit-content;
+  padding: 3px;
+}
+
+span{
+  color: var(--span-color);
+}
+
+
+h1, h2, h3{
+  font-family: var(--main-font);
+  margin: 7px;
+  color: var(--background-dark);
+  background-color: var(--background-light);
+  border-radius: var(--small-border-radious);
+}
+
+.ingredients{
+  margin-top: 1rem;
+}
+
+.add-ingredient{
+  font-family: var(--main-font);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  padding: 3px;
+}
+
+.delete-ingredient{
+  width: 2rem;
+  margin-right: 5rem;
+  font-weight: 700;
+  color: var(--span-color);
+  border-radius: var(--big-border-radious);
+  font-family: var(--secondary-font);
+  font-size: var(--font-size-medium);
+}
+
+.ingredient{
+  margin-top: 1rem;
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.validator{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
