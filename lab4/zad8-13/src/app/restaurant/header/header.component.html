@@ -1,0 +1,29 @@
+<div class="nav-bar">
+  <div class="logo">
+    <div class="name"><span>my</span>Kitchen</div>
+  </div>
+
+  <div class="nav-items">
+    <div class="option checkout">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      Checkout
+    </div>
+
+    <div class="option">
+      <div *ngIf="moneyItemHandler.basketItems>10; else elseBlock" class="amountDisplayer" [style.backgroundColor]="'steelblue'" >{{moneyItemHandler.basketItems}}</div>
+      <ng-template #elseBlock>
+        <div class="amountDisplayer" [style.backgroundColor]="'orange'" >{{moneyItemHandler.basketItems}}</div>
+      </ng-template>
+    </div>
+
+    <div class="option">
+      <h2 class="basketValue">{{moneyItemHandler.basketValue.toFixed(2)}}<span>{{moneyItemHandler.currency}}</span></h2>
+    </div>
+
+    <div class="option currencies">
+      <button class="curr euro" (click)="swap()" [disabled]="moneyItemHandler.currency==='€'">€</button>
+      <button class="curr usd" (click)="swap()" [disabled]="moneyItemHandler.currency==='$'">$</button>
+    </div>
+  </div>
+
+</div>

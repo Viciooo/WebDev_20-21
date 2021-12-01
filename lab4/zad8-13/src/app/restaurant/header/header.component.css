@@ -1,0 +1,101 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px rgb(211, 205, 205) solid;
+  background-color: white;
+  font-family: var(--main-font);
+}
+
+
+.logo {
+  font-size: 3rem;
+  color: var(--background-dark);
+  margin-bottom: 1.5vh;
+  font-weight: 800;
+  margin-right: auto;
+  margin-left: 2rem;
+}
+
+.nav-items{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2rem;
+  margin-left: 3rem;
+
+}
+.option{
+  margin-right: 2rem;
+}
+
+span {
+  color: var(--span-color);
+}
+
+i {
+  font-size: var(--font-size-big);
+}
+.checkout{
+  cursor: pointer;
+}
+
+.checkout:hover{
+  color: #464444;
+}
+
+.basketValue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  font-size: var(--font-size-big);
+  font-family: var(--secondary-font);
+}
+
+.currencies{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  width: 5rem;
+  border-radius: var(---medium-border-radious);
+}
+
+.curr{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-big);
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.euro{
+  border-right: 2px solid black;
+}
+
+.curr:disabled{
+  background-color:var(--span-color) ;
+  color: var(--background-light);
+}
+
+.amountDisplayer{
+  border: 2px solid var(--background-dark);
+  border-radius: var(---medium-border-radious);
+  font-family: var(--secondary-font);
+  font-size: var(--font-size-big);
+  font-weight: 700;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
