@@ -1,0 +1,43 @@
+<form class="container" [style.display]="dishesService.displayFilters">
+    <div class="item">
+      <h1>Type of dish</h1>
+      <div class="box" *ngFor="let dishType of dishesService.dishTypes;let x = index">
+        <input type="checkbox" value="{{dishType}}" id="{{dishType}}"
+               (change) = "dishesService.dishTypesSelected[x] = (dishesService.dishTypesSelected[x] + 1) % 2">
+        <label for="{{dishType}}">{{dishType}} {{dishesService.dishTypesSelected[x]}}</label>
+      </div>
+    </div>
+
+    <div class="item">
+      <h1>Type of cuisine</h1>
+      <div class="box" *ngFor="let cuisineType of dishesService.cuisineTypes;let x = index">
+        <input type="checkbox" value="{{cuisineType}}" id="{{cuisineType}}"
+               (change) = "dishesService.cuisineTypesSelected[x] = (dishesService.cuisineTypesSelected[x] + 1) % 2">
+        <label for="{{cuisineType}}">{{cuisineType}} {{dishesService.cuisineTypesSelected[x]}}</label>
+      </div>
+    </div>
+
+    <div class="item">
+      <h1>Rating in stars</h1>
+      <div class="box" *ngFor="let item of [].constructor(5); let x = index">
+        <input type="checkbox" value="{{x}}" id="{{x}}"
+               (change) = "dishesService.starsSelected[x] = (dishesService.starsSelected[x] + 1) % 2">
+        <label for="{{x}}">
+          <i class="fa fa-star" aria-hidden="true" *ngFor="let item of [].constructor(x+1)"></i>
+        </label>
+      </div>
+    </div>
+
+    <div class="item prices">
+      <h1>Select the price</h1>
+      <h2>Price is in <span>{{moneyItemHandler.currency}}</span></h2>
+      <ng5-slider [(value)]="dishesService.prices[2]" [(highValue)]="dishesService.prices[3]"
+                  [options]="options"></ng5-slider>
+        <button class="reset" type="reset" (click)="resetAllCheckboxes()">Clear all filters</button>
+    </div>
+
+  <div class="hideAll" (click)="dishesService.displayFilters ==='none' ? dishesService.displayFilters ='flex' : dishesService.displayFilters ='none'">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  </div>
+
+</form>

@@ -1,10 +1,15 @@
 7.filtrowanie dania
-- po cenie
-- po dishType
-- po ilości (?)
-
-8.Koszyk
--przycisk do checkout
--drop-down menu z przyciskami + i - i licznik danego dania i nazwa
-    *jeśli licznik 0 to znika z listy
--możliwość zwinięcia i rozwinięcia listy
+-obsługa checkboxów:
+    - stworzyć pipe do dishType
+    - stworzyć pipe do cuisineType
+    - min max money pipe
+    - stars pipe
+-dodać do dodawania dania zmianę
+    - min max price
+    - dodawanie dishtype
+    - dodawanie cuisineType
+-dodać do usuwania dania:
+    -zmiana price
+    -zmiana dishtype
+    -zmiana cuisinetype
+-walidacja min i max price

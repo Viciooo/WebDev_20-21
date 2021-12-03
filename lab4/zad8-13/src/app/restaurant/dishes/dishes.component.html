@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="box" *ngFor="let myDish of dishesService.myDishes">
+  <div class="box" *ngFor="let myDish of dishesService.myDishes | filterDishes:dishesService" >
     <div class="delete-btn">
       <i class="fa fa-times" aria-hidden="true" (click)="deleteElement(myDish)"></i>
     </div>

@@ -43,10 +43,11 @@ i {
 }
 .checkout{
   cursor: pointer;
+  font-size: var(--font-size-medium);
 }
 
 .checkout:hover{
-  color: #464444;
+  color: var(--hover-grey);
 }
 
 .basketValue {
@@ -99,3 +100,98 @@ i {
   align-items: center;
 }
 
+.listOfItems{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  width: 15rem;
+}
+
+.dropDown{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  top: 3.5rem;
+  width: 15rem;
+  background-color: white;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  z-index: 4;
+}
+
+.item{
+  font-family: var(--secondary-font);
+  border-top: 1px solid grey;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.item h1{
+  font-size: var(--font-size-medium);
+
+}
+.total{
+  font-weight: 600;
+  font-size: var(--font-size-big);
+}
+
+
+
+.filter{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0 7px;
+  width: 15rem;
+}
+
+.filter h1:hover{
+  color: var(--hover-grey);
+}
+
+.filter h1{
+  margin-right: 5px;
+}
+
+.filter-list{
+  font-size: var(--font-size-medium);
+  font-family: var(--main-font);
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: var(--hover-grey) 1px solid;
+  width: 100%;
+  padding: 5px;
+}
+
+.item{
+  font-family: var(--secondary-font);
+  border-top: 1px solid grey;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-top: 5px;
+  flex-direction: column;
+}
+
+.item label{
+  font-size: var(--font-size-medium);
+}

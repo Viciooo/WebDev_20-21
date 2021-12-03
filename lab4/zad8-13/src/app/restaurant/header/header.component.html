@@ -4,11 +4,9 @@
   </div>
 
   <div class="nav-items">
-    <div class="option checkout">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      Checkout
+    <div class="option filter">
+      <h1 (click)="dishesService.displayFilters ==='none' ? dishesService.displayFilters ='flex' : dishesService.displayFilters ='none'"><i class="fa fa-sliders" aria-hidden="true"></i> Filters</h1>
     </div>
-
     <div class="option">
       <div *ngIf="moneyItemHandler.basketItems>10; else elseBlock" class="amountDisplayer" [style.backgroundColor]="'steelblue'" >{{moneyItemHandler.basketItems}}</div>
       <ng-template #elseBlock>
@@ -23,6 +21,20 @@
     <div class="option currencies">
       <button class="curr euro" (click)="swap()" [disabled]="moneyItemHandler.currency==='€'">€</button>
       <button class="curr usd" (click)="swap()" [disabled]="moneyItemHandler.currency==='$'">$</button>
+    </div>
+
+    <div class="listOfItems">
+      <div class="checkout"
+           (click)="listOfItems.style.display ==='none' ? listOfItems.style.display='flex' : listOfItems.style.display ='none'">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        Checkout
+      </div>
+      <div #listOfItems class="dropDown">
+        <div *ngFor="let i of moneyItemHandler.checkoutList" class="item">
+          <h1>{{i.amount}} <span>x</span> {{i.name}}  <span>{{i.value}}</span> {{moneyItemHandler.currency}} </h1>
+        </div>
+        <div class="item total"><span>Total</span>: {{moneyItemHandler.basketValue.toFixed(2)}}{{moneyItemHandler.currency}}</div>
+      </div>
     </div>
   </div>
 

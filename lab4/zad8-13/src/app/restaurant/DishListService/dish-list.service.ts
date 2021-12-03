@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Dish} from "../dishes/dish/dish.module";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export class DishListService {
     new Dish(0,0,10, "Żurek", "Polska", "Zupa", ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ")
     , new Dish(0,1,8, "Pomidorowa", "Polska", "Zupa", ["kostka rosołowa", "troche wody", "przyprawy", "pomidory", "makaron"], 8, 9, "Trochę czuć koncentrat", "https://drive.google.com/uc?export=view&id=1yWarxZGHb8dkQR-VYaYj-UYtnVG20SS_")
     , new Dish(0,2,15, "Pizza NY-style", "Amerykańska", "Pizza", ["ciasto", "ser", "szynka", "sos z butelki"], 15, 15, "Studenckie paliwo, najlepiej smakuje do kawki o 3am", "https://drive.google.com/uc?export=view&id=1I7oGRbRNb6_lrT8d1vPqx5l3CJo5e1Ss")
-    , new Dish(0,3,30, "Pizza Italian-style", "Włoska", "Pizza", ["ciasto", "ser", "pyszny sos", "salami pikante"], 5, 30, "Bdb pizza custom sos, ogólnie super", "https://drive.google.com/uc?export=view&id=1u9p3Cj7UDfK8TfRj9Ujd9y5VITzqryzn")
-    , new Dish(0,4,5, "Spaghetti", "Włoska", "Makaron", ["makaron", "sos pomidorowy", "ser", "przyprawy"], 12, 14, "Trochę rozgotowany bo polacy nie potrafią robić makaronu", "https://drive.google.com/uc?export=view&id=1xH7NpysoZDHCwz3JS63KHeYt_f9zSwxj")
+    , new Dish(0,3,5, "Pizza Italian-style", "Włoska", "Pizza", ["ciasto", "ser", "pyszny sos", "salami pikante"], 5, 30, "Bdb pizza custom sos, ogólnie super", "https://drive.google.com/uc?export=view&id=1u9p3Cj7UDfK8TfRj9Ujd9y5VITzqryzn")
+    , new Dish(0,4,12, "Spaghetti", "Włoska", "Makaron", ["makaron", "sos pomidorowy", "ser", "przyprawy"], 12, 14, "Trochę rozgotowany bo polacy nie potrafią robić makaronu", "https://drive.google.com/uc?export=view&id=1xH7NpysoZDHCwz3JS63KHeYt_f9zSwxj")
     , new Dish(0,5,13, "Carbonara", "Włoska", "Makaron", ["makaron", "jajko", "pieprz", "boczek"], 13, 5, "Zawsze spoko", "https://drive.google.com/uc?export=view&id=1GEnPFncdT52DSZUpPwhF58JY81PbzgMa")
     , new Dish(0,6,10, "Zdrowa krowa", "Amerykańska", "Burger", ["bułka", "mięso", "warzywa", "sos"], 10, 25, "Bardzo dobry burger przy Galerii Krakowskiej", "https://drive.google.com/uc?export=view&id=1XJ9gFuRG-w2nVDryTxfpYOOOD6vWwJVF")
     , new Dish(0,7,100, "McChicken", "Amerykańska", "Burger", ["soja", "więcej soji", "jeszcze trochę soji"], 100, 2, "Trzeba być mocno głodnym", "https://drive.google.com/uc?export=view&id=1Hnp0vnfsFpeJZyBbwvF3JiJMgbmHeEbq")
@@ -21,7 +22,7 @@ export class DishListService {
     , new Dish(0,11,100, "French fries", "Francuska", "Frytki", ["ziemniaki"], 100, 4, "Fajne fryteczki bardzo", "https://drive.google.com/uc?export=view&id=1jSdgmLTgaPpwBwrGbZMO01H3ssZLYxVy")
     , new Dish(0,12,1001, "American fries", "Amerykańska", "Frytki", ["ziemniaki"], 1001, 7, "OK", "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR")
   ]
-  priceList: Number[][] =
+  priceList: number[][] =
     [[0,this.myDishes[0].price],
     [1,this.myDishes[1].price],
     [2,this.myDishes[2].price],
@@ -37,6 +38,67 @@ export class DishListService {
     [12,this.myDishes[12].price]
     ].sort((a, b) => a[1] > b[1] && 1 || -1)
   constructor() { }
+
+  dishTypes:string[] = [
+    "inne",
+    "frytki",
+    "lody",
+    "zupa",
+    "pizza",
+    "makaron",
+    "burger"
+  ]
+
+  dishTypesSelected:number[] = Array(this.dishTypes.length).fill(0)
+
+  cuisineTypes:string[] = [
+    "Polska",
+    "Amerykańska",
+    "Włoska",
+    "Francuska"
+    ]
+
+  cuisineTypesSelected:number[] = Array(this.cuisineTypes.length).fill(0)
+
+  //prices[0] - min value product
+  //prices[1] - max value product
+  //prices[0] - min CHOSEN value product
+  //prices[1] - max CHOSEN value product
+
+  calcMax(){
+    let val = -1
+    this.priceList.forEach(e=>{
+      val = Math.max(val,e[1])
+    })
+    return val
+  }
+
+  calcMin(){
+    let val = 1000000
+    this.priceList.forEach(e=>{
+      val = Math.min(val,e[1])
+    })
+    return val
+  }
+
+  prices:number[] = [
+    this.calcMin(),
+    this.calcMax(),
+    this.calcMin(),
+    this.calcMax()
+  ]
+
+  starsSelected:number[] = Array(6).fill(0)
+
+  displayFilters:string = 'none'
+
+  sumOfCuisine:number = this.cuisineTypesSelected.reduce((a, b) => a + b, 0)
+  sumOfDishTypes:number = this.dishTypesSelected.reduce((a, b) => a + b, 0)
+  sumOfstars:number = this.starsSelected.reduce((a, b) => a + b, 0)
+
+
+
+
 
   // myDishes: Dish[] = [
   //   new Dish(10, "Żurek", "Polska", "Zupa", ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", ["https://drive.google.com/uc?export=view&id=17SDwy5sqAHe3sLaaDjnE6IrvvwCsXInb", "https://drive.google.com/uc?export=view&id=1pP8ub1bpvL6UriY1fnMIcn066tznpcE_", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ", "https://drive.google.com/uc?export=view&id=1h74qpsj3ekiqW1SvHime_xRj-7PWN7f-"])
