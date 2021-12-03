@@ -6,37 +6,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-of-cars.component.css'],
 })
 export class ListOfCarsComponent {
-   public brands: string[] = ["audi", "bmw", "mercedes-benz", "volkswagen", "porsche", "lamborghini"]
+   public brands: string[] = ["audi", "bmw", "tesla", "volkswagen", "porsche","ford"]
 
   public models = {
-    "audi": ["a4", "a6", "a7"],
+    "tesla": ["S", "3", "X","Y"],
     "bmw": ["m2", "m3", "m5"],
-    "mercedes-benz": ["e-klasa", "c-klasa", "g-klasa"],
     "volkswagen": ["tiguan", "arteon", "polo", "transporter"],
+    "audi": ["a4", "a6", "a7"],
     "porsche": ["cayenee", "spider", "cayman", "911"],
-    "lamborghini": ["urus", "huracan"]
+    "ford": ["focus"]
   }
   public colors= {
-    "a4": ["blue", "violet", "green", "chocolate"],
-    "a5": ["black", "red", "lightgreen"],
-    "a6": ["lightblue", "lightred", "pink"],
-    "a7": ["brown", "orange"],
+
+    "m3": ["grey", "violet", "green"],
     "m2": ["blue", "red", "yellow"],
-    "m3": ["lightblue", "orange", "green"],
-    "m5": ["gray", "lightred", "lightgreen", "cyan", "crimson"],
-    "e-klasa": ["gray", "red", "green"],
-    "c-klasa": ["lightgray", "brown", "aqua"],
-    "g-klasa": ["white", "lightred", "orange"],
-    "tiguan": ["lightblue", "lightred", "pink"],
+    "m5": ["yellow", "red", "lightgreen"],
+    "a7": ["brown", "orange"],
+    "a5": ["black", "red", "lightgreen"],
+    "a4": ["blue", "violet", "green", "chocolate"],
+    "a6": ["lightblue", "pink"],
+    "S": ["gray", "red", "green"],
+    "3": ["lightgray", "brown", "aqua"],
+    "X": ["white", "orange"],
+    "Y": ["red", "green", "blue"],
+    "tiguan": ["lightblue", "pink"],
     "arteon": ["blue", "red", "yellow"],
     "polo": ["aqua", "orange", "lightgreen"],
     "transporter": ["white", "brown", "green"],
-    "cayenee": ["gray", "red", "green"],
-    "spider": ["lightgray", "lightred", "lightgreen"],
+    "spider": ["lightgray", "lightgreen"],
     "cayman": ["blue", "violet", "pink"],
     "911": ["brown", "orange", "yellow"],
-    "urus": ["orange", "coral", "green"],
-    "huracan": ["aqua", "lightblue", "chartreuse"],
+    "focus" : ["silver","brown"]
   }
   currentModels: string[] | undefined;
   currentColors: string[] | undefined;
@@ -45,22 +45,22 @@ export class ListOfCarsComponent {
   currentBrand: string | undefined;
   currentColor: string | undefined;
 
-  isBrandChosen = false;
-  isModelChosen = false;
-  isColorChosen = false;
+  brandChosen = false;
+  modelChosen = false;
+  colorChosen = false;
 
-  chooseBrand(event: any, brand: string) {
-    let list = event.currentTarget.parentNode;
+  chooseBrand(e: any, brand: string) {
+    let list = e.currentTarget.parentNode;
     this.resetList(list);
 
-    event.currentTarget.classList.add('active');
+    e.currentTarget.classList.add('active');
 
-    this.isBrandChosen = true;
+    this.brandChosen = true;
 
-    this.isModelChosen = false;
+    this.modelChosen = false;
     this.currentModel = undefined;
 
-    this.isColorChosen = false;
+    this.colorChosen = false;
     this.currentColor = undefined;
 
     this.currentBrand = brand;
@@ -68,15 +68,15 @@ export class ListOfCarsComponent {
     this.currentModels = this.models[brand];
   }
 
-  chooseModel(event: any, model: string) {
-    let list = event.currentTarget.parentNode;
+  chooseModel(e: any, model: string) {
+    let list = e.currentTarget.parentNode;
     this.resetList(list);
 
-    event.currentTarget.classList.add('active');
+    e.currentTarget.classList.add('active');
 
-    this.isModelChosen = true;
+    this.modelChosen = true;
 
-    this.isColorChosen = false;
+    this.colorChosen = false;
     this.currentColor = undefined;
 
     this.currentModel = model;
@@ -84,18 +84,18 @@ export class ListOfCarsComponent {
     this.currentColors = this.colors[model];
   }
 
-  chooseColor(event: any, color: string) {
-    let list = event.currentTarget.parentNode;
+  chooseColor(e: any, color: string) {
+    let list = e.currentTarget.parentNode;
     this.resetList(list);
 
-    event.currentTarget.classList.add('active');
+    e.currentTarget.classList.add('active');
 
-    this.isColorChosen = true;
+    this.colorChosen = true;
     this.currentColor = color;
   }
 
   resetList(list: any) {
-    let liArray: HTMLCollectionOf<HTMLLIElement> =
+    let liArray: any =
       list.getElementsByTagName('li');
     for (let i = 0; i < liArray.length; i++) {
       if (liArray[i].classList.contains('active')) {

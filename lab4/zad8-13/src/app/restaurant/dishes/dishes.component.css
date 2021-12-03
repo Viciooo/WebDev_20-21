@@ -118,6 +118,7 @@ h4{
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .delete-btn i{
@@ -148,7 +149,7 @@ app-new-dish-forms{
   margin: 3px;
   font-size: var(--font-size-medium);
   cursor: pointer;
-  color: yellow;
+  color: var(--star-color);
 }
 
 

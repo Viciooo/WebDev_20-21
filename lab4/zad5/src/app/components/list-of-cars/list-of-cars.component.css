@@ -1,62 +1,69 @@
-main {
-  margin: auto;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --background-color:rgb(170, 190, 190);
+  --small-font-size:2rem;
+  --big-font-size: 3rem;
+}
+
+.container {
   text-align: center;
   display: grid;
   width: 100vw;
   grid-template-areas: "brands models colors";
+  cursor: pointer;
 }
+
+
 
 .brands {
   width: 100%;
   grid-area: brands;
-  background-color: rgb(207, 204, 204);
+  background-color: var(--background-color);
 }
 
 .models {
   width: 100%;
-  background-color: rgb(207, 204, 204);
+  background-color: var(--background-color);
   grid-area: models;
 }
 
 .colors {
-  background-color: rgb(207, 204, 204);
+  background-color: var(--background-color);
   grid-area: colors;
   width: 100%;
 }
 
 ul {
   list-style-type: none;
-  margin-left: 0px;
-  padding-left: 0px;
 }
 
 li {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-left: 0;
-  padding-left: none;
   text-transform: capitalize;
   height: 50px;
 }
 
 li:hover {
-  background-color: black;
-  color: white;
+  background-color: #3d3c3c;
+  color: #f4efef;
 }
 
 .active {
-  background-color: gray;
+  background-color: #0f4352;
   color: white;
 }
 
 .info {
-  font-size: 25px;
+  font-size: 5rem;
   color: white;
-  background-color: gray;
+  height: 7rem;
+  background-color: #112847;
   font-weight: bold;
-  width: 100vw;
-  height: 100px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,9 +75,21 @@ li:hover {
 }
 
 .colorPallet {
-  border: 1px solid black;
-  margin-left: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
   display: inline-block;
-  width: 30%;
-  height: 80%;
+  width: 40%;
+  height: 50%;
+}
+
+li,h1,p{
+  font-family: "Agency FB", serif;
+}
+
+h1{
+  font-size: var(--big-font-size);
+}
+
+p{
+  font-size: var(--small-font-size);
 }

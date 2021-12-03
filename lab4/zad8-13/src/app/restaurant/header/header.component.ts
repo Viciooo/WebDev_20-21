@@ -20,7 +20,10 @@ export class HeaderComponent implements OnInit {
       this.moneyItemHandler.basketValue *= this.moneyItemHandler.exchangeRate
       this.dishesService.myDishes.forEach((element)=>{
         element.price *= this.moneyItemHandler.exchangeRate
-        element.price.toFixed(2)
+      })
+      this.moneyItemHandler.checkoutList.forEach((element)=>{
+        element.value *= this.moneyItemHandler.exchangeRate
+        element.value = +element.value.toFixed(2)
       })
     }
         else {
@@ -28,10 +31,12 @@ export class HeaderComponent implements OnInit {
       this.moneyItemHandler.basketValue /= this.moneyItemHandler.exchangeRate
       this.dishesService.myDishes.forEach((element)=>{
         element.price /= this.moneyItemHandler.exchangeRate
-        element.price.toFixed(2)
+      })
+      this.moneyItemHandler.checkoutList.forEach((element)=>{
+        element.value /= this.moneyItemHandler.exchangeRate
+        element.value = +element.value.toFixed(2)
       })
     }
-        this.moneyItemHandler.basketItems.toFixed(2)
   }
 
 }

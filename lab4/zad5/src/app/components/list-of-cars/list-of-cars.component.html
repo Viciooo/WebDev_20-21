@@ -1,7 +1,7 @@
-<main>
+<div class="container">
   <div class="brands">
     <ul>
-      <h3>Dostępne marki:</h3>
+      <h1>Brands</h1>
       <li *ngFor="let brand of brands" (click)="chooseBrand($event, brand)">
         {{ brand }}
       </li>
@@ -9,8 +9,8 @@
   </div>
 
   <div class="models">
-    <ul *ngIf="isBrandChosen; else brandNotChoosed">
-      <h3>Dostępne modele:</h3>
+    <ul *ngIf="brandChosen; else brandNotChosen">
+      <h1>Models</h1>
       <li
         *ngFor="let model of currentModels"
         (click)="chooseModel($event, model)"
@@ -19,32 +19,31 @@
       </li>
     </ul>
 
-    <ng-template #brandNotChoosed>
-      <p>Choose brand!</p>
+    <ng-template #brandNotChosen>
+      <p>Choose a brand!</p>
     </ng-template>
   </div>
 
   <div class="colors">
-    <ul *ngIf="isModelChosen; else modelNotChoosed">
-      <h3>Dostępne kolory:</h3>
+    <ul *ngIf="modelChosen; else modelNotChosen">
+      <h1>Colors</h1>
       <li
         *ngFor="let color of currentColors"
         (click)="chooseColor($event, color)"
       >
-        <p class="colorName">Kolor: {{ color }}</p>
+        <p class="colorName">Color {{ color }}</p>
         <div class="colorPallet" [style.background]="color"></div>
       </li>
     </ul>
 
-    <ng-template #modelNotChoosed>
-      <p>Choose model!</p>
+    <ng-template #modelNotChosen>
+      <p>Choose a model!</p>
     </ng-template>
   </div>
-</main>
+</div>
 
-<div class="info" *ngIf="isColorChosen">
+<div class="info" *ngIf="colorChosen">
   <p>
-    Wybrałeś {{ currentBrand }} {{ currentModel }} w kolorze {{ currentColor }},
-    Gratulacje!
+    You chose {{ currentBrand }} {{ currentModel }} in {{ currentColor }}, good choice ;)
   </p>
 </div>

@@ -45,7 +45,7 @@ export class NewDishFormsComponent implements OnInit{
     this.dishesService.priceList.push([this.dishesService.newId,newDish.price])
     this.dishesService.priceList.sort((a, b) => a[1] > b[1] && 1 || -1)
     this.dishesService.newId++
-    this.dishForm.reset()
+    // this.dishForm.reset()
   }
 
   addIngredient() {
