@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Dish} from "../dishes/dish/dish.module";
-
 @Injectable({
   providedIn: 'root'
 })
 export class DishListService {
   newId: number = 12
+
   myDishes: Dish[] = [
     new Dish(1,0,10, "Żurek", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ")
     , new Dish(1,1,8, "Pomidorowa", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "pomidory", "makaron"], 8, 9, "Trochę czuć koncentrat", "https://drive.google.com/uc?export=view&id=1yWarxZGHb8dkQR-VYaYj-UYtnVG20SS_")
@@ -21,6 +21,9 @@ export class DishListService {
     , new Dish(1,11,100, "French fries", "Francuska", 'Frytki', ["ziemniaki"], 100, 4, "Fajne fryteczki bardzo", "https://drive.google.com/uc?export=view&id=1jSdgmLTgaPpwBwrGbZMO01H3ssZLYxVy")
     , new Dish(1,12,1001, "American fries", "Amerykańska", 'Frytki', ["ziemniaki"], 1001, 7, "OK", "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR")
   ]
+
+
+
   priceList: number[][] =
     [[0,this.myDishes[0].price],
     [1,this.myDishes[1].price],
@@ -90,8 +93,10 @@ export class DishListService {
 
   displayFilters:string = 'none'
 
-
-
+  // options: Options = {
+  //   floor: this.prices[0],
+  //   ceil: this.prices[1]
+  // };
 
   // myDishes: Dish[] = [
   //   new Dish(10, "Żurek", "Polska", "Zupa", ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", ["https://drive.google.com/uc?export=view&id=17SDwy5sqAHe3sLaaDjnE6IrvvwCsXInb", "https://drive.google.com/uc?export=view&id=1pP8ub1bpvL6UriY1fnMIcn066tznpcE_", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ", "https://drive.google.com/uc?export=view&id=1h74qpsj3ekiqW1SvHime_xRj-7PWN7f-"])

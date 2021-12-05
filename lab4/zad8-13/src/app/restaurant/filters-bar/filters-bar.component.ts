@@ -12,10 +12,6 @@ export class FiltersBarComponent implements OnInit {
 
   constructor(public dishesService:DishListService, public moneyItemHandler:CheckoutAndCurrenciesService) { }
 
-  options: Options = {
-    floor: this.dishesService.prices[0],
-    ceil: this.dishesService.prices[1]
-  };
 
   ngOnInit(): void {
   }

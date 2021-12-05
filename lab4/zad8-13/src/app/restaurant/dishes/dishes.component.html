@@ -3,7 +3,7 @@
   | filterDishes :c(dishesService.dishTypesSelected):c(dishesService.dishTypes)
   | filterCuisinesPipe :c(dishesService.cuisineTypesSelected) : c(dishesService.cuisineTypes)
   | starsPipe :c(dishesService.starsSelected)
-  | pricePipe :dishesService.prices[2].valueOf():dishesService.prices[3].valueOf()
+  | pricePipe :dishesService.prices[2]:dishesService.prices[3]
   )" >
     <div class="delete-btn">
       <i class="fa fa-times" aria-hidden="true" (click)="deleteElement(myDish)"></i>

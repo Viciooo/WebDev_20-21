@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {Dish} from "./dish/dish.module";
 import { DishListService } from "../DishListService/dish-list.service"
 import {CheckoutAndCurrenciesService} from "../checkoutAndCurrenciesService/checkout-and-currencies.service";
@@ -9,13 +9,12 @@ import {checkoutItem} from '../checkoutAndCurrenciesService/checkoutItem/checkou
   templateUrl: './dishes.component.html',
   styleUrls: ['./dishes.component.css'],
 })
-export class DishesComponent implements OnInit {
+export class DishesComponent implements OnInit{
   constructor(public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) {
   }
 
   ngOnInit(): void {
   }
-
 
 
   takeItem(myDish: Dish) {
@@ -85,7 +84,6 @@ export class DishesComponent implements OnInit {
     else if(typeOfPrice === 1){
       this.dishesService.prices[1] = this.dishesService.calcMax()
       this.dishesService.prices[3] = this.dishesService.prices[1]
-      console.log(this.dishesService.prices[1])
     }
 
     // this.dishesService.myDishes.forEach(e=>{
@@ -109,8 +107,14 @@ export class DishesComponent implements OnInit {
   }
 
   getIdxInPriceList(idxInMyDishes:number,priceInMyDishes:number){
-    return this.dishesService.priceList.findIndex(
-      (element) =>element.toString() === [idxInMyDishes,priceInMyDishes].toString())
+    if(this.moneyItemHandler.currency === "$"){
+      return this.dishesService.priceList.findIndex(
+        (element) =>element.toString() === [idxInMyDishes,priceInMyDishes].toString())
+    }
+    else{
+      return this.dishesService.priceList.findIndex(
+        (element) =>element.toString() === [idxInMyDishes,priceInMyDishes/this.moneyItemHandler.exchangeRate].toString())
+    }
 
   }
 

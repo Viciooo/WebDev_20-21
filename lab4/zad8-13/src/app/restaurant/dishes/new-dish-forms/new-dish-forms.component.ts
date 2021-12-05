@@ -29,7 +29,7 @@ export class NewDishFormsComponent implements OnInit{
   }
   onSubmit() {
     let newDish = new Dish(
-      0,
+      1,
       this.dishesService.newId,
       (<FormArray>this.dishForm.get('maxAmt')).value,
       (<FormArray>this.dishForm.get('name')).value,
@@ -45,6 +45,24 @@ export class NewDishFormsComponent implements OnInit{
     this.dishesService.priceList.push([this.dishesService.newId,newDish.price])
     this.dishesService.priceList.sort((a, b) => a[1] > b[1] && 1 || -1)
     this.dishesService.newId++
+
+    if(this.dishesService.dishTypes.indexOf((<FormArray>this.dishForm.get('dishType')).value) === -1){
+      this.dishesService.dishTypes.push((<FormArray>this.dishForm.get('dishType')).value)
+      this.dishesService.dishTypesSelected.push(1)
+    }
+    if(this.dishesService.cuisineTypes.indexOf((<FormArray>this.dishForm.get('cuisine')).value) === -1){
+      this.dishesService.cuisineTypes.push((<FormArray>this.dishForm.get('cuisine')).value)
+      this.dishesService.cuisineTypesSelected.push(1)
+    }
+
+    if(this.dishesService.prices[0] > (<FormArray>this.dishForm.get('price')).value){
+      this.dishesService.prices[0] = (<FormArray>this.dishForm.get('price')).value
+      this.dishesService.prices[2] = (<FormArray>this.dishForm.get('price')).value
+    }
+    if(this.dishesService.prices[1] < (<FormArray>this.dishForm.get('price')).value){
+      this.dishesService.prices[1] = (<FormArray>this.dishForm.get('price')).value
+      this.dishesService.prices[3] = (<FormArray>this.dishForm.get('price')).value
+    }
     // this.dishForm.reset()
   }
 
