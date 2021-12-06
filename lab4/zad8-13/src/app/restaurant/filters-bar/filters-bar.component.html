@@ -3,7 +3,6 @@
       <h1>Type of dish</h1>
       <div class="box" *ngFor="let dishType of dishesService.dishTypes;let x = index">
         <input type="checkbox" value="{{dishType}}" id="{{dishType}}"
-               [checked]="dishesService.dishTypesSelected[x] === 1"
                (change) = "dishesService.dishTypesSelected[x] = (dishesService.dishTypesSelected[x] + 1) % 2">
         <label for="{{dishType}}">{{dishType}}</label>
       </div>
@@ -13,7 +12,6 @@
       <h1>Type of cuisine</h1>
       <div class="box" *ngFor="let cuisineType of dishesService.cuisineTypes;let x = index">
         <input type="checkbox" value="{{cuisineType}}" id="{{cuisineType}}"
-               [checked]="dishesService.cuisineTypesSelected[x].valueOf() === 1"
                (change) = "dishesService.cuisineTypesSelected[x] = (dishesService.cuisineTypesSelected[x] + 1) % 2">
         <label for="{{cuisineType}}">{{cuisineType}}</label>
       </div>
@@ -23,7 +21,6 @@
       <h1>Rating in stars</h1>
       <div class="box" *ngFor="let item of [].constructor(5); let x = index">
         <input type="checkbox" value="{{x}}" id="{{x}}"
-               [checked]="dishesService.starsSelected[x] === 1"
                (change) = "dishesService.starsSelected[x] = (dishesService.starsSelected[x] + 1) % 2">
         <label for="{{x}}">
           <i class="fa fa-star" aria-hidden="true" *ngFor="let item of [].constructor(x+1)"></i>

@@ -48,11 +48,11 @@ export class NewDishFormsComponent implements OnInit{
 
     if(this.dishesService.dishTypes.indexOf((<FormArray>this.dishForm.get('dishType')).value) === -1){
       this.dishesService.dishTypes.push((<FormArray>this.dishForm.get('dishType')).value)
-      this.dishesService.dishTypesSelected.push(1)
+      this.dishesService.dishTypesSelected.push(0)
     }
     if(this.dishesService.cuisineTypes.indexOf((<FormArray>this.dishForm.get('cuisine')).value) === -1){
       this.dishesService.cuisineTypes.push((<FormArray>this.dishForm.get('cuisine')).value)
-      this.dishesService.cuisineTypesSelected.push(1)
+      this.dishesService.cuisineTypesSelected.push(0)
     }
 
     if(this.dishesService.prices[0] > (<FormArray>this.dishForm.get('price')).value){
@@ -63,7 +63,7 @@ export class NewDishFormsComponent implements OnInit{
       this.dishesService.prices[1] = (<FormArray>this.dishForm.get('price')).value
       this.dishesService.prices[3] = (<FormArray>this.dishForm.get('price')).value
     }
-    // this.dishForm.reset()
+    this.dishForm.reset()
   }
 
   addIngredient() {

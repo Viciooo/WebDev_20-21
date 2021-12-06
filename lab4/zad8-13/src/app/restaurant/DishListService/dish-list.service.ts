@@ -51,7 +51,7 @@ export class DishListService {
     'Burger'
   ]
   // dishTypesSelected:number[] = [0,1,0,0,1,0,0]
-  dishTypesSelected:number[] = Array(this.dishTypes.length).fill(1)
+  dishTypesSelected:number[] = Array(this.dishTypes.length).fill(0)
   cuisineTypes:string[] = [
     'Polska',
     'Amerykańska',
@@ -59,7 +59,7 @@ export class DishListService {
     'Francuska'
     ]
 
-  cuisineTypesSelected:number[] = Array(this.cuisineTypes.length).fill(1)
+  cuisineTypesSelected:number[] = Array(this.cuisineTypes.length).fill(0)
 
   //prices[0] - min value product
   //prices[1] - max value product
@@ -89,14 +89,11 @@ export class DishListService {
     this.calcMax()
   ]
 
-  starsSelected:number[] = Array(6).fill(1)
+  starsSelected:number[] = Array(6).fill(0)
 
   displayFilters:string = 'none'
 
-  // options: Options = {
-  //   floor: this.prices[0],
-  //   ceil: this.prices[1]
-  // };
+
 
   // myDishes: Dish[] = [
   //   new Dish(10, "Żurek", "Polska", "Zupa", ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", ["https://drive.google.com/uc?export=view&id=17SDwy5sqAHe3sLaaDjnE6IrvvwCsXInb", "https://drive.google.com/uc?export=view&id=1pP8ub1bpvL6UriY1fnMIcn066tznpcE_", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ", "https://drive.google.com/uc?export=view&id=1h74qpsj3ekiqW1SvHime_xRj-7PWN7f-"])
@@ -114,7 +111,4 @@ export class DishListService {
   //   , new Dish(1001, "American fries", "Amerykańska", "Frytki", ["ziemniaki"], 1001, 0.5, "OK", ["https://drive.google.com/uc?export=view&id=1w-D_lQgYVY-_wXyKNMTNMHA3D7iR17ut", "https://drive.google.com/uc?export=view&id=1YlnhN6GLz6bwsEExVixqArFgP77fpZQS", "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR", "https://drive.google.com/uc?export=view&id=1s0jNJr4wmIB9CGCG34BXu2v2gmxV_fEs"])
   // ].sort((a, b) => a.price > b.price && 1 || -1)
   // constructor() { }
-  // //minus takiego rozwiązania jest taki, że elementy wyświetlają się posortowane, ale nigdzie nie było napisane jak ma to wyglądać
-  // //jeśli klient chciałby aby były w kolejności dodawania to najprostsze rozwiązanie to zrobić po prostu osobny obiekt i używać pierwotnego do wyświetlania a tamtego do wszystkeigo innego
-
 }

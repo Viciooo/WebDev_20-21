@@ -52,10 +52,10 @@ export class DishesComponent implements OnInit{
   deleteElement(myDish:Dish) {
     // @ts-ignore
     let f
-    // let thisDishType = myDish.dishType
-    // let thisCuisineType = myDish.cuisine
-    // let itsLastDishOfThisType = true
-    // let itsLastCuisineOfThisType = true
+    let thisDishType = myDish.dishType
+    let thisCuisineType = myDish.cuisine
+    let itsLastDishOfThisType = true
+    let itsLastCuisineOfThisType = true
 
     //if the price is max typeOfPrice = 1  in between its 0 min its -1
     let typeOfPrice = 0
@@ -86,22 +86,22 @@ export class DishesComponent implements OnInit{
       this.dishesService.prices[3] = this.dishesService.prices[1]
     }
 
-    // this.dishesService.myDishes.forEach(e=>{
-    //   if(e.dishType === thisDishType) itsLastDishOfThisType = false
-    //   if(e.cuisine === thisCuisineType) itsLastCuisineOfThisType = false
-    // })
-    //
-    // if(itsLastDishOfThisType){
-    //   let idx = this.dishesService.dishTypes.indexOf(thisDishType)
-    //   this.dishesService.dishTypes.splice(idx, 1);
-    //   this.dishesService.dishTypesSelected.splice(idx, 1);
-    // }
-    //
-    // if(itsLastCuisineOfThisType){
-    //   let idx = this.dishesService.cuisineTypes.indexOf(thisCuisineType)
-    //   this.dishesService.cuisineTypes.splice(idx, 1);
-    //   this.dishesService.cuisineTypesSelected.splice(idx, 1);
-    // }
+    this.dishesService.myDishes.forEach(e=>{
+      if(e.dishType.toLowerCase() === thisDishType.toLowerCase()) itsLastDishOfThisType = false
+      if(e.cuisine.toLowerCase() === thisCuisineType.toLowerCase()) itsLastCuisineOfThisType = false
+    })
+
+    if(itsLastDishOfThisType){
+      let idx = this.dishesService.dishTypes.indexOf(thisDishType)
+      this.dishesService.dishTypes.splice(idx, 1);
+      this.dishesService.dishTypesSelected.splice(idx, 1);
+    }
+
+    if(itsLastCuisineOfThisType){
+      let idx = this.dishesService.cuisineTypes.indexOf(thisCuisineType)
+      this.dishesService.cuisineTypes.splice(idx, 1);
+      this.dishesService.cuisineTypesSelected.splice(idx, 1);
+    }
 
 
   }
@@ -130,4 +130,11 @@ export class DishesComponent implements OnInit{
     return x
   }
 
+  sum(arr:number[]){
+    let tmp = 0
+    arr.forEach(e=>{
+      tmp += e
+    })
+    return tmp
+  }
 }
