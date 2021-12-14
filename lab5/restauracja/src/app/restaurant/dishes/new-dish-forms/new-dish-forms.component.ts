@@ -24,7 +24,6 @@ export class NewDishFormsComponent implements OnInit{
       'description': ['', [Validators.required, Validators.minLength(2)]],
       'imgPath': ['', Validators.required],
       'ingredients': new FormArray([],[Validators.required,Validators.minLength(2)])
-
     });
   }
   onSubmit() {
