@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import { PhotosComponent } from './photos/photos.component';
+import { ImgViewComponent } from './img-view/img-view.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'photos', component: PhotosComponent },
+  { path: 'photos/:id', component: ImgViewComponent },
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     PostsComponent,
-    PhotosComponent
+    PhotosComponent,
+    ImgViewComponent
   ],
   imports: [
     BrowserModule,

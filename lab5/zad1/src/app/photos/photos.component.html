@@ -3,7 +3,9 @@
     <ul>
       <div *ngFor="let photo of photos">
         {{photo.id}}
-        <img src="{{photo.url}}" alt="{{photo.id}}">
+        <div (click)="onClick(photo.id)">
+          <img src="{{photo.url}}" alt="{{photo.id}}">
+        </div>
       </div>
     </ul>
   </div>

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fca4a07-4491-4041-92ff-85d2d72abd6c" name="Changes" comment="rebuild">
+    <list default="true" id="8fca4a07-4491-4041-92ff-85d2d72abd6c" name="Changes" comment="zad1 completed &amp; start of zad2">
+      <change afterPath="$PROJECT_DIR$/zad1/src/app/img-view/img-view.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zad1/src/app/img-view/img-view.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zad1/src/app/img-view/img-view.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zad1/src/app/img-view/img-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zad1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zad1/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zad1/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zad1/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zad1/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zad1/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zad1/src/app/photos/photos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/src/app/photos/photos.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zad1/src/app/photos/photos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/zad1/src/app/photos/photos.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="22E7UGYwR0Y0i1BsALYaedobxQm" />
@@ -27,9 +36,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zad1" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\zad1\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\restauracja\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -44,6 +53,7 @@
       <workItem from="1639429729657" duration="4688000" />
       <workItem from="1639470063395" duration="4248000" />
       <workItem from="1639475386184" duration="23000" />
+      <workItem from="1639475410674" duration="1418000" />
     </task>
     <task id="LOCAL-00001" summary="rebuild">
       <created>1639391450219</created>
@@ -52,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639391450219</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="zad1 completed &amp; start of zad2">
+      <created>1639475452763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639475452763</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rebuild" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild" />
+    <MESSAGE value="zad1 completed &amp; start of zad2" />
+    <option name="LAST_COMMIT_MESSAGE" value="zad1 completed &amp; start of zad2" />
   </component>
 </project>

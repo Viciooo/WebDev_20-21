@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Photo} from "../photo";
 import {DataService} from "../data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-photos',
@@ -9,10 +10,13 @@ import {DataService} from "../data.service";
 })
 export class PhotosComponent implements OnInit {
   photos : Photo[] = []
-  constructor(public dataHandler: DataService) { }
+  constructor(public dataHandler: DataService,private router:Router) { }
 
   ngOnInit(): void {
     this.dataHandler.getPhotos().subscribe(photos=>this.photos = photos)
   }
 
+  onClick(id:number) {
+  this.router.navigate(['/photos',id])
+  }
 }
