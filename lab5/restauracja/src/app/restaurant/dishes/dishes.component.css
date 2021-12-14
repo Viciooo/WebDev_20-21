@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3{
+  font-family: var(--main-font);
+  margin: 7px;
+  color: var(--background-dark);
+  background-color: var(--background-light);
+  border-radius: var(--small-border-radious);
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.img-box {
+  width: 100%;
+}
+
+.img-box img {
+  width: 100%;
+}
+
+.box {
+  background: var(--background-dark);
+  color: var(--background-light);
+  border-radius: var(--small-border-radious);
+  box-shadow: var(--box-shadow);
+  margin: 10px;
+}
+
+.img-box img {
+  width: 100%;
+  padding: 2%;
+  height: auto;
+  border-radius: var(---medium-border-radious);
+}
+
+p {
+  font-style: italic;
+  text-align: center;
+  font-family: var(--main-font);
+  padding: 7px;
+  font-size: var(--font-size-small);
+}
+
+h1 {
+  text-align: center;
+  font-size: var(--font-size-big);
+}
+
+h2{
+  font-size:var(--font-size-medium);
+  width: fit-content;
+  padding: 3px;
+}
+
+span{
+  color: var(--span-color);
+}
+ul{
+  display: flex;
+  margin-left: 2rem;
+  flex-direction: column;
+}
+
+li{
+  list-style-type: square;
+  font-size: var(--font-size-small);
+  font-family: var(--main-font);
+}
+
+.amount{
+  display: flex;
+  align-items: center;
+}
+
+h4,.plus,.minus{
+  font-family: var(--secondary-font);
+  font-size: var(--font-size-big);
+}
+
+h4{
+  margin-left: 3%;
+
+}
+
+.plus,.minus{
+  margin-left: 3%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--small-border-radious);
+}
+.plus{
+  margin-left: 15%;
+}
+
+.delete-btn{
+  position: relative;
+  background-color: var(--background-light);
+  padding: 7px 12px 7px 12px;
+  border-radius: var(--big-border-radious);
+  float: right;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.delete-btn i{
+  font-size: 3rem;
+  color: var(--span-color)
+}
+
+.delete-btn i:hover{
+  color: var(--background-dark)
+}
+
+.delete-btn:hover{
+  color: var(--span-color)
+}
+
+app-new-dish-forms{
+  height: 30vh;
+}
+
+.stars{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rem;
+}
+
+.stars i{
+  margin: 3px;
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  color: var(--star-color);
+}
+
+
+
+.priceAndStars{
+  display: flex;
+  align-items: center;
+}

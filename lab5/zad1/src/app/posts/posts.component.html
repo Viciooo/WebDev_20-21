@@ -1,0 +1,17 @@
+<div class="container" >
+  <div class="post-displayed">
+    <ul>
+      <li *ngFor="let post of posts">
+        {{post.id}} {{post.title}} {{post.content}}
+      </li>
+    </ul>
+  </div>
+  <form [formGroup]="postsForm" (ngSubmit)="onSubmit()">
+    <label for="title">title: </label>
+    <input type="text" id="title" formControlName="title">
+    <label for="content">content: </label>
+    <input type="text" id="content" formControlName="content">
+    <button type="submit" [disabled]="!postsForm.valid" >Submit</button>
+  </form>
+  <button type="button" (click)="dataHandler.getPosts()">FetchData</button>
+</div>

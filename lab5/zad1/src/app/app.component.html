@@ -1,13 +1,22 @@
 <nav>
-  <ul class="nav-tabs">
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="#">Posts</a></li>
-    <li><a href="#">Photos</a></li>
-  </ul>
+  <div class="options">
+    <div class="option" >
+      <a [routerLink]="['/']" class="active" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        Home
+      </a>
+    </div>
+    <div class="option"  >
+      <a [routerLink]="['/posts']" routerLinkActive="active" >
+        Posts
+      </a>
+    </div>
+    <div class="option" >
+      <a [routerLink]="['/photos']" routerLinkActive="active">
+        Photos
+      </a>
+    </div>
+  </div>
 </nav>
 <div class="container">
-  <app-home></app-home>
-  <app-photos></app-photos>
-  <app-posts></app-posts>
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

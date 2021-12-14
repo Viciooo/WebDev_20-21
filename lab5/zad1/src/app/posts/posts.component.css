@@ -1,0 +1,29 @@
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "Agency FB",sans-serif;
+  font-size: 3rem;
+}
+
+input{
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+button{
+  width: fit-content;
+  font-family: "Agency FB",sans-serif;
+  font-size: 2rem;
+}
+
+label{
+  margin-top: 10px;
+}
+
+.post-displayed{
+  border: 2px solid black;
+  min-height: 30vh;
+  margin-top: 10px;
+}

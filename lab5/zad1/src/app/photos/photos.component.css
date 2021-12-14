@@ -1,0 +1,11 @@
+button{
+  width: fit-content;
+  font-family: "Agency FB",sans-serif;
+  font-size: 2rem;
+}
+
+.post-displayed{
+  border: 2px solid black;
+  min-height: 30vh;
+  margin-top: 10px;
+}
