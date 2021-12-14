@@ -4,6 +4,19 @@
   </div>
 
   <div class="nav-items">
+
+    <div class="option">
+      <a [routerLink]="['/']">
+        Home
+      </a>
+    </div>
+
+    <div class="option">
+      <a [routerLink]="['/checkout']" routerLinkActive="active">
+        Check<span>out</span>
+      </a>
+    </div>
+
     <div class="option filter">
       <h1 (click)="dishesService.displayFilters ==='none' ? dishesService.displayFilters ='flex' : dishesService.displayFilters ='none'"><i class="fa fa-sliders" aria-hidden="true"></i> Filters</h1>
     </div>
@@ -24,10 +37,10 @@
     </div>
 
     <div class="listOfItems">
-      <div class="checkout"
+      <div class="basket"
            (click)="listOfItems.style.display ==='none' ? listOfItems.style.display='flex' : listOfItems.style.display ='none'">
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        Checkout
+        Basket
       </div>
       <div #listOfItems class="dropDown">
         <div *ngFor="let i of moneyItemHandler.checkoutList" class="item">

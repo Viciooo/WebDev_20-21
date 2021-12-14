@@ -1,0 +1,35 @@
+<div class="nav-bar">
+  <div class="logo">
+    <div class="name"><span>my</span>Kitchen</div>
+  </div>
+  <div class="option">
+    <a [routerLink]="['/']"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      Home
+    </a>
+  </div>
+  <div class="option">
+    <a [routerLink]="['/menu']" routerLinkActive="active" >
+      Menu
+    </a>
+  </div>
+  <div class="option">
+    <a [routerLink]="['/chefsView']" routerLinkActive="active">
+      ChefsView
+    </a>
+  </div>
+  <div class="option">
+    <a [routerLink]="['/checkout']" routerLinkActive="active">
+      Check<span>out</span>
+    </a>
+  </div>
+  <div class="option">
+    <a [routerLink]="['/login']" routerLinkActive="active">
+      Log<span>In</span>
+    </a>
+  </div>
+  <div class="option">
+    <a [routerLink]="['/signup']" routerLinkActive="active">
+      Sign<span>Up</span>
+    </a>
+  </div>
+</div>

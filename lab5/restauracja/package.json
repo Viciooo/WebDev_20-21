@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
     "font-awesome": "^4.7.0",
+    "leaflet": "^1.7.1",
     "ng-multiselect-dropdown": "^0.3.7",
     "ng5-slider": "^1.2.6",
     "rxjs-compat": "^6.6.7",
