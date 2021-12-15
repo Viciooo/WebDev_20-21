@@ -20,18 +20,21 @@
       <h2>Kuchnia: {{myDish.cuisine | uppercase}}</h2>
       <h2>Rodzaj dania: {{myDish.dishType | lowercase}}</h2>
     </div>
-    <div class="ingredients">
-      <h2>Skła<span>dniki</span></h2>
-      <ul>
-        <li *ngFor="let item of myDish.ingredients">{{item}}</li>
-      </ul>
-    </div>
-    <div class="info">
+<!--    <div class="ingredients">-->
+<!--      <h2>Skła<span>dniki</span></h2>-->
+<!--      <ul>-->
+<!--        <li *ngFor="let item of myDish.ingredients">{{item}}</li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--    <div class="info">-->
 
-    </div>
-    <div class="description">
-      <h2>OPIS</h2>
-      <p>"{{myDish.description}}"</p>
+<!--    </div>-->
+<!--    <div class="description">-->
+<!--      <h2>OPIS</h2>-->
+<!--      <p>"{{myDish.description}}"</p>-->
+<!--    </div>-->
+    <div class="details" (click)="goToDetails(myDish.id)">
+      <i class="fa fa-info-circle" aria-hidden="true"> See more</i>
     </div>
     <div class="amount">
       <h2>Dostępna ilość:</h2>
@@ -69,41 +72,38 @@
         </h2>
 
       </div>
-
       <div class="stars">
-        <i *ngIf="myDish.rating < 1;else fullStar1"
-           class="fa fa-star-o" aria-hidden="true" (click)="changeRating(1,myDish)"></i>
-        <ng-template #fullStar1>
-          <i class="fa fa-star" aria-hidden="true" (click)="changeRating(1,myDish)"></i>
-        </ng-template>
+      <i *ngIf="myDish.rating < 1;else fullStar1"
+         class="fa fa-star-o" aria-hidden="true"></i>
+      <ng-template #fullStar1>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </ng-template>
 
-        <i *ngIf="myDish.rating < 2;else fullStar2"
-           class="fa fa-star-o" aria-hidden="true" (click)="changeRating(2,myDish)"></i>
-        <ng-template #fullStar2>
-          <i class="fa fa-star" aria-hidden="true" (click)="changeRating(2,myDish)"></i>
-        </ng-template>
+      <i *ngIf="myDish.rating < 2;else fullStar2"
+         class="fa fa-star-o" aria-hidden="true"></i>
+      <ng-template #fullStar2>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </ng-template>
 
-        <i *ngIf="myDish.rating < 3;else fullStar3"
-           class="fa fa-star-o" aria-hidden="true" (click)="changeRating(3,myDish)"></i>
-        <ng-template #fullStar3>
-          <i class="fa fa-star" aria-hidden="true" (click)="changeRating(3,myDish)"></i>
-        </ng-template>
+      <i *ngIf="myDish.rating < 3;else fullStar3"
+         class="fa fa-star-o" aria-hidden="true"></i>
+      <ng-template #fullStar3>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </ng-template>
 
 
-        <i *ngIf="myDish.rating < 4;else fullStar4"
-           class="fa fa-star-o" aria-hidden="true" (click)="changeRating(4,myDish)"></i>
-        <ng-template #fullStar4>
-          <i class="fa fa-star" aria-hidden="true" (click)="changeRating(4,myDish)"></i>
-        </ng-template>
+      <i *ngIf="myDish.rating < 4;else fullStar4"
+         class="fa fa-star-o" aria-hidden="true"></i>
+      <ng-template #fullStar4>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </ng-template>
 
-        <i *ngIf="myDish.rating < 5;else fullStar5"
-           class="fa fa-star-o" aria-hidden="true" (click)="changeRating(5,myDish)"></i>
-        <ng-template #fullStar5>
-          <i class="fa fa-star" aria-hidden="true" (click)="changeRating(5,myDish)"></i>
-        </ng-template>
+      <i *ngIf="myDish.rating < 5;else fullStar5"
+         class="fa fa-star-o" aria-hidden="true"></i>
+      <ng-template #fullStar5>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </ng-template>
       </div>
     </div>
-
-
+    </div>
   </div>
-</div>

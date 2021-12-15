@@ -14,18 +14,10 @@ h1, h2, h3{
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 5vh;
-}
-
-.img-box {
-  width: 100%;
-}
-
-.img-box img {
-  width: 100%;
 }
 
 .box {
@@ -36,12 +28,7 @@ h1, h2, h3{
   margin: 10px;
 }
 
-.img-box img {
-  width: 100%;
-  padding: 2%;
-  height: auto;
-  border-radius: var(---medium-border-radious);
-}
+
 
 p {
   font-style: italic;
@@ -107,34 +94,6 @@ h4{
   margin-left: 15%;
 }
 
-.delete-btn{
-  position: relative;
-  background-color: var(--background-light);
-  padding: 7px 12px 7px 12px;
-  border-radius: var(--big-border-radious);
-  float: right;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-
-.delete-btn i{
-  font-size: 3rem;
-  color: var(--span-color)
-}
-
-.delete-btn i:hover{
-  color: var(--background-dark)
-}
-
-.delete-btn:hover{
-  color: var(--span-color)
-}
-
-
 .stars{
   display: flex;
   justify-content: center;
@@ -156,12 +115,57 @@ h4{
   align-items: center;
 }
 
-.details{
-  margin-left: 1rem;
-  font-size: var(--font-size-medium);
-  cursor: pointer;
+/*slider*/
+picture {
+  object-fit: cover;
+  z-index: 3;
+}
+img {
+  height: 100%;
 }
 
-.details:hover{
+section {
+  display: flex;
+  position: relative;
+  height: 50vh;
+  border: white solid 0.2vw;
+  margin: 1rem 5rem 1rem 1rem;
+}
+
+section picture {
+  position: relative;
+  flex: 1;
+  border-right: 0.5vw white solid;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+}
+
+section picture:last-child {
+  border-right: 0;
+}
+
+section picture:hover {
+  flex-grow: 2;
+}
+
+.img-box{
+  width: 70%;
+  margin-left: 3rem;
+}
+
+.goBack{
+  background-color: var(--background-light);
+  width: fit-content;
+  font-size: var(--font-size-big);
+  padding: 5px;
+  border-radius: var(--big-border-radious);
+  margin-left: 5rem;
+  margin-top: 1rem;
+}
+.goBack i{
+  color: var(--background-dark);
+}
+
+.goBack i:hover{
   color: var(--span-color);
 }

@@ -25,12 +25,14 @@ import { SignupViewComponent } from './restaurant/views/signup-view/signup-view.
 import {HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './restaurant/navbar/navbar.component';
 import { MapComponent } from './restaurant/map/map.component';
-import { PageNotFoundComponent } from './restaurant/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './restaurant/views/page-not-found/page-not-found.component';
+import { SingleDishViewComponent } from './restaurant/views/single-dish-view/single-dish-view.component';
 
 
 const appRoutes: Routes = [
   {path: '',component:HomeViewComponent},
   {path: 'menu',component:MenuViewComponent},
+  {path: 'menu/:id',component:SingleDishViewComponent},
   {path: 'checkout',component:CheckoutViewComponent},
   {path: 'login',component:LoginViewComponent},
   {path: 'signup',component:SignupViewComponent},
@@ -57,6 +59,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     MapComponent,
     PageNotFoundComponent,
+    SingleDishViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import {Dish} from "./dish/dish.module";
 import { DishListService } from "../DishListService/dish-list.service"
 import {CheckoutAndCurrenciesService} from "../checkoutAndCurrenciesService/checkout-and-currencies.service";
 import {checkoutItem} from '../checkoutAndCurrenciesService/checkoutItem/checkout-list.module'
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dishes',
@@ -10,7 +11,7 @@ import {checkoutItem} from '../checkoutAndCurrenciesService/checkoutItem/checkou
   styleUrls: ['./dishes.component.css'],
 })
 export class DishesComponent implements OnInit{
-  constructor(public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) {
+  constructor(private router:Router,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) {
   }
 
   ngOnInit(): void {
@@ -118,10 +119,6 @@ export class DishesComponent implements OnInit{
 
   }
 
-  changeRating(i: number,myDish:Dish) {
-    myDish.rating = i
-  }
-
   c(arr:any[]){
     let x = new Array(0)
     arr.forEach(e=>{
@@ -136,5 +133,8 @@ export class DishesComponent implements OnInit{
       tmp += e
     })
     return tmp
+  }
+  goToDetails(id:number){
+    this.router.navigate(['/menu',id])
   }
 }

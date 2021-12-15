@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="box">
+  <div class="img-box">
+    <section>
+      <picture>
+        <img
+          src="{{myDish.imgPath}}"
+          alt="1"
+        />
+      </picture>
+      <picture>
+        <img
+          src="{{myDish.imgPath}}"
+          alt="2"
+        />
+      </picture>
+      <picture>
+        <img
+          src="{{myDish.imgPath}}"
+          alt="3"
+        />
+      </picture>
+    </section>
+  </div>
+<div class="generalInfo">
+      <h1>{{myDish.name | uppercase}}</h1>
+      <h2>Kuchnia: {{myDish.cuisine | uppercase}}</h2>
+      <h2>Rodzaj dania: {{myDish.dishType | lowercase}}</h2>
+    </div>
+    <div class="ingredients">
+      <h2>Skła<span>dniki</span></h2>
+      <ul>
+        <li *ngFor="let item of myDish.ingredients">{{item}}</li>
+      </ul>
+    </div>
+    <div class="info">
+
+    </div>
+    <div class="description">
+      <h2>OPIS</h2>
+      <p>"{{myDish.description}}"</p>
+    </div>
+    <div class="amount">
+      <h2>Dostępna ilość:</h2>
+      <h4 >
+        {{myDish.amount}}
+      </h4>
+
+      <button class="plus" (click)="takeItem(myDish)" [disabled]="myDish.amount===0">+</button>
+      <button class="minus" (click)="returnItem(myDish)" [disabled]="myDish.amount===myDish.maxAmt">-</button>
+
+    </div>
+
+    <div class="priceAndStars">
+      <div class="price">
+        <h2>
+          Price
+          <span>
+          {{ myDish.price }}
+        </span>
+
+
+          {{moneyItemHandler.currency }}
+        </h2>
+
+      </div>
+
+      <div class="stars">
+              <div class="stars">
+                <i *ngIf="myDish.rating < 1;else fullStar1"
+                   class="fa fa-star-o" aria-hidden="true" (click)="changeRating(1,myDish)"></i>
+                <ng-template #fullStar1>
+                  <i class="fa fa-star" aria-hidden="true" (click)="changeRating(1,myDish)"></i>
+                </ng-template>
+
+                <i *ngIf="myDish.rating < 2;else fullStar2"
+                   class="fa fa-star-o" aria-hidden="true" (click)="changeRating(2,myDish)"></i>
+                <ng-template #fullStar2>
+                  <i class="fa fa-star" aria-hidden="true" (click)="changeRating(2,myDish)"></i>
+                </ng-template>
+
+                <i *ngIf="myDish.rating < 3;else fullStar3"
+                   class="fa fa-star-o" aria-hidden="true" (click)="changeRating(3,myDish)"></i>
+                <ng-template #fullStar3>
+                  <i class="fa fa-star" aria-hidden="true" (click)="changeRating(3,myDish)"></i>
+                </ng-template>
+
+
+                <i *ngIf="myDish.rating < 4;else fullStar4"
+                   class="fa fa-star-o" aria-hidden="true" (click)="changeRating(4,myDish)"></i>
+                <ng-template #fullStar4>
+                  <i class="fa fa-star" aria-hidden="true" (click)="changeRating(4,myDish)"></i>
+                </ng-template>
+
+                <i *ngIf="myDish.rating < 5;else fullStar5"
+                   class="fa fa-star-o" aria-hidden="true" (click)="changeRating(5,myDish)"></i>
+                <ng-template #fullStar5>
+                  <i class="fa fa-star" aria-hidden="true" (click)="changeRating(5,myDish)"></i>
+                </ng-template>
+      </div>
+    </div>
+<p>single-dish-view works!</p>
+</div>
+</div>
+  <div class="goBack">
+    <a [routerLink]="['/menu']" routerLinkActive="active" >
+      <i class="fa fa-long-arrow-left" aria-hidden="true">Go Back to Menu</i>
+    </a>
+  </div>
+</div>

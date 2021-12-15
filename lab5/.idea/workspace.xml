@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fca4a07-4491-4041-92ff-85d2d72abd6c" name="Changes" comment="zad2 only checkoutView left">
-      <change afterPath="$PROJECT_DIR$/../lab2/zad6/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2/zad6/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2/zad6/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2/zad6/.idea/zad6.iml" afterDir="false" />
+    <list default="true" id="8fca4a07-4491-4041-92ff-85d2d72abd6c" name="Changes" comment="zad2 finally done">
+      <change afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restauracja/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/DishListService/dish-list.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/DishListService/dish-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/DishListService/dish-list.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/checkoutAndCurrenciesService/checkout-and-currencies.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/checkoutAndCurrenciesService/checkout-and-currencies.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/manuHeader.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menu-header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/manuHeader.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menu-header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/page-not-found/page-not-found.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/page-not-found/page-not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/page-not-found/page-not-found.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/page-not-found/page-not-found.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +43,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zad1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\restauracja\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\restauracja\src\app\restaurant\views" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -66,7 +70,7 @@
       <workItem from="1639492490403" duration="401000" />
       <workItem from="1639500122616" duration="8941000" />
       <workItem from="1639510543215" duration="3189000" />
-      <workItem from="1639555769677" duration="6226000" />
+      <workItem from="1639555769677" duration="9428000" />
     </task>
     <task id="LOCAL-00001" summary="rebuild">
       <created>1639391450219</created>
@@ -96,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639519917958</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="zad2 finally done">
+      <created>1639562447425</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639562447425</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +131,7 @@
     <MESSAGE value="zad1 completed &amp; start of zad2" />
     <MESSAGE value="zad2 work in progress" />
     <MESSAGE value="zad2 only checkoutView left" />
-    <option name="LAST_COMMIT_MESSAGE" value="zad2 only checkoutView left" />
+    <MESSAGE value="zad2 finally done" />
+    <option name="LAST_COMMIT_MESSAGE" value="zad2 finally done" />
   </component>
 </project>
