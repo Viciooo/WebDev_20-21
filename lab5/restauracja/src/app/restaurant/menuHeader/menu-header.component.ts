@@ -4,10 +4,10 @@ import {CheckoutAndCurrenciesService} from "../checkoutAndCurrenciesService/chec
 
 @Component({
   selector: 'app-header',
-  templateUrl: './manuHeader.component.html',
+  templateUrl: './menu-header.component.html',
   styleUrls: ['./menuHeader.component.css']
 })
-export class ManuHeaderComponent implements OnInit {
+export class MenuHeaderComponent implements OnInit {
 
   constructor(public dishesService:DishListService,public moneyItemHandler:CheckoutAndCurrenciesService) { }
 

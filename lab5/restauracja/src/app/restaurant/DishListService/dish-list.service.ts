@@ -50,7 +50,6 @@ export class DishListService {
     'Makaron',
     'Burger'
   ]
-  // dishTypesSelected:number[] = [0,1,0,0,1,0,0]
   dishTypesSelected:number[] = Array(this.dishTypes.length).fill(0)
   cuisineTypes:string[] = [
     'Polska',

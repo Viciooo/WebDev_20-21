@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CheckoutAndCurrenciesService} from "../../checkoutAndCurrenciesService/checkout-and-currencies.service";
+import {DishListService} from "../../DishListService/dish-list.service";
 
 @Component({
   selector: 'app-basket-view',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public moneyItemHandler: CheckoutAndCurrenciesService,public dishesService:DishListService,public checkoutService:CheckoutAndCurrenciesService) { }
 
   ngOnInit(): void {
   }

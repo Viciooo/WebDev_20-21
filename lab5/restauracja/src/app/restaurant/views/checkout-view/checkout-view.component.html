@@ -1,2 +1,41 @@
 <app-navbar></app-navbar>
-<p>basket-view works!</p>
+<div class="container">
+  <div class="item" *ngFor="let myDish of checkoutService.checkoutList">
+    <div class="info">
+      <h1>{{myDish.name}}</h1>
+      <h2>Amount chosen: {{myDish.amount}}</h2>
+      <h2>Cost: {{myDish.value}} <span>{{moneyItemHandler.currency}}</span></h2>
+    </div>
+    <div class="photos">
+      <section>
+      <picture>
+        <img
+          src="{{dishesService.myDishes[myDish.id].imgPath}}"
+          alt="1"
+        />
+      </picture>
+      <picture>
+        <img
+          src="{{dishesService.myDishes[myDish.id].imgPath}}"
+          alt="2"
+        />
+      </picture>
+      <picture>
+        <img
+          src="{{dishesService.myDishes[myDish.id].imgPath}}"
+          alt="3"
+        />
+      </picture>
+        </section>
+    </div>
+
+</div>
+<div class="buyBox">
+  <div class="overview">
+    <h1>You have got  <span>{{checkoutService.basketItems}}</span> items in your cart</h1>
+    <h1>Together to be paid: {{checkoutService.basketValue}} <span>{{moneyItemHandler.currency}}</span></h1>
+  </div>
+  <div class="paymentMethods"><\works in progress></div>
+  <button type="button" [disabled]="checkoutService.basketValue === 0" >Buy</button>
+</div>
+</div>

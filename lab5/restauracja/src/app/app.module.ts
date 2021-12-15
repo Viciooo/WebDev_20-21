@@ -7,7 +7,7 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DishesComponent } from './restaurant/dishes/dishes.component';
-import { ManuHeaderComponent } from './restaurant/menuHeader/manuHeader.component';
+import { MenuHeaderComponent } from './restaurant/menuHeader/menu-header.component';
 import { DishListService } from './restaurant/DishListService/dish-list.service'
 import { CheckoutAndCurrenciesService } from "./restaurant/checkoutAndCurrenciesService/checkout-and-currencies.service";
 import { FiltersBarComponent } from './restaurant/filters-bar/filters-bar.component';
@@ -42,7 +42,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     DishesComponent,
-    ManuHeaderComponent,
+    MenuHeaderComponent,
     FiltersBarComponent,
     FilterDishesPipe,
     FilterCuisinesPipePipe,
