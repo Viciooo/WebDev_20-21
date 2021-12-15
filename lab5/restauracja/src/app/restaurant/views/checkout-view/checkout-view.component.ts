@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CheckoutAndCurrenciesService} from "../../checkoutAndCurrenciesService/checkout-and-currencies.service";
-import {DishListService} from "../../DishListService/dish-list.service";
+import {CheckoutAndCurrenciesService} from "../../services/checkout-and-currencies.service";
+import {DishListService} from "../../services/dish-list.service";
 
 @Component({
   selector: 'app-basket-view',

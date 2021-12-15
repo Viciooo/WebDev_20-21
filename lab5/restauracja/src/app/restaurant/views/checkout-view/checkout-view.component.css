@@ -25,6 +25,9 @@ span{
 
 .photos{
   grid-column: col 3 / span  3 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item{
@@ -40,38 +43,11 @@ span{
   background-color: var(--background-light);
 }
 
-/*"slider"*/
 
-picture {
-  object-fit: cover;
-}
 img {
-  height: 100%;
+  width: 70%;
 }
 
-section {
-  display: flex;
-  position: relative;
-  height: 50vh;
-  border: white solid 0.2vw;
-  margin: 1rem 5rem 1rem 1rem;
-}
-
-section picture {
-  position: relative;
-  flex: 1;
-  border-right: 0.5vw white solid;
-  overflow: hidden;
-  transition: 1s ease-in-out;
-}
-
-section picture:last-child {
-  border-right: 0;
-}
-
-section picture:hover {
-  flex-grow: 2;
-}
 .buyBox{
   background-color: var(--span-color);
   min-height: 20vh;

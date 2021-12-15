@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { checkoutItem } from './checkoutItem/checkout-list.module'
+import { checkoutItem } from '../interfaces/checkout-list.module'
 
 @Injectable({
   providedIn: 'root'

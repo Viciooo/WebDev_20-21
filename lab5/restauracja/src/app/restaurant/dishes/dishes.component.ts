@@ -1,8 +1,8 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
-import {Dish} from "./dish/dish.module";
-import { DishListService } from "../DishListService/dish-list.service"
-import {CheckoutAndCurrenciesService} from "../checkoutAndCurrenciesService/checkout-and-currencies.service";
-import {checkoutItem} from '../checkoutAndCurrenciesService/checkoutItem/checkout-list.module'
+import {Dish} from "../interfaces/dish.module";
+import { DishListService } from "../services/dish-list.service"
+import {CheckoutAndCurrenciesService} from "../services/checkout-and-currencies.service";
+import {checkoutItem} from '../interfaces/checkout-list.module'
 import {Router} from "@angular/router";
 
 @Component({

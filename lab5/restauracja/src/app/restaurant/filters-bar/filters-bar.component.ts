@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DishListService} from "../DishListService/dish-list.service";
+import {DishListService} from "../services/dish-list.service";
 import { Options } from 'ng5-slider';
-import { CheckoutAndCurrenciesService } from "../checkoutAndCurrenciesService/checkout-and-currencies.service";
+import { CheckoutAndCurrenciesService } from "../services/checkout-and-currencies.service";
 
 @Component({
   selector: 'app-filters-bar',

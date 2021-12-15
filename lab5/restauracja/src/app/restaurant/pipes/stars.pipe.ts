@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Dish} from "../dishes/dish/dish.module";
+import {Dish} from "../interfaces/dish.module";
 
 @Pipe({
   name: 'starsPipe'

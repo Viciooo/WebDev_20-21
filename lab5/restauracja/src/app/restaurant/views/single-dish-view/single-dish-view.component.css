@@ -18,6 +18,7 @@ h1, h2, h3{
   flex-direction: column;
   justify-content: center;
   margin-bottom: 5vh;
+  padding: 3rem;
 }
 
 .box {
@@ -25,11 +26,16 @@ h1, h2, h3{
   color: var(--background-light);
   border-radius: var(--small-border-radious);
   box-shadow: var(--box-shadow);
-  margin: 10px;
+  margin: 5px;
+  display: flex;
+  width: 100%;
 }
 
+.dish-details{
+  width: 50%;
+}
 
-
+/*main styles*/
 p {
   font-style: italic;
   text-align: center;
@@ -93,7 +99,9 @@ h4{
 .plus{
   margin-left: 15%;
 }
+/*main styles end*/
 
+/*price and stars*/
 .stars{
   display: flex;
   justify-content: center;
@@ -108,17 +116,15 @@ h4{
   color: var(--star-color);
 }
 
-
-
 .priceAndStars{
   display: flex;
   align-items: center;
 }
+/*price and stars end*/
 
 /*slider*/
 picture {
   object-fit: cover;
-  z-index: 3;
 }
 img {
   height: 100%;
@@ -126,16 +132,15 @@ img {
 
 section {
   display: flex;
-  position: relative;
   height: 50vh;
-  border: white solid 0.2vw;
-  margin: 1rem 5rem 1rem 1rem;
+  border: white solid 5px;
+  width: 95%;
+  margin: 1rem 1rem 1rem 1rem;
 }
 
 section picture {
-  position: relative;
   flex: 1;
-  border-right: 0.5vw white solid;
+  border-right: 5px white solid;
   overflow: hidden;
   transition: 1s ease-in-out;
 }
@@ -149,10 +154,11 @@ section picture:hover {
 }
 
 .img-box{
-  width: 70%;
-  margin-left: 3rem;
+  width: 100%;
 }
+/*slider end*/
 
+/*back to menu*/
 .goBack{
   background-color: var(--background-light);
   width: fit-content;
@@ -160,7 +166,7 @@ section picture:hover {
   padding: 5px;
   border-radius: var(--big-border-radious);
   margin-left: 5rem;
-  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 .goBack i{
   color: var(--background-dark);
@@ -169,3 +175,52 @@ section picture:hover {
 .goBack i:hover{
   color: var(--span-color);
 }
+/*back to menu end*/
+
+/*forms*/
+.forms{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forms h1{
+  font-size: 4rem;
+  color: var(--span-color);
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.input-block{
+  background-color: var(--background-light);
+  margin-bottom: 1rem;
+  color: var(--background-dark);
+  font-family: var(--main-font);
+  font-size: var(--font-size-big);
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: var(---medium-border-radious);
+}
+
+input{
+  font-size: var(--font-size-big);
+}
+
+textarea{
+  font-size: var(--font-size-big);
+}
+form button{
+  font-size: var(--font-size-big);
+  font-family: var(--secondary-font);
+  background-color: var(--span-color);
+  color: var(--background-light);
+  padding: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--big-border-radious);
+}
+/*forms*/

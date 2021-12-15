@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, Validators} from "@angular/forms";
-import {DishListService} from "../../DishListService/dish-list.service";
-import {Dish} from "../../dishes/dish/dish.module";
+import {DishListService} from "../../services/dish-list.service";
+import {Dish} from "../../interfaces/dish.module";
 
 @Component({
   selector: 'app-chefs-view',
