@@ -15,7 +15,7 @@
 
 .logo {
   font-size: 3rem;
-  color: var(--background-dark);
+  color: var(--dark-grey);
   margin-bottom: 1.5vh;
   font-weight: 800;
   margin-right: auto;
@@ -65,7 +65,7 @@ i {
   align-items: center;
   border: 2px solid black;
   width: 5rem;
-  border-radius: var(---medium-border-radious);
+  border-radius: var(--medium-border-radious);
 }
 
 .curr{
@@ -85,12 +85,12 @@ i {
 
 .curr:disabled{
   background-color:var(--span-color) ;
-  color: var(--background-light);
+  color: var(--light-grey);
 }
 
 .amountDisplayer{
-  border: 2px solid var(--background-dark);
-  border-radius: var(---medium-border-radious);
+  border: 2px solid var(--dark-grey);
+  border-radius: var(--medium-border-radious);
   font-family: var(--secondary-font);
   font-size: var(--font-size-big);
   font-weight: 700;

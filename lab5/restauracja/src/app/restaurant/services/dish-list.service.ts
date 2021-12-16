@@ -7,19 +7,19 @@ export class DishListService {
   newId: number = 12
 
   myDishes: Dish[] = [
-    new Dish(1,0,10, "Żurek", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ")
-    , new Dish(1,1,8, "Pomidorowa", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "pomidory", "makaron"], 8, 9, "Trochę czuć koncentrat", "https://drive.google.com/uc?export=view&id=1yWarxZGHb8dkQR-VYaYj-UYtnVG20SS_")
-    , new Dish(1,2,15, "Pizza NY-style", "Amerykańska", 'Pizza', ["ciasto", "ser", "szynka", "sos z butelki"], 15, 15, "Studenckie paliwo, najlepiej smakuje do kawki o 3am", "https://drive.google.com/uc?export=view&id=1I7oGRbRNb6_lrT8d1vPqx5l3CJo5e1Ss")
-    , new Dish(1,3,5, "Pizza Italian-style", "Włoska", 'Pizza', ["ciasto", "ser", "pyszny sos", "salami pikante"], 5, 30, "Bdb pizza custom sos, ogólnie super", "https://drive.google.com/uc?export=view&id=1u9p3Cj7UDfK8TfRj9Ujd9y5VITzqryzn")
-    , new Dish(1,4,12, "Spaghetti", "Włoska", 'Makaron', ["makaron", "sos pomidorowy", "ser", "przyprawy"], 12, 14, "Trochę rozgotowany bo polacy nie potrafią robić makaronu", "https://drive.google.com/uc?export=view&id=1xH7NpysoZDHCwz3JS63KHeYt_f9zSwxj")
-    , new Dish(1,5,13, "Carbonara", "Włoska", 'Makaron', ["makaron", "jajko", "pieprz", "boczek"], 13, 5, "Zawsze spoko", "https://drive.google.com/uc?export=view&id=1GEnPFncdT52DSZUpPwhF58JY81PbzgMa")
-    , new Dish(1,6,10, "Zdrowa krowa", "Amerykańska", 'Burger', ["bułka", "mięso", "warzywa", "sos"], 10, 25, "Bardzo dobry burger przy Galerii Krakowskiej", "https://drive.google.com/uc?export=view&id=1XJ9gFuRG-w2nVDryTxfpYOOOD6vWwJVF")
-    , new Dish(1,7,100, "McChicken", "Amerykańska", 'Burger', ["soja", "więcej soji", "jeszcze trochę soji"], 100, 2, "Trzeba być mocno głodnym", "https://drive.google.com/uc?export=view&id=1Hnp0vnfsFpeJZyBbwvF3JiJMgbmHeEbq")
-    , new Dish(1,8,12, "Lody włoskie", "Włoska", 'Lody', ["śmietana", "rożek", "polewa"], 12, 1, "Smak wakacji", "https://drive.google.com/uc?export=view&id=1IQSfwVF08FEIpxoUDLUSwUT4hL-XcuT7")
-    , new Dish(1,9,7, "Świderek", "Polska", 'Lody', ["śmietana", "wafel", "chefs-kiss"], 7, 3, "Najlepsze lody <3", "https://drive.google.com/uc?export=view&id=1ehmHPZUmame5KcXEHOJgFEcDFxakz6yp")
-    , new Dish(1,10,10000, "Jakiś ślimak", "Francuska", 'Inne', ["ślimak", "woda do wypłukania ust"], 10000, 80, "Fuj", "https://drive.google.com/uc?export=view&id=1gXK1LdlI3S3NCq7G4ThZUHUZqVAzDiDG")
-    , new Dish(1,11,100, "French fries", "Francuska", 'Frytki', ["ziemniaki"], 100, 4, "Fajne fryteczki bardzo", "https://drive.google.com/uc?export=view&id=1jSdgmLTgaPpwBwrGbZMO01H3ssZLYxVy")
-    , new Dish(1,12,1001, "American fries", "Amerykańska", 'Frytki', ["ziemniaki"], 1001, 7, "OK", "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR")
+    new Dish([],1,0,10, "Żurek", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ")
+    , new Dish([],1,1,8, "Pomidorowa", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "pomidory", "makaron"], 8, 9, "Trochę czuć koncentrat", "https://drive.google.com/uc?export=view&id=1yWarxZGHb8dkQR-VYaYj-UYtnVG20SS_")
+    , new Dish([],1,2,15, "Pizza NY-style", "Amerykańska", 'Pizza', ["ciasto", "ser", "szynka", "sos z butelki"], 15, 15, "Studenckie paliwo, najlepiej smakuje do kawki o 3am", "https://drive.google.com/uc?export=view&id=1I7oGRbRNb6_lrT8d1vPqx5l3CJo5e1Ss")
+    , new Dish([],1,3,5, "Pizza Italian-style", "Włoska", 'Pizza', ["ciasto", "ser", "pyszny sos", "salami pikante"], 5, 30, "Bdb pizza custom sos, ogólnie super", "https://drive.google.com/uc?export=view&id=1u9p3Cj7UDfK8TfRj9Ujd9y5VITzqryzn")
+    , new Dish([],1,4,12, "Spaghetti", "Włoska", 'Makaron', ["makaron", "sos pomidorowy", "ser", "przyprawy"], 12, 14, "Trochę rozgotowany bo polacy nie potrafią robić makaronu", "https://drive.google.com/uc?export=view&id=1xH7NpysoZDHCwz3JS63KHeYt_f9zSwxj")
+    , new Dish([],1,5,13, "Carbonara", "Włoska", 'Makaron', ["makaron", "jajko", "pieprz", "boczek"], 13, 5, "Zawsze spoko", "https://drive.google.com/uc?export=view&id=1GEnPFncdT52DSZUpPwhF58JY81PbzgMa")
+    , new Dish([],1,6,10, "Zdrowa krowa", "Amerykańska", 'Burger', ["bułka", "mięso", "warzywa", "sos"], 10, 25, "Bardzo dobry burger przy Galerii Krakowskiej", "https://drive.google.com/uc?export=view&id=1XJ9gFuRG-w2nVDryTxfpYOOOD6vWwJVF")
+    , new Dish([],1,7,100, "McChicken", "Amerykańska", 'Burger', ["soja", "więcej soji", "jeszcze trochę soji"], 100, 2, "Trzeba być mocno głodnym", "https://drive.google.com/uc?export=view&id=1Hnp0vnfsFpeJZyBbwvF3JiJMgbmHeEbq")
+    , new Dish([],1,8,12, "Lody włoskie", "Włoska", 'Lody', ["śmietana", "rożek", "polewa"], 12, 1, "Smak wakacji", "https://drive.google.com/uc?export=view&id=1IQSfwVF08FEIpxoUDLUSwUT4hL-XcuT7")
+    , new Dish([],1,9,7, "Świderek", "Polska", 'Lody', ["śmietana", "wafel", "chefs-kiss"], 7, 3, "Najlepsze lody <3", "https://drive.google.com/uc?export=view&id=1ehmHPZUmame5KcXEHOJgFEcDFxakz6yp")
+    , new Dish([],1,10,10000, "Jakiś ślimak", "Francuska", 'Inne', ["ślimak", "woda do wypłukania ust"], 10000, 80, "Fuj", "https://drive.google.com/uc?export=view&id=1gXK1LdlI3S3NCq7G4ThZUHUZqVAzDiDG")
+    , new Dish([],1,11,100, "French fries", "Francuska", 'Frytki', ["ziemniaki"], 100, 4, "Fajne fryteczki bardzo", "https://drive.google.com/uc?export=view&id=1jSdgmLTgaPpwBwrGbZMO01H3ssZLYxVy")
+    , new Dish([],1,12,1001, "American fries", "Amerykańska", 'Frytki', ["ziemniaki"], 1001, 7, "OK", "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR")
   ]
 
 
@@ -59,11 +59,6 @@ export class DishListService {
     ]
 
   cuisineTypesSelected:number[] = Array(this.cuisineTypes.length).fill(0)
-
-  //prices[0] - min value product
-  //prices[1] - max value product
-  //prices[0] - min CHOSEN value product
-  //prices[1] - max CHOSEN value product
 
   calcMax(){
     let val = -1

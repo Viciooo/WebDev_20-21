@@ -4,7 +4,6 @@ import {DishListService} from "../../services/dish-list.service";
 import {CheckoutAndCurrenciesService} from "../../services/checkout-and-currencies.service";
 import {Dish} from "../../interfaces/dish.module";
 import {checkoutItem} from "../../interfaces/checkout-list.module";
-import {ReviewsService} from "../../services/reviews.service";
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Review} from "../../interfaces/review.module";
 
@@ -21,7 +20,6 @@ export class SingleDishViewComponent implements OnInit {
   reviewForm: FormGroup
 
   constructor(private formBuilder : FormBuilder,
-              public reviews:ReviewsService,
               private route: ActivatedRoute,
               public dishService:DishListService,
               public moneyItemHandler:CheckoutAndCurrenciesService) { }
@@ -79,6 +77,8 @@ export class SingleDishViewComponent implements OnInit {
       (<FormArray>this.reviewForm.get('title')).value,
       (<FormArray>this.reviewForm.get('content')).value,
     )
+    this.dishService.myDishes[this.dishId].reviews.push(newReview)
+    this.reviewForm.reset()
   //  to be continued
   }
 }

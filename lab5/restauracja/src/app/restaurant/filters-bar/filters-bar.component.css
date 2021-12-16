@@ -47,7 +47,7 @@ i{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(---medium-border-radious);
+  border-radius: var(--medium-border-radious);
   box-shadow: var(--box-shadow);
 }
 
@@ -56,7 +56,7 @@ i{
 }
 
 .box:hover{
-  background-color: var(--background-light);
+  background-color: var(--light-grey);
 }
 
 
@@ -97,7 +97,7 @@ h2{
 }
 
 .hideAll i{
-  color: var(--background-light);
+  color: var(--light-grey);
   font-size: var(--font-size-medium);
   padding: 1px;
 }
@@ -105,7 +105,7 @@ h2{
 .reset{
   font-family: var(--main-font);
   font-size: var(--font-size-medium);
-  border-radius: var(---medium-border-radious);
+  border-radius: var(--medium-border-radious);
   cursor: pointer;
   padding: 2px;
 }

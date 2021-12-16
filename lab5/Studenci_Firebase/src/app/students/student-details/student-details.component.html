@@ -1,0 +1,12 @@
+<div *ngIf="student" id="student">
+  <div>
+    <label>Imie: </label> {{student.name}}
+  </div>
+  <div>
+    <label>Wiek: </label> {{student.age}}
+  </div>
+ 
+  <span class="button is-small btn-danger" (click)='deleteStudent()'>Delete</span>
+
+  <hr />
+</div>

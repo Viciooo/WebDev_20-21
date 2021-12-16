@@ -7,8 +7,8 @@
 h1, h2, h3{
   font-family: var(--main-font);
   margin: 7px;
-  color: var(--background-dark);
-  background-color: var(--background-light);
+  color: var(--dark-grey);
+  background-color: var(--light-grey);
   border-radius: var(--small-border-radious);
 
 }
@@ -29,8 +29,8 @@ h1, h2, h3{
 }
 
 .box {
-  background: var(--background-dark);
-  color: var(--background-light);
+  background: var(--dark-grey);
+  color: var(--light-grey);
   border-radius: var(--small-border-radious);
   box-shadow: var(--box-shadow);
   margin: 10px;
@@ -40,7 +40,7 @@ h1, h2, h3{
   width: 100%;
   padding: 2%;
   height: auto;
-  border-radius: var(---medium-border-radious);
+  border-radius: var(--medium-border-radious);
 }
 
 p {
@@ -109,7 +109,7 @@ h4{
 
 .delete-btn{
   position: relative;
-  background-color: var(--background-light);
+  background-color: var(--light-grey);
   padding: 7px 12px 7px 12px;
   border-radius: var(--big-border-radious);
   float: right;
@@ -127,7 +127,7 @@ h4{
 }
 
 .delete-btn i:hover{
-  color: var(--background-dark)
+  color: var(--dark-grey)
 }
 
 .delete-btn:hover{

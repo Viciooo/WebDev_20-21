@@ -1,6 +1,6 @@
 form{
-  background: var(--background-dark);
-  color: var(--background-light);
+  background: var(--dark-grey);
+  color: var(--light-grey);
   border-radius: var(--small-border-radious);
   box-shadow: var(--box-shadow);
   margin: 10px;
@@ -38,7 +38,7 @@ h1{
   font-weight: 700;
   text-transform: uppercase;
   color: var(--span-color);
-  border-radius: var(---medium-border-radious);
+  border-radius: var(--medium-border-radious);
   margin: 2%;
 }
 
@@ -61,8 +61,8 @@ span{
 h1, h2, h3{
   font-family: var(--main-font);
   margin: 7px;
-  color: var(--background-dark);
-  background-color: var(--background-light);
+  color: var(--dark-grey);
+  background-color: var(--light-grey);
   border-radius: var(--small-border-radious);
 }
 

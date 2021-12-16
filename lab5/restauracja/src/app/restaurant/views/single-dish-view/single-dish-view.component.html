@@ -101,7 +101,6 @@
               </ng-template>
             </div>
           </div>
-          <p>single-dish-view works!</p>
         </div>
       </div>
       <div class="forms">
@@ -128,11 +127,22 @@
             <input formControlName="date" type="date" name="date" id="date">
           </div>
           <button type="submit" [disabled]="!reviewForm.valid">Submit</button>
+
+          <div class="errorsTable">
+            <p><\to do errors table></p>
+          </div>
         </form>
       </div>
       </div>
 
+  </div>
 
+  <div class="existing-reviews">
+    <div class="review" *ngFor="let review of dishService.myDishes[dishId].reviews">
+      <h1>{{review.title}}</h1>
+      <p>"{{review.content}}"</p>
+      <h2>{{review.nick}}</h2>
+    </div>
   </div>
   <div class="goBack">
     <a [routerLink]="['/menu']" routerLinkActive="active">

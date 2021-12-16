@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import '~font-awesome/css/font-awesome.css';
 :root {
-  --background-dark: #2f2d2d;
-  --background-light: #e3e0e0;
+  --dark-grey: #2f2d2d;
+  --light-grey: #e3e0e0;
   --box-shadow: 5px 5px 3px grey;
   --main-font:'Poppins', sans-serif;
   --secondary-font: "Agency FB", serif;
   --small-border-radious:2px;
-  ---medium-border-radious:7px;
+  --medium-border-radious:7px;
   --big-border-radious:15px;
   --span-color:steelblue;
   --font-size-big:2rem;

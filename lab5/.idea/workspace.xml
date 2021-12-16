@@ -1,43 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fca4a07-4491-4041-92ff-85d2d72abd6c" name="Changes" comment="zad3 start">
-      <change afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/interfaces/review.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/reviews.service.ts" afterDir="false" />
+    <list default="true" id="8fca4a07-4491-4041-92ff-85d2d72abd6c" name="Changes" comment="zad3 in progress, working on sdv forms">
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restauracja/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/DishListService/dish-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/dish-list.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/checkoutAndCurrenciesService/checkout-and-currencies.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/checkout-and-currencies.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/checkoutAndCurrenciesService/checkoutItem/checkout-list.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/interfaces/checkout-list.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dish/dish.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/interfaces/dish.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/filters-bar/filters-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/filters-bar/filters-bar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menu-header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menu-header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/filter-cuisines-pipe.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/filter-cuisines.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/filter-dishes.pipe.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/filter-dishes.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/filter-dishes.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/price.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/price.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/stars.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/pipes/stars.pipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/filters-bar/filters-bar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/filters-bar/filters-bar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/interfaces/dish.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/interfaces/dish.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menuHeader.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menuHeader.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/dish-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/dish-list.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/reviews.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/home-view/home-view.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/login-view/login-view.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/menu-view/menu-view.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found-view/page-not-found.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found-view/page-not-found.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found/page-not-found.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/page-not-found-view/page-not-found.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/signup-view/signup-view.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/home-view/home-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/home-view/home-view.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restauracja/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,9 +48,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/restauracja" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Studenci_Firebase" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\restauracja\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\Studenci_Firebase\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -97,7 +79,15 @@
       <workItem from="1639500122616" duration="8941000" />
       <workItem from="1639510543215" duration="3189000" />
       <workItem from="1639555769677" duration="9462000" />
-      <workItem from="1639581367609" duration="5809000" />
+      <workItem from="1639581367609" duration="8398000" />
+      <workItem from="1639590372314" duration="733000" />
+      <workItem from="1639600144633" duration="560000" />
+      <workItem from="1639651140535" duration="622000" />
+      <workItem from="1639658226152" duration="20000" />
+      <workItem from="1639667842828" duration="408000" />
+      <workItem from="1639675247296" duration="954000" />
+      <workItem from="1639688348211" duration="81000" />
+      <workItem from="1639688462393" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="rebuild">
       <created>1639391450219</created>
@@ -141,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639565571244</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="zad3 in progress, working on sdv forms">
+      <created>1639587262479</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639587262479</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +164,7 @@
     <MESSAGE value="zad2 only checkoutView left" />
     <MESSAGE value="zad2 finally done" />
     <MESSAGE value="zad3 start" />
-    <option name="LAST_COMMIT_MESSAGE" value="zad3 start" />
+    <MESSAGE value="zad3 in progress, working on sdv forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="zad3 in progress, working on sdv forms" />
   </component>
 </project>

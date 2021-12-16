@@ -1,5 +1,8 @@
+import {Review} from "./review.module";
+
 export class Dish {
-  constructor(public rating: number,
+  constructor(public reviews:Review[],
+              public rating: number,
               public id: number,
               public maxAmt: number,
               public name: string,

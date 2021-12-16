@@ -7,8 +7,8 @@
 h1, h2, h3{
   font-family: var(--main-font);
   margin: 7px;
-  color: var(--background-dark);
-  background-color: var(--background-light);
+  color: var(--dark-grey);
+  background-color: var(--light-grey);
   border-radius: var(--small-border-radious);
 
 }
@@ -22,8 +22,8 @@ h1, h2, h3{
 }
 
 .box {
-  background: var(--background-dark);
-  color: var(--background-light);
+  background: var(--dark-grey);
+  color: var(--light-grey);
   border-radius: var(--small-border-radious);
   box-shadow: var(--box-shadow);
   margin: 5px;
@@ -32,7 +32,7 @@ h1, h2, h3{
 }
 
 .dish-details{
-  width: 50%;
+  width: 55%;
 }
 
 /*main styles*/
@@ -160,7 +160,7 @@ section picture:hover {
 
 /*back to menu*/
 .goBack{
-  background-color: var(--background-light);
+  background-color: var(--light-grey);
   width: fit-content;
   font-size: var(--font-size-big);
   padding: 5px;
@@ -169,7 +169,7 @@ section picture:hover {
   margin-bottom: 3rem;
 }
 .goBack i{
-  color: var(--background-dark);
+  color: var(--dark-grey);
 }
 
 .goBack i:hover{
@@ -193,9 +193,9 @@ section picture:hover {
 }
 
 .input-block{
-  background-color: var(--background-light);
+  background-color: var(--light-grey);
   margin-bottom: 1rem;
-  color: var(--background-dark);
+  color: var(--dark-grey);
   font-family: var(--main-font);
   font-size: var(--font-size-big);
   margin-top: 1rem;
@@ -203,7 +203,7 @@ section picture:hover {
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
-  border-radius: var(---medium-border-radious);
+  border-radius: var(--medium-border-radious);
 }
 
 input{
@@ -212,15 +212,53 @@ input{
 
 textarea{
   font-size: var(--font-size-big);
+  min-height: 15rem;
 }
 form button{
   font-size: var(--font-size-big);
   font-family: var(--secondary-font);
   background-color: var(--span-color);
-  color: var(--background-light);
+  color: var(--light-grey);
   padding: 5px;
   font-weight: 500;
   cursor: pointer;
   border-radius: var(--big-border-radious);
+  margin-bottom: 3rem;
+}
+form button:disabled{
+  opacity: 0.5;
+  cursor: default;
 }
 /*forms*/
+
+.existing-reviews{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.existing-reviews p{
+font-style: italic;
+  font-size: var(--font-size-small);
+  font-family: var(--main-font);
+}
+
+.existing-reviews h1{
+  width: fit-content;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+.existing-reviews h2{
+  text-transform: uppercase;
+  font-size: var(--font-size-medium);
+  margin-left: 2rem;
+}
+
+.review{
+  margin: 2rem;
+  background-color: var(--span-color);
+  border-radius: var(--medium-border-radious);
+  width: 80%;
+  box-shadow: var(--box-shadow);
+}

@@ -8,7 +8,7 @@
 h1, h2, h3{
   font-family: var(--main-font);
   margin: 7px;
-  color: var(--background-dark);
+  color: var(--dark-grey);
   border-radius: var(--small-border-radious);
 }
 .container {
@@ -33,14 +33,14 @@ span{
 .item{
   display: grid;
   grid-template-columns: repeat(5, [col] 20vw );
-  background-color: var(--background-dark);
+  background-color: var(--dark-grey);
   margin-bottom: 1rem;
   box-shadow: var(--box-shadow);
 }
 
 .info{
   grid-column: col /span 2;
-  background-color: var(--background-light);
+  background-color: var(--light-grey);
 }
 
 
@@ -61,7 +61,7 @@ img {
 
 .overview, .paymentMethods{
   min-height: 10vh;
-  background-color: var(--background-light);
+  background-color: var(--light-grey);
   width: 80%;
   margin: 1rem;
   box-shadow: var(--box-shadow);
