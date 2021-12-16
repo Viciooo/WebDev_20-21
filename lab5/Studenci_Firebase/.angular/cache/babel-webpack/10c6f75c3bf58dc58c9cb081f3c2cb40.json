@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from './angularfire2';\nexport * from './firebase.app.module'; //# sourceMappingURL=public_api.js.map","map":null,"metadata":{},"sourceType":"module"}

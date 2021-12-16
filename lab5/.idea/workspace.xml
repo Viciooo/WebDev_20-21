@@ -2,24 +2,280 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fca4a07-4491-4041-92ff-85d2d72abd6c" name="Changes" comment="zad3 in progress, working on sdv forms">
-      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/dishes/dishes.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/filters-bar/filters-bar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/filters-bar/filters-bar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/interfaces/dish.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/interfaces/dish.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menuHeader.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/menuHeader/menuHeader.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/navbar/navbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/dish-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/dish-list.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/services/reviews.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/checkout-view/checkout-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/chefs-view/chefs-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/home-view/home-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/home-view/home-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/app/restaurant/views/single-dish-view/single-dish-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restauracja/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/restauracja/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/angular-webpack/08cf105c45cc798103fdb3c644ec629cc4e85d52/0.pack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/angular-webpack/08cf105c45cc798103fdb3c644ec629cc4e85d52/index.pack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/angular-webpack/0adfcf5496a28eff778efdd4943238f59eb02671/0.pack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/angular-webpack/0adfcf5496a28eff778efdd4943238f59eb02671/index.pack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/004bb73447391e11f73d1686e41bd167.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/016c14174db841e69f58ee06f14cf974.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/038890cdcf09488f4f0d6c7c215a091a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/055ae063cf8864cacb0d6f7fd08e56cc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/05b48f9e8b51de456370589d19015364.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/05df24a6975a55cb3eb1d754ab701adc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/05eb916d4a74fa8eb870db10b43e4a66.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0604dcf38e964903171a6d0be7317c9e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/06a28f93c8fba8f354bafe809c17662b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0ad38fc637347aa0a131e87291a2be9c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0b3829016d5cd27a4f15e5b9c6e7dcd0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0c35798ba63bea65246f8de2a91339ce.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0cc3436759db0627647cfbf1f5beba04.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0cd1712792a6a5924b5ad4d414046683.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0d60c042f3d4c7daf1af702376d877a9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0e6427fec3c972531d6abdd9ec81e0e8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/0f3c5534887611af2fa73f4d631d9fd7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1059234d988c376a0d76dc17dabf1c3c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/108bfaef4c00254607896fbd9edb6ca1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/10a2ff2cea3c77e072ba8eeab2c6e43b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/10c6f75c3bf58dc58c9cb081f3c2cb40.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/126fecc6c98b17efc537fb823f6515d3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/133a20f5752c7777a94f8c2803f53c1c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/13d06f26ae37855a63c0eb1670179ff5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/174aceec98ff3d87113db7973c683aea.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/17c71d099f90fac4586a4f9046172811.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/17dc72cc777e16211590edc0f70edde7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/184717222382427837550bf9c4b1d0f9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/18c94ffd9553abf1d3d78459848abc4d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/191008a1a79594ca1a55193afe422b23.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1ad45995630c196852c4bebe63978854.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1c05a158cee84e0260ab3bd3413aae6e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1c13fb19b78469f6a9c5547c5a01ade9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1e551e67839acca22618ee8a3f8b14aa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1e960a5918bdb52b07e725b37d6aea74.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1efaa0c6dc98baf62f17c449438c9bee.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1f289e4a48ccef76503c1e632296d625.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/1fc7668481d3be3612df3cbba9074a4e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/204660a95cb14539561d4314f021cbdb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/211ea749de397a81acbebf74ad71d197.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/214f80b6ef74bc5c72a4fd5c375bca21.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/216e91552cfd76d78d8a1416dbc6ad8d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2544d4c610c4841fe1d33f9e734afbc1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/266bb094446e05344b118cd210102d2f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2702fb491d6f28c9116b3073ff12a8ea.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/280dff0ac44a762a4e0e564ef0c1f998.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2aa0a3357eef687fcfcaf61d90835155.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2aff3a8d03c77c05469e4d0f715723ae.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2b234f26409a27a74f53c96b1c78d1e2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2b455d7e60b2f77a4f6e4a62ed01b834.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2ca9f0b7779b03c5db7d52f2e66de936.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/2e54bd57357cd2d44f062e2ea407c658.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/33e95351a85980f8d8ddecef18f35eb4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/34338c21034b25ca707b8e6b1e42a4f6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/3537937536cc4fc52d58131ea2eec53d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/36145b2fc0f894a422db36eeb1107b74.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/36709c44385dc3e0847de654137b5c1d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/36e286fd7f79cd8f86feda9ccac2245f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/378f6e6276fc1282c46164e02ac9566c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/3ab5f3f9773592e07b8a3b5aefad46a6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/3af408e3db9327ea996a17c5acaed605.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/3b6310a008ec9883015f853688838b78.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/3d4febfef663983780f829348d547748.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/413ac4bf91271b8965f22bf58aabd037.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4153c2e64d1d0698aa9fb0aeebd3c451.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4338540082ebfcf1c0a76dee5df6c8b7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4338bcbac1d19ccebbe2a5acfc18853d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/46463bff694566380f303362841fca0d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/46567bba4f3c722b62b1fecdb71dfd25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/46dbbebfeca54f694e2d0a4e86e7ec93.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/474af73346128ece644b9f7e841c90d3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/48a417869132085dc5a40973288cae41.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4ad734cd0f954f8d1ec041ca2b2e6bde.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4b50cca7774a11ce952feef60cdb110a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4b5212376ae41e0c6240724822eee870.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4b7d65a3e3aa10b1dde8f4ab5ad8f8c0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/4cb08ad73fa6d980fe25737c2ca2e53e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/50c3787e8725473c6e26c99f25273753.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/511f0e26260a453da4d8bfd74dc416ec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/52dcaba1abf2ac6bb80266ebb07b5dac.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/537a3389adbfbb62d800f977baea3b75.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/538a360f40ed4d1aa7de0f985b54fb72.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/56931816c11d10cac3e848d0b112e2cf.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/57556813222ede38799b5597df5a6752.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/587ba25a4239e3088e720fb0be8f0ac4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/58a249d42eb745ec3005146563a2693e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/590b3fe16c38f863cfb8e5ac5f6981b1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/5d771331b8bdbc0d075f42a9bed003c3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/5d8ace1a9d5f7590b83a9675cd5ba97b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/5eca4ecc3cac2613cae05e3fd516c10d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/5f09880722aa61e3426b4d00d747d8d7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/6051837697c22a3ab5b10b09d494900d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/608775fa3975b775df744b87fda97cad.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/60fa83c694290f1ae3efa5747260cd40.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/63826393cb379438bc9e9764fa1884e5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/63edabb570a1586155d5718a39361a0c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/64b3a57659ffec748f53ff696486dc87.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/64ca5e0d928513fb15f99a0dbe73b8db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/6565af6d64d0bad2312a22bfa0d4ce2c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/659fcb8420c540942b8c8c0000947404.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/66b3923529c56220a5616664dfebcd33.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/66fad52034e399fbb65d3b506064b20c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/676199f0b9ce00bf31864b0f0dc977d8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/68ce99b7845ee858d51a3cc9f443f9c3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/6b0735b5b30c8ddd742ba66fa8560773.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/6baefe1bb86c0bddb95e008d2d364d5c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/6bb84fe1c4137aa6252bc66d614c4c60.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/6ceef17bd4c3884a8e8b09334cf24545.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/6ea830e0acc5f489a54947cb6c5f1329.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/700d4fc288c093f4822b45f5abd7ec1e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/71904452e267e7eb71058f061bd7797c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/719b5823122e023cc7f0c28e817d4a13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/721e1947d6d98fafe2456ad3f1e32a38.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/73b61a79ab042f899bc58316e7c2b488.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/73d7a5e9c7d84bc46aa526c1e6fff6c0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/74c13f66791d2cb3c875db42a955f9a7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/74e310da605ed254b3c8a72c75020574.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/75a08f1bc90a99a8fdccddbff2c619d8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7afec5c7b15b95fd5c6122f0efe48c97.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7be941ee67751fcdffbc2786d656f2c9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7cd4b2fbc4b87eacb24095310eb8f8c8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7ce7d1547d4f64e4719dd542259fa670.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7cff174201fbe2495ce205e609249c30.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7d91069795b4020aca6a87e6eadca4df.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7d9f51951e277ac45be43ba7e0e0e625.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7e40f21f0e0cf7b2c9d0b86da730f0f0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7f05f75860ca0dfa1670c18828c1b242.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7f20a6f5218c764326adebd78f060d57.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/7fdd067da2f768a1624eceda351e3933.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/80399817a303414dc309cbf19ec27010.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/809b420851086d47f24fa166ad4c8808.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8128b99fb346051df55dc28a3e9bd57d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/833c207d0ede077a597505ac774eacc2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/843ecb77877afb323429736c0cf19716.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/85316e9b345bbbc1cfa5ec25fc502a00.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/854bb73e5a0af400019a10ce4accd957.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/85679dbc146626f4a75a014f35fef2f7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/86729f85fb61e51f42ac86ff50a4741b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/88393d1ac40d0f66fc8921d57f687bfa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8847eaf84a6b19eef5abf8d0cb3d252c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8bfba721e3207f3152b89d355b14f8a1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8bfd3e70444857924e3d528998edacb3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8c86125ed1175dca5dd7ff2d2f4698c6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8cd6cd58c8d552298d5d6d2d7803cf45.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8e97ccba133e3520cf775409b012fc1d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/8f9201e798006a08ffa0fc3653a34187.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/921b7f832a27107e62571840cdf3acf2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/933c8250837d160af6e7bf9f0f097cc9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/93b43ef031b15441087cd1570fcad8df.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/944afadf940dd3ae0e540dca33dbf90e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/96b5402776a442ac7c2df817df876b14.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/979ae8ce3741c5cd75579b07c5013570.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/99e723888a63c04ea08e882e950d31f7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9a5cd642047a328b58d48a037ad0735b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9a992990bdde24027b3653666ac39d78.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9adbfe9af8ec68fb779df7e8ce9bcad9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9b1025ce068f9aae914eed5b39929542.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9bd606d0aab1ae6697d38d0cab788fa2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9c0088bdfaedac9f2c69e5924f91b701.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9c3881d573649d1717b2c99908d386d8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9e82ee0a1c4f6a4044c973af71011248.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/9f368187978a8a28763f00fbc0b1a544.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a0dfd00bb9df29100c54ec1bccc2ff81.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a200fe01a36e686ecb01528fba1059bb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a2044b1bc65a2c008db9a700bf48cf31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a2630e0091ae2861435280ba7e25c223.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a2cb04096d735f40508347d092882689.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a2da1d1e6fbb0f890cdfcf462fd22922.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a406f768731cc7a8326ce0eb27dbe5ad.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a4ae0c7d4cd188e2c1e7584b9b302517.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a61859e36371af7cde6444c70cf54809.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a64e415b4666c96adf9c39d7be16728c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a68b04e271a0c4d48839906167330dc8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a7eef9e7517dd1354cb567a5d3f91af6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a8df7802828f92a1af5f16fe484517b2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/a9109fd101cad9752d41f0f6fa3e71f4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/aaf8e2c9a1d474fb94911b0055dc86d9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ade3f842b2d2e68abcc5a7885a692c0d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/af426e156f966e7405f7fbee2acad51d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/b17bc5a12a8e4bc23f01972d0664f29b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/b2de4c2785b8a4ff336235de4a9083ed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/b4ff1870725b5ce2975ba42b475df417.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/b61611f803bb450dce9dcd3593af6f52.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/b973d15b23a5d6f8f116de47194a13c8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/b9afec0cd27fcc41410be2e6a1a19466.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ba7b55252d985e394f01765e69be5b89.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ba7eb8248e699ac9c937ed40ba290ef1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/bbf03a95cf806620422d9ec407cee341.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/bca1170d0b266124c226f50da6b7b660.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/bcae2f5a7215622903e0961425d698d5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/be56ff8ae5d2084a63f5d588f396d3cc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c0a67e6b510263eaa9d67e6bacb5b75f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c13fb76a8cecac680d337b505697c3c5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c186cc78de82b345f74a2b961831925c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c27bccb9b310a6677cbfc233fbe553fc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c2cb6865b85f69ac2320032dbb5b7664.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c2e98d3f51ecce154767f4216916e96b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c33fa37883b9cc6a83883e930dfcc8ca.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c7988e38b6509f3b3ed3063f410e522f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c7cb1f2d3b1f43dfb7bf8c620bcc02ef.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c8f20117e38003782cf3ef95e7763528.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c99a5d58507bd3245dbfb7a6e05b01d6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/c9d2361828ad94dc671b4ed01b899638.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cae1cdbcfa5f7dba8b756a1d60bed456.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cb3d7cac1a1ccda51f88638703e86e83.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cb97dda856cee4b9973790ac22e6efe1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cba7a3d8481f57679bb6cc08334bd44a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cbba746d9b3160d8cffc218fedf58000.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cc23f2e3fb754cbcc36d8de06899e4b9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cca79c46eb93342659b8669eaabbf453.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cead36e6a600e4375987be995755cceb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cf481db9057acce5208665e22e8d9862.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/cfc21407131a80f9fb9232b45f6e8471.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d09f54864afa44d62e56d74e5d333c45.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d28ec303ccce08b7f62e24111f05695b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d2b6904310e8ff2e67774e34cd941de0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d2eb83334662eb738a1333a0e798ed15.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d456e84c3f7e6d27a37187449bb06fbb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d4a85a07c95066db83d5d381b89d816b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d51fdcdd8e033b2a4743191034451be7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d556ffbcd5b177ac9cd5955c6a86f85b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d57dce715fce243e873d4100f124f3f4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d63c75a03164c70046c56eb356385073.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d6eefbf9fe1b371e643190980aa9aa9f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d7c2383b221e0027017f1b64d875ad59.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d8bfa078eb3077aa1292b7e9deb4a303.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d942a71f4d9ef88e0a46e96dcea5beea.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/d9c4825adb66b4c1f86ddb238ed11e16.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/db475c57e73f0971d55644caef56f08b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/dcca39e0b1a8b40987edec7a7d0e8000.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/de93295f7c8804032396300be561c558.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/deca1ba7e65e9656c5619c2c516fe453.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e00ae3a0f2db5aae3db25925954fde11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e1e7d4707efd1335a801ab76b80f6134.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e2dc85195211b61b1cc21d8c749a932e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e3117cf1e83371d38effaa51b3ba9362.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e364c72bff2884e686be2c74bcbd59c4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e3e0fc426a4829c140caa2f3533cdeda.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e450f1aa3a72428ec9ca174d64837a9a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e4b41b7d4dca1a8da40c7acfaa7a403f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e6d8a851fba52493699aafcea4ea6594.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e72cb9acfe62c3e85db66142317aaca3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e828e1996261e26c4238f47b83d91771.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e8ffefc0d0955466a730ec8014562f5d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/e9467c798968821b8a62c938a9bab798.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ea63c5435aef9d29717d9159815a4f95.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ebc8c9d2e762bfe37a7adb895b33d68e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ed7b9dbbe008e7a05b29778d10b8ffa0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ed8272ff5e4ad8d90d6f9e2a533cb83c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/edee757cb8b03a926f01fbf578d96e25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ee99762ca847801725934b4ca7b50f88.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ef3dae512d9a35419738dfae0051210f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/eff40b256651667bcf353e3d84d63cd5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/f2bb015168e4bad417a9fcc0dd823a4f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/f4181a729cd677f4f1bb87aed2a6bd44.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/f66dc39b5ae2c7044cc21729dfc49f43.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/f6836abbbe5997026d3cbac54ad9c02d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/f776d1d4fa14e38c46946510382e1d43.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/fa10426e340202e55b32edaea8f98f5a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/fb9e99c830605c33759e35a0183d9640.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/fc1c897d6dda28cce3260e769bc7670f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/fc5b760bc0562ecbbe3dc9a1003127a5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/feea0d66054eee9aa4b96575f8914e83.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/fefe564d671e4d95640bafd0f1611769.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ff051484817f1501678a8aaa92a4d012.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studenci_Firebase/.angular/cache/babel-webpack/ff7c71d642e6403a9bd4e56e1d842448.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studenci_Firebase/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Studenci_Firebase/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studenci_Firebase/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Studenci_Firebase/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studenci_Firebase/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Studenci_Firebase/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studenci_Firebase/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studenci_Firebase/src/test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +304,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Studenci_Firebase" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/restauracja" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\Studenci_Firebase\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\48602\Desktop\3_semestr\WDAI\PROJEKTY\lab5\restauracja\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -88,6 +344,7 @@
       <workItem from="1639675247296" duration="954000" />
       <workItem from="1639688348211" duration="81000" />
       <workItem from="1639688462393" duration="9000" />
+      <workItem from="1639693292572" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="rebuild">
       <created>1639391450219</created>
