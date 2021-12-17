@@ -1,0 +1,251 @@
+{
+  "dishList":
+    {
+      "Żurek": {
+        "review": [],
+        "rating": 1,
+        "id": 0,
+        "maxAmt": 10,
+        "name": "Żurek",
+        "cuisine": "Polska",
+        "dishType": "Zupa",
+        "ingredients": [
+          "kostka rosołowa",
+          "troche wody",
+          "przyprawy",
+          "kiełbaska"
+        ],
+        "amount": 10,
+        "price": 10,
+        "description": "Pyszna zupka jak u babci",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ"
+        ]
+      },
+      "Pomidorowa": {
+        "review": [],
+        "rating": 1,
+        "id": 1,
+        "maxAmt": 8,
+        "name": "Pomidorowa",
+        "cuisine": "Polska",
+        "dishType": "Zupa",
+        "ingredients": [
+          "kostka rosołowa",
+          "troche wody",
+          "przyprawy",
+          "pomidory",
+          "makaron"
+        ],
+        "amount": 8,
+        "price": 9,
+        "description": "Trochę czuć koncentrat",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1yWarxZGHb8dkQR-VYaYj-UYtnVG20SS_"
+        ]
+      },
+      "Pizza NY-style": {
+        "review": [],
+        "rating": 1,
+        "id": 2,
+        "maxAmt": 15,
+        "name": "Pizza NY-style",
+        "cuisine": "Amerykańska",
+        "dishType": "Pizza",
+        "ingredients": [
+          "ciasto",
+          "ser",
+          "szynka",
+          "sos z butelki"
+        ],
+        "amount": 15,
+        "price": 15,
+        "description": "Studenckie paliwo, najlepiej smakuje do kawki o 3am",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1I7oGRbRNb6_lrT8d1vPqx5l3CJo5e1Ss"
+        ]
+      },
+      "Pizza Italian-style": {
+        "review": [],
+        "rating": 1,
+        "id": 3,
+        "maxAmt": 5,
+        "name": "Pizza Italian-style",
+        "cuisine": "Włoska",
+        "dishType": "Pizza",
+        "ingredients": [
+          "ciasto",
+          "ser",
+          "pyszny sos",
+          "salami pikante"
+        ],
+        "amount": 5,
+        "price": 30,
+        "description": "Bdb pizza custom sos, ogólnie super",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1u9p3Cj7UDfK8TfRj9Ujd9y5VITzqryzn"
+        ]
+      },
+      "Spaghetti": {
+        "review": [],
+        "rating": 1,
+        "id": 4,
+        "maxAmt": 12,
+        "name": "Spaghetti",
+        "cuisine": "Włoska",
+        "dishType": "Makaron",
+        "ingredients": [
+          "makaron",
+          "sos pomidorowy",
+          "ser",
+          "przyprawy"
+        ],
+        "amount": 12,
+        "price": 14,
+        "description": "Trochę rozgotowany bo polacy nie potrafią robić makaronu",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1xH7NpysoZDHCwz3JS63KHeYt_f9zSwxj"
+        ]
+      },
+      "Carbonara": {
+        "review": [],
+        "rating": 1,
+        "id": 5,
+        "maxAmt": 13,
+        "name": "Carbonara",
+        "cuisine": "Włoska",
+        "dishType": "Makaron",
+        "ingredients": [
+          "makaron",
+          "jajko",
+          "pieprz",
+          "boczek"
+        ],
+        "amount": 13,
+        "price": 5,
+        "description": "Zawsze spoko",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1GEnPFncdT52DSZUpPwhF58JY81PbzgMa"
+        ]
+      },
+      "Zdrowa krowa": {
+        "review": [],
+        "rating": 1,
+        "id": 6,
+        "maxAmt": 10,
+        "name": "Zdrowa krowa",
+        "cuisine": "Amerykańska",
+        "dishType": "Burger",
+        "ingredients": [
+          "bułka",
+          "mięso",
+          "warzywa",
+          "sos"
+        ],
+        "amount": 10,
+        "price": 25,
+        "description": "Bardzo dobry burger przy Galerii Krakowskiej",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1XJ9gFuRG-w2nVDryTxfpYOOOD6vWwJVF"
+        ]
+      },
+      "McChicken": {
+        "review": [],
+        "rating": 1,
+        "id": 7,
+        "maxAmt": 100,
+        "name": "McChicken",
+        "cuisine": "Amerykańska",
+        "dishType": "Burger",
+        "ingredients": [
+          "soja",
+          "więcej soji",
+          "jeszcze trochę soji"
+        ],
+        "amount": 100,
+        "price": 2,
+        "description": "Trzeba być mocno głodnym",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1Hnp0vnfsFpeJZyBbwvF3JiJMgbmHeEbq"
+        ]
+      },
+      "Lody włoskie": {
+        "review": [],
+        "rating": 1,
+        "id": 8,
+        "maxAmt": 12,
+        "name": "Lody włoskie",
+        "cuisine": "Włoska",
+        "dishType": "Lody",
+        "ingredients": [
+          "śmietana",
+          "rożek",
+          "polewa"
+        ],
+        "amount": 12,
+        "price": 1,
+        "description": "Smak wakacji",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1IQSfwVF08FEIpxoUDLUSwUT4hL-XcuT7"
+        ]
+      },
+      "Świderek": {
+        "review": [],
+        "rating": 1,
+        "id": 9,
+        "maxAmt": 7,
+        "name": "Świderek",
+        "cuisine": "Polska",
+        "dishType": "Lody",
+        "ingredients": [
+          "śmietana",
+          "wafel",
+          "chefs-kiss"
+        ],
+        "amount": 7,
+        "price": 3,
+        "description": "Najlepsze lody <3 uwu",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1ehmHPZUmame5KcXEHOJgFEcDFxakz6yp"
+        ]
+      },
+      "French fries": {
+        "review": [],
+        "rating": 1,
+        "id": 10,
+        "maxAmt": 100,
+        "name": "French fries",
+        "cuisine": "Francuska",
+        "dishType": "Frytki",
+        "ingredients": [
+          "ziemniaki"
+        ],
+        "amount": 100,
+        "price": 4,
+        "description": "Fajne fryteczki bardzo",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1jSdgmLTgaPpwBwrGbZMO01H3ssZLYxVy"
+        ]
+      },
+      "American fries": {
+        "review": [],
+        "rating": 1,
+        "id": 11,
+        "maxAmt": 1001,
+        "name": "American fries",
+        "cuisine": "Amerykańska",
+        "dishType": "Frytki",
+        "ingredients": [
+          "ziemniaki"
+        ],
+        "amount": 1001,
+        "price": 7,
+        "description": "OK",
+        "imgPath": [
+          "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR"
+        ]
+      }
+    }
+}
+
+

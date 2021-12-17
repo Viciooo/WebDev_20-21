@@ -27,7 +27,9 @@ import { NavbarComponent } from './restaurant/navbar/navbar.component';
 import { MapComponent } from './restaurant/map/map.component';
 import { PageNotFoundComponent } from './restaurant/views/page-not-found-view/page-not-found.component';
 import { SingleDishViewComponent } from './restaurant/views/single-dish-view/single-dish-view.component';
-
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire/compat";
 
 const appRoutes: Routes = [
   {path: '',component:HomeViewComponent},
@@ -68,7 +70,9 @@ const appRoutes: Routes = [
     FormsModule,
     Ng5SliderModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [DishListService,CheckoutAndCurrenciesService,FilterDishesPipe],
   bootstrap: [AppComponent]

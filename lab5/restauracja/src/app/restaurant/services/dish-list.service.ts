@@ -1,11 +1,14 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Dish} from "../interfaces/dish.module";
 @Injectable({
   providedIn: 'root'
 })
-export class DishListService {
-  newId: number = 12
+export class DishListService{
 
+  constructor() {
+  }
+
+  newId: number = 11
   myDishes: Dish[] = [
     new Dish([],1,0,10, "Żurek", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "kiełbaska"], 10, 10, "Pyszna zupka jak u babci", "https://drive.google.com/uc?export=view&id=1DtLgpxMRfkAf7Wy_uxbxrejVlGf1kKMZ")
     , new Dish([],1,1,8, "Pomidorowa", "Polska", 'Zupa', ["kostka rosołowa", "troche wody", "przyprawy", "pomidory", "makaron"], 8, 9, "Trochę czuć koncentrat", "https://drive.google.com/uc?export=view&id=1yWarxZGHb8dkQR-VYaYj-UYtnVG20SS_")
@@ -17,9 +20,8 @@ export class DishListService {
     , new Dish([],1,7,100, "McChicken", "Amerykańska", 'Burger', ["soja", "więcej soji", "jeszcze trochę soji"], 100, 2, "Trzeba być mocno głodnym", "https://drive.google.com/uc?export=view&id=1Hnp0vnfsFpeJZyBbwvF3JiJMgbmHeEbq")
     , new Dish([],1,8,12, "Lody włoskie", "Włoska", 'Lody', ["śmietana", "rożek", "polewa"], 12, 1, "Smak wakacji", "https://drive.google.com/uc?export=view&id=1IQSfwVF08FEIpxoUDLUSwUT4hL-XcuT7")
     , new Dish([],1,9,7, "Świderek", "Polska", 'Lody', ["śmietana", "wafel", "chefs-kiss"], 7, 3, "Najlepsze lody <3", "https://drive.google.com/uc?export=view&id=1ehmHPZUmame5KcXEHOJgFEcDFxakz6yp")
-    , new Dish([],1,10,10000, "Jakiś ślimak", "Francuska", 'Inne', ["ślimak", "woda do wypłukania ust"], 10000, 80, "Fuj", "https://drive.google.com/uc?export=view&id=1gXK1LdlI3S3NCq7G4ThZUHUZqVAzDiDG")
-    , new Dish([],1,11,100, "French fries", "Francuska", 'Frytki', ["ziemniaki"], 100, 4, "Fajne fryteczki bardzo", "https://drive.google.com/uc?export=view&id=1jSdgmLTgaPpwBwrGbZMO01H3ssZLYxVy")
-    , new Dish([],1,12,1001, "American fries", "Amerykańska", 'Frytki', ["ziemniaki"], 1001, 7, "OK", "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR")
+    , new Dish([],1,10,100, "French fries", "Francuska", 'Frytki', ["ziemniaki"], 100, 4, "Fajne fryteczki bardzo", "https://drive.google.com/uc?export=view&id=1jSdgmLTgaPpwBwrGbZMO01H3ssZLYxVy")
+    , new Dish([],1,11,1001, "American fries", "Amerykańska", 'Frytki', ["ziemniaki"], 1001, 7, "OK", "https://drive.google.com/uc?export=view&id=1yhruWNdrfiHa-Q3hETBtVX6wCJtiSrqR")
   ]
 
 
@@ -37,12 +39,9 @@ export class DishListService {
     [9,this.myDishes[9].price],
     [10,this.myDishes[10].price],
     [11,this.myDishes[11].price],
-    [12,this.myDishes[12].price]
     ].sort((a, b) => a[1] > b[1] && 1 || -1)
-  constructor() { }
 
   dishTypes:string[] = [
-    'Inne',
     'Frytki',
     'Lody',
     'Zupa',

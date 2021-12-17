@@ -1,0 +1,10 @@
+{
+  "dishTypes": [
+    "Frytki",
+    "Lody",
+    "Zupa",
+    "Pizza",
+    "Makaron",
+    "Burger"
+  ]
+}
