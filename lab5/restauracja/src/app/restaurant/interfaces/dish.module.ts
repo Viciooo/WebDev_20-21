@@ -1,7 +1,7 @@
 import {Review} from "./review.module";
 
 export class Dish {
-  constructor(public reviews:Review[],
+  constructor(public review:Review[],
               public rating: number,
               public id: number,
               public maxAmt: number,
@@ -12,5 +12,5 @@ export class Dish {
               public amount: number,
               public price: number,
               public description: string,
-              public imgPath: string) {}
+              public imgPath: string[]) {}
 }

@@ -1,4 +1,4 @@
-import { Sudent, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../services/student.service';
 import { map } from 'rxjs/operators';
 
@@ -18,7 +18,7 @@ export class StudentsListComponent implements OnInit {
   }
 
   getStudentsList() {
- 
+
   }
 
   deleteStudents() {

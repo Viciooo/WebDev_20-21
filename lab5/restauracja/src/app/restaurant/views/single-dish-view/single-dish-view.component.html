@@ -1,38 +1,38 @@
 <div class="container">
-<!--  <div class="box-and-form-holder">-->
+  <div class="box-and-form-holder">
     <div class="box">
       <div class="dish-details">
         <div class="img-box">
           <section>
             <picture>
               <img
-                src="{{myDish.imgPath}}"
+                src="{{getMyDish().imgPath[0]}}"
                 alt="1"
               />
             </picture>
             <picture>
               <img
-                src="{{myDish.imgPath}}"
+                src="{{getMyDish().imgPath[0]}}"
                 alt="2"
               />
             </picture>
             <picture>
               <img
-                src="{{myDish.imgPath}}"
+                src="{{getMyDish().imgPath[0]}}"
                 alt="3"
               />
             </picture>
           </section>
         </div>
         <div class="generalInfo">
-          <h1>{{myDish.name | uppercase}}</h1>
-          <h2>Kuchnia: {{myDish.cuisine | uppercase}}</h2>
-          <h2>Rodzaj dania: {{myDish.dishType | lowercase}}</h2>
+          <h1>{{getMyDish().name | uppercase}}</h1>
+          <h2>Kuchnia: {{getMyDish().cuisine | uppercase}}</h2>
+          <h2>Rodzaj dania: {{getMyDish().dishType | lowercase}}</h2>
         </div>
         <div class="ingredients">
           <h2>Skła<span>dniki</span></h2>
           <ul>
-            <li *ngFor="let item of myDish.ingredients">{{item}}</li>
+            <li *ngFor="let item of getMyDish().ingredients">{{item}}</li>
           </ul>
         </div>
         <div class="info">
@@ -40,16 +40,16 @@
         </div>
         <div class="description">
           <h2>OPIS</h2>
-          <p>"{{myDish.description}}"</p>
+          <p>"{{getMyDish().description}}"</p>
         </div>
         <div class="amount">
           <h2>Dostępna ilość:</h2>
           <h4>
-            {{myDish.amount}}
+            {{getMyDish().amount}}
           </h4>
 
-          <button class="plus" (click)="takeItem(myDish)" [disabled]="myDish.amount===0">+</button>
-          <button class="minus" (click)="returnItem(myDish)" [disabled]="myDish.amount===myDish.maxAmt">-</button>
+          <button class="plus" (click)="takeItem(getMyDish())" [disabled]="getMyDish().amount===0">+</button>
+          <button class="minus" (click)="returnItem(getMyDish())" [disabled]="getMyDish().amount=== getMyDish().maxAmt">-</button>
 
         </div>
 
@@ -58,7 +58,7 @@
             <h2>
               Price
               <span>
-          {{ myDish.price }}
+          {{ getMyDish().price }}
         </span>
 
 
@@ -69,35 +69,35 @@
 
           <div class="stars">
             <div class="stars">
-              <i *ngIf="myDish.rating < 1;else fullStar1"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(1,myDish)"></i>
+              <i *ngIf="getMyDish().rating < 1;else fullStar1"
+                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(1,getMyDish())"></i>
               <ng-template #fullStar1>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(1,myDish)"></i>
+                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(1,getMyDish())"></i>
               </ng-template>
 
-              <i *ngIf="myDish.rating < 2;else fullStar2"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(2,myDish)"></i>
+              <i *ngIf="getMyDish().rating < 2;else fullStar2"
+                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(2,getMyDish())"></i>
               <ng-template #fullStar2>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(2,myDish)"></i>
+                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(2,getMyDish())"></i>
               </ng-template>
 
-              <i *ngIf="myDish.rating < 3;else fullStar3"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(3,myDish)"></i>
+              <i *ngIf="getMyDish().rating < 3;else fullStar3"
+                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(3,getMyDish())"></i>
               <ng-template #fullStar3>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(3,myDish)"></i>
+                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(3,getMyDish())"></i>
               </ng-template>
 
 
-              <i *ngIf="myDish.rating < 4;else fullStar4"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(4,myDish)"></i>
+              <i *ngIf="getMyDish().rating < 4;else fullStar4"
+                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(4,getMyDish())"></i>
               <ng-template #fullStar4>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(4,myDish)"></i>
+                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(4,getMyDish())"></i>
               </ng-template>
 
-              <i *ngIf="myDish.rating < 5;else fullStar5"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(5,myDish)"></i>
+              <i *ngIf="getMyDish().rating < 5;else fullStar5"
+                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(5,getMyDish())"></i>
               <ng-template #fullStar5>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(5,myDish)"></i>
+                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(5,getMyDish())"></i>
               </ng-template>
             </div>
           </div>
@@ -138,7 +138,7 @@
   </div>
 
   <div class="existing-reviews">
-    <div class="review" *ngFor="let review of dishService.myDishes[dishId].reviews">
+    <div class="review" *ngFor="let review of myReviews">
       <h1>{{review.title}}</h1>
       <p>"{{review.content}}"</p>
       <h2>{{review.nick}}</h2>
@@ -149,3 +149,4 @@
       <i class="fa fa-long-arrow-left" aria-hidden="true">Go Back to Menu</i>
     </a>
   </div>
+</div>

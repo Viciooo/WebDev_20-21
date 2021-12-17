@@ -14,4 +14,8 @@
 - no info
 
 ## Zad6
-- no info
+- naprawić ceny
+  - dishes
+  - single component
+- formularz do dodawania 
+- 
