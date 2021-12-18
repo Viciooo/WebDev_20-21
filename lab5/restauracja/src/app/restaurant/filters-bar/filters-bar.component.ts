@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DishListService} from "../services/dish-list.service";
-import { Options } from 'ng5-slider';
 import { CheckoutAndCurrenciesService } from "../services/checkout-and-currencies.service";
+import {DataService} from "../services/data.service";
+import {Dish} from "../interfaces/dish.module";
 
 @Component({
   selector: 'app-filters-bar',
@@ -9,13 +10,28 @@ import { CheckoutAndCurrenciesService } from "../services/checkout-and-currencie
   styleUrls: ['./filters-bar.component.css']
 })
 export class FiltersBarComponent implements OnInit {
-
-  constructor(public dishesService:DishListService, public moneyItemHandler:CheckoutAndCurrenciesService) { }
-
+  myDishes: any = [];
+  myDishTypes: any = [];
+  myCuisineTypes: any = [];
+  constructor(private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
 
   ngOnInit(): void {
+    this.dataService.getDishList()
+      .subscribe((e) => this.myDishes = e);
+    this.dataService.getDishTypes()
+      .subscribe((e) => this.myDishTypes = e);
+    this.dataService.getCuisineTypes()
+      .subscribe((e) => this.myCuisineTypes = e);
   }
 
+  ngOnChanges() {
+    this.dataService.getDishList()
+      .subscribe((e) => this.myDishes = e);
+    this.dataService.getDishTypes()
+      .subscribe((e) => this.myDishTypes = e);
+    this.dataService.getCuisineTypes()
+      .subscribe((e) => this.myCuisineTypes = e);
+  }
   resetAllCheckboxes() {
     this.dishesService.cuisineTypesSelected = Array(this.dishesService.cuisineTypesSelected.length).fill(0)
     this.dishesService.dishTypesSelected = Array(this.dishesService.dishTypesSelected.length).fill(0)
@@ -23,6 +39,5 @@ export class FiltersBarComponent implements OnInit {
     this.dishesService.prices[2] = this.dishesService.prices[0]
     this.dishesService.prices[3] = this.dishesService.prices[1]
   }
-
 
 }

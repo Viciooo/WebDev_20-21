@@ -1,10 +1,10 @@
 <div class="container">
   <div class="box" *ngFor="let myDish of this.myDishes
-  | filterDishes :c(dishesService.dishTypesSelected):c(dishesService.dishTypes):sum(dishesService.dishTypesSelected)
-  | filterCuisinesPipe :c(dishesService.cuisineTypesSelected) : c(dishesService.cuisineTypes): sum(dishesService.cuisineTypesSelected)
-  | starsPipe :c(dishesService.starsSelected):sum(dishesService.starsSelected)
-  | pricePipe :dishesService.prices[2]:dishesService.prices[3]
-  ">
+">
+<!--    // | filterDishes :c(dishesService.dishTypesSelected):myDishTypes:sum(dishesService.dishTypesSelected)-->
+<!--    // | filterCuisinesPipe :c(dishesService.cuisineTypesSelected) : myCuisineTypes: sum(dishesService.cuisineTypesSelected)-->
+<!--    // | starsPipe :c(dishesService.starsSelected):sum(dishesService.starsSelected)-->
+<!--    // | pricePipe :dishesService.prices[2]:dishesService.prices[3]-->
     <div class="delete-btn">
       <i class="fa fa-times" aria-hidden="true" (click)="deleteElement(myDish)"></i>
     </div>
@@ -19,19 +19,7 @@
       <h2>Kuchnia: {{myDish.cuisine | uppercase}}</h2>
       <h2>Rodzaj dania: {{myDish.dishType | lowercase}}</h2>
     </div>
-<!--    <div class="ingredients">-->
-<!--      <h2>Skła<span>dniki</span></h2>-->
-<!--      <ul>-->
-<!--        <li *ngFor="let item of myDish.ingredients">{{item}}</li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--    <div class="info">-->
 
-<!--    </div>-->
-<!--    <div class="description">-->
-<!--      <h2>OPIS</h2>-->
-<!--      <p>"{{myDish.description}}"</p>-->
-<!--    </div>-->
     <div class="details" (click)="goToDetails(myDish.id)">
       <i class="fa fa-info-circle" aria-hidden="true"> See more</i>
     </div>
@@ -105,4 +93,5 @@
       </div>
     </div>
     </div>
+<!--  <button (click)="test()">test</button>-->
   </div>

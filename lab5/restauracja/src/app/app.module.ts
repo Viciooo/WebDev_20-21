@@ -30,6 +30,7 @@ import { SingleDishViewComponent } from './restaurant/views/single-dish-view/sin
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire/compat";
+import {DataService} from "./restaurant/services/data.service";
 
 const appRoutes: Routes = [
   {path: '',component:HomeViewComponent},
@@ -74,7 +75,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [DishListService,CheckoutAndCurrenciesService,FilterDishesPipe],
+  providers: [DishListService,CheckoutAndCurrenciesService,FilterDishesPipe,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

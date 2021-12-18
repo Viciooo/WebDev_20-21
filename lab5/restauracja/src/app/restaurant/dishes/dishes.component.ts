@@ -107,14 +107,14 @@ export class DishesComponent implements OnInit,OnChanges{
     })
 
     if(itsLastDishOfThisType){
-      let idx = this.dishesService.dishTypes.indexOf(thisDishType)
-      this.dishesService.dishTypes.splice(idx, 1);
+      let idx = this.myDishTypes.indexOf(thisDishType)
+      this.dataService.removeDishType(thisDishType)
       this.dishesService.dishTypesSelected.splice(idx, 1);
     }
 
     if(itsLastCuisineOfThisType){
-      let idx = this.dishesService.cuisineTypes.indexOf(thisCuisineType)
-      this.dishesService.cuisineTypes.splice(idx, 1);
+      let idx = this.myCuisineTypes.indexOf(thisCuisineType)
+      this.dataService.removeCuisineType(thisCuisineType);
       this.dishesService.cuisineTypesSelected.splice(idx, 1);
     }
 
@@ -152,4 +152,7 @@ export class DishesComponent implements OnInit,OnChanges{
     this.router.navigate(['/menu',id])
   }
 
+  // test() {
+  //   console.log(this.dishesService.cuisineTypesSelected)
+  // }
 }

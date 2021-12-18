@@ -15,6 +15,8 @@ export class DataService {
     this.dishTypes = this.getDishTypes()
     this.cuisineTypes = this.getCuisineTypes()
   }
+
+
   getDishList(){
     return this.db.list('dishList').valueChanges();
   }
