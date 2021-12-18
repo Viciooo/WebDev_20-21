@@ -3,7 +3,7 @@
     <h1>Type of dish</h1>
     <div class="box" *ngFor="let dishType of myDishTypes;let x = index">
       <input type="checkbox" value="{{dishType}}" id="{{dishType}}"
-             (change) = "dishesService.dishTypesSelected[x] = (dishesService.dishTypesSelected[x] + 1) % 2">
+             (change) = "dishesService.changeDishTypesSelected(x)">
       <label for="{{dishType}}">{{dishType}}</label>
     </div>
   </div>
@@ -12,7 +12,7 @@
     <h1>Type of cuisine</h1>
     <div class="box" *ngFor="let cuisineType of myCuisineTypes;let x = index">
       <input type="checkbox" value="{{cuisineType}}" id="{{cuisineType}}"
-             (change) = "dishesService.cuisineTypesSelected[x] = (dishesService.cuisineTypesSelected[x] + 1) % 2">
+             (change) = "dishesService.changeCuisineTypesSelected(x)">
       <label for="{{cuisineType}}">{{cuisineType}}</label>
     </div>
   </div>
@@ -21,7 +21,7 @@
     <h1>Rating in stars</h1>
     <div class="box" *ngFor="let item of [].constructor(5); let x = index">
       <input type="checkbox" value="{{x}}" id="{{x}}"
-             (change) = "dishesService.starsSelected[x] = (dishesService.starsSelected[x] + 1) % 2">
+             (change) = "dishesService.changeStarsSelected(x)">
       <label for="{{x}}">
         <i class="fa fa-star" aria-hidden="true" *ngFor="let item of [].constructor(x+1)"></i>
       </label>
@@ -31,15 +31,15 @@
   <div class="item prices">
     <h1>Select the price</h1>
     <h2>Price is in <span>{{moneyItemHandler.currency}}</span></h2>
-    <ng5-slider [(value)]="dishesService.prices[2]" [(highValue)]="dishesService.prices[3]"
+    <ng5-slider (change)="dishesService.changePrices(prices)" [(value)]="prices[2]" [(highValue)]="prices[3]"
                 [options]="{
-    floor: dishesService.prices[0],
-    ceil: dishesService.prices[1]
+    floor: prices[0],
+    ceil: prices[1]
   }"></ng5-slider>
     <button class="reset" type="reset" (click)="resetAllCheckboxes()">Clear all filters</button>
   </div>
 
-  <div class="hideAll" (click)="dishesService.displayFilters ==='none' ? dishesService.displayFilters ='flex' : dishesService.displayFilters ='none'">
+  <div class="hideAll" (click)="dishesService.changeDisplayFilters()">
     <i class="fa fa-chevron-up" aria-hidden="true"></i>
   </div>
 

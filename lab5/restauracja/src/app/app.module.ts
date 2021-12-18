@@ -75,6 +75,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
+  //potential problem
   providers: [DishListService,CheckoutAndCurrenciesService,FilterDishesPipe,DataService],
   bootstrap: [AppComponent]
 })

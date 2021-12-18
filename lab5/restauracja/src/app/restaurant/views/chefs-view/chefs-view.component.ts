@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, Validators} from "@angular/forms";
 import {DishListService} from "../../services/dish-list.service";
 import {Dish} from "../../interfaces/dish.module";
+import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-chefs-view',
@@ -12,8 +13,11 @@ import {Dish} from "../../interfaces/dish.module";
 export class ChefsViewComponent implements OnInit{
   //@ts-ignore
   dishForm : FormGroup;
+  myDishes: any = [];
+  myDishTypes: any = [];
+  myCuisineTypes: any = [];
 
-  constructor(private formBuilder : FormBuilder,public dishesService:DishListService) {}
+  constructor(private formBuilder : FormBuilder,public dishesService:DishListService,private dataService:DataService) {}
 
   ngOnInit() : void {
     this.dishForm = this.formBuilder.group({
@@ -26,6 +30,14 @@ export class ChefsViewComponent implements OnInit{
       'imgPath': ['', Validators.required],
       'ingredients': new FormArray([],[Validators.required,Validators.minLength(2)])
     });
+
+      this.dataService.getDishList()
+        .subscribe((e) => this.myDishes = e);
+      this.dataService.getDishTypes()
+        .subscribe((e) => this.myDishTypes = e);
+      this.dataService.getCuisineTypes()
+        .subscribe((e) => this.myCuisineTypes = e);
+
   }
   onSubmit() {
     let newDish = new Dish(
@@ -42,17 +54,19 @@ export class ChefsViewComponent implements OnInit{
       (<FormArray>this.dishForm.get('description')).value,
       (<FormArray>this.dishForm.get('imgPath')).value,
     )
-    this.dishesService.myDishes.push(newDish)
+    // this.dishesService.myDishes.push(newDish)
     this.dishesService.priceList.push([this.dishesService.newId,newDish.price])
     this.dishesService.priceList.sort((a, b) => a[1] > b[1] && 1 || -1)
     this.dishesService.newId++
 
     if(this.dishesService.dishTypes.indexOf((<FormArray>this.dishForm.get('dishType')).value) === -1){
-      this.dishesService.dishTypes.push((<FormArray>this.dishForm.get('dishType')).value)
+      // this.dishesService.dishTypes.push((<FormArray>this.dishForm.get('dishType')).value)
+      this.dataService.pushDishType((<FormArray>this.dishForm.get('dishType')).value)
       this.dishesService.dishTypesSelected.push(0)
     }
     if(this.dishesService.cuisineTypes.indexOf((<FormArray>this.dishForm.get('cuisine')).value) === -1){
-      this.dishesService.cuisineTypes.push((<FormArray>this.dishForm.get('cuisine')).value)
+      // this.dishesService.cuisineTypes.push((<FormArray>this.dishForm.get('cuisine')).value)
+      this.dataService.pushCuisineType((<FormArray>this.dishForm.get('cuisine')).value)
       this.dishesService.cuisineTypesSelected.push(0)
     }
 
@@ -64,6 +78,8 @@ export class ChefsViewComponent implements OnInit{
       this.dishesService.prices[1] = (<FormArray>this.dishForm.get('price')).value
       this.dishesService.prices[3] = (<FormArray>this.dishForm.get('price')).value
     }
+    this.dataService.pushDish(newDish)
+
     this.dishForm.reset()
   }
 

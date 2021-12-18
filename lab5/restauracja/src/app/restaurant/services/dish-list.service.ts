@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Dish} from "../interfaces/dish.module";
 import {DataService} from "./data.service";
+import {Observable, of} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
@@ -13,10 +14,10 @@ export class DishListService{
     this.db.getDishTypes().subscribe(e=>this.dishTypes = e)
     this.db.getCuisineTypes().subscribe(e=>this.cuisineTypes = e)
   }
-  dishTypesSelected:number[] = Array(this.dishTypes.length).fill(0)
-  cuisineTypesSelected:number[] = Array(this.cuisineTypes.length).fill(0)
-  starsSelected:number[] = Array(6).fill(0)
-  displayFilters:string = 'none'
+  dishTypesSelected = Array(this.dishTypes.length).fill(0)
+  cuisineTypesSelected = Array(this.cuisineTypes.length).fill(0)
+  starsSelected = Array(6).fill(0)
+  displayFilters = 'none'
   //potentially not true
   newId = this.myDishes.length
   populatePriceList(){
@@ -27,29 +28,66 @@ export class DishListService{
     })
     return tmp
   }
-  priceList: number[][] = this.populatePriceList()
+  priceList = this.populatePriceList()
 
   calcMax(){
-    let val = -1
-    this.priceList.forEach(e=>{
-      val = Math.max(val,e[1])
-    })
-    return val
+    // let val = -1
+    // this.priceList.forEach(e=>{
+    //   val = Math.max(val,e[1])
+    // })
+    return 1000
   }
 
   calcMin(){
-    let val = 1000000
-    this.priceList.forEach(e=>{
-      val = Math.min(val,e[1])
-    })
-    return val
+    // let val = 1000000
+    // this.priceList.forEach(e=>{
+    //   val = Math.min(val,e[1])
+    // })
+    return 1
   }
 
-  prices:number[] = [
+  prices = [
     this.calcMin(),
     this.calcMax(),
     this.calcMin(),
     this.calcMax()
   ]
 
+  getDishTypesSelected(): Observable<any>{
+    return of(this.dishTypesSelected)
+  }
+  getCuisineTypesSelected(): Observable<any>{
+    return of(this.cuisineTypesSelected)
+  }
+  getStarsSelected(): Observable<any>{
+    return of(this.starsSelected)
+  }
+  getPrices(): Observable<any>{
+    return of(this.prices)
+  }
+  getPriceList(): Observable<any>{
+    return of(this.priceList)
+  }
+  getDisplayFilters(): Observable<any>{
+    return of(this.displayFilters)
+  }
+  changeDishTypesSelected(x:number){
+    this.dishTypesSelected[x] = (this.dishTypesSelected[x] + 1) % 2
+  }
+  changeCuisineTypesSelected(x:number){
+    this.cuisineTypesSelected[x] = (this.cuisineTypesSelected[x] + 1) % 2
+  }
+  changeStarsSelected(x:number){
+    this.starsSelected[x] = (this.starsSelected[x] + 1) % 2
+  }
+  changeDisplayFilters(){
+    if(this.displayFilters === 'none')this.displayFilters = 'flex'
+    else{
+      this.displayFilters ='none'
+    }
+
+  }
+  changePrices(prices:number[]){
+    this.prices = prices
+  }
 }

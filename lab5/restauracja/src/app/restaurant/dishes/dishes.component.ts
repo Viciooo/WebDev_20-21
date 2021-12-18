@@ -15,6 +15,13 @@ export class DishesComponent implements OnInit,OnChanges{
   myDishes: any = [];
   myDishTypes: any = [];
   myCuisineTypes: any = [];
+  dishTypesSelected: any = []
+  cuisineTypesSelected: any = []
+  starsSelected: any = []
+  priceList: any = []
+  prices: any = []
+  displayFilters: any
+
   constructor(private router:Router,private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
 
   ngOnInit(): void {
@@ -24,6 +31,13 @@ export class DishesComponent implements OnInit,OnChanges{
       .subscribe((e) => this.myDishTypes = e);
     this.dataService.getCuisineTypes()
       .subscribe((e) => this.myCuisineTypes = e);
+
+    this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
+    this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
+    this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
+    this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
+    this.dishesService.getPrices().subscribe(e=> this.prices = e)
+    this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
   }
 
   ngOnChanges() {
@@ -33,6 +47,12 @@ export class DishesComponent implements OnInit,OnChanges{
       .subscribe((e) => this.myDishTypes = e);
     this.dataService.getCuisineTypes()
       .subscribe((e) => this.myCuisineTypes = e);
+    this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
+    this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
+    this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
+    this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
+    this.dishesService.getPrices().subscribe(e=> this.prices = e)
+    this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
   }
 
   takeItem(myDish: Dish) {
@@ -77,8 +97,8 @@ export class DishesComponent implements OnInit,OnChanges{
 
     //if the price is max typeOfPrice = 1  in between its 0 min its -1
     let typeOfPrice = 0
-    if(myDish.price === this.dishesService.prices[0]) typeOfPrice = -1
-    if(myDish.price === this.dishesService.prices[1]) typeOfPrice = 1
+    if(myDish.price === this.prices[0]) typeOfPrice = -1
+    if(myDish.price === this.prices[1]) typeOfPrice = 1
 
     let idx = this.getIdxInCheckoutList(myDish)
     if(idx !== -1){
@@ -91,15 +111,15 @@ export class DishesComponent implements OnInit,OnChanges{
     this.dataService.removeDish(myDish.name)
 
     let idxToRemove = this.getIdxInPriceList(myDish.id,myDish.price)
-    this.dishesService.priceList.splice(idxToRemove, 1);
+    // this.dishesService.priceList.splice(idxToRemove, 1);
 
     if(typeOfPrice === -1){
-      this.dishesService.prices[0] = this.dishesService.calcMin()
-      this.dishesService.prices[2] = this.dishesService.prices[0]
+      this.prices[0] = this.dishesService.calcMin()
+      this.prices[2] = this.prices[0]
     }
     else if(typeOfPrice === 1){
-      this.dishesService.prices[1] = this.dishesService.calcMax()
-      this.dishesService.prices[3] = this.dishesService.prices[1]
+      this.prices[1] = this.dishesService.calcMax()
+      this.prices[3] = this.prices[1]
     }
     this.myDishes.forEach((e: Dish)=>{
       if(e.dishType.toLowerCase() === thisDishType.toLowerCase()) itsLastDishOfThisType = false
@@ -109,13 +129,13 @@ export class DishesComponent implements OnInit,OnChanges{
     if(itsLastDishOfThisType){
       let idx = this.myDishTypes.indexOf(thisDishType)
       this.dataService.removeDishType(thisDishType)
-      this.dishesService.dishTypesSelected.splice(idx, 1);
+      // this.dishesService.dishTypesSelected.splice(idx, 1);
     }
 
     if(itsLastCuisineOfThisType){
       let idx = this.myCuisineTypes.indexOf(thisCuisineType)
       this.dataService.removeCuisineType(thisCuisineType);
-      this.dishesService.cuisineTypesSelected.splice(idx, 1);
+      // this.dishesService.cuisineTypesSelected.splice(idx, 1);
     }
 
 
@@ -123,12 +143,12 @@ export class DishesComponent implements OnInit,OnChanges{
 
   getIdxInPriceList(idxInMyDishes:number,priceInMyDishes:number){
     if(this.moneyItemHandler.currency === "$"){
-      return this.dishesService.priceList.findIndex(
-        (element) =>element.toString() === [idxInMyDishes,priceInMyDishes].toString())
+      return this.priceList.findIndex(
+        (element: { toString: () => string; }) =>element.toString() === [idxInMyDishes,priceInMyDishes].toString())
     }
     else{
-      return this.dishesService.priceList.findIndex(
-        (element) =>element.toString() === [idxInMyDishes,priceInMyDishes/this.moneyItemHandler.exchangeRate].toString())
+      return this.priceList.findIndex(
+        (element: { toString: () => string; }) =>element.toString() === [idxInMyDishes,priceInMyDishes/this.moneyItemHandler.exchangeRate].toString())
     }
 
   }
@@ -152,7 +172,7 @@ export class DishesComponent implements OnInit,OnChanges{
     this.router.navigate(['/menu',id])
   }
 
-  // test() {
-  //   console.log(this.dishesService.cuisineTypesSelected)
-  // }
+  test() {
+    console.log(this.dishesService.priceList)
+  }
 }
