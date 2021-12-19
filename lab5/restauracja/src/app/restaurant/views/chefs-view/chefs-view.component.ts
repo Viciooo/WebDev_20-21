@@ -28,7 +28,7 @@ export class ChefsViewComponent implements OnInit{
       'dishType': ['', [Validators.required, Validators.minLength(2)]],
       'price': ['', [Validators.required,Validators.min(1),Validators.max(1000)]],
       'description': ['', [Validators.required, Validators.minLength(2)]],
-      'imgPath': ['', Validators.required],
+      'imgPath': ['', [Validators.required,Validators.minLength(5)]],
       'ingredients': new FormArray([],[Validators.required,Validators.minLength(2)])
     });
 

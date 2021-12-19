@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Dish} from "../interfaces/dish.module";
 import {DataService} from "./data.service";
-import {Observable, of} from "rxjs";
-import {Options} from "ng5-slider";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,9 +13,7 @@ export class DishListService{
   newId: number = 0
   priceList: any[] = []
   prices: any[] = []
-  // value: any
-  // highValue: any
-  // options: any
+
   constructor(private db: DataService) {
     this.db.dishList.subscribe(e=> {
       this.myDishes = e
@@ -29,12 +25,6 @@ export class DishListService{
         this.calcMin(),
         this.calcMax()
       ]
-      // this.value = this.prices[2];
-      // this.highValue= this.prices[3];
-      // this.options = {
-      //   floor: this.prices[0],
-      //   ceil: this.prices[1]
-      // };
     })
     this.db.dishTypes.subscribe(e=> {
       this.dishTypes = e

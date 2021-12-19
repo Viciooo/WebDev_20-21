@@ -2,21 +2,16 @@
 
 # Todos
 
-## Zad3
-- formularz recenzji
-  - obsługa błędów !!!
-
 ## Zad4
-- last minute to gotowe rozwiązanie jest na yt gdzieś
+- dopracować
+  - nie aktualizuje zmiany ilości stron po zaznaczeniu filtru
 
 ## Zad5
 - no info
 
 ## Zad6
   - kolory cen się nie zmieniają
-  - slider nie działa 
-  
-  
+  - slider nie działa
 
 # odśmiecanie
 # rzeczy się nie skaluja perfekcyjnie

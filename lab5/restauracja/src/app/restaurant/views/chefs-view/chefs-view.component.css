@@ -57,6 +57,9 @@ span{
   color: var(--span-color);
 }
 
+.error{
+  font-size: var(--font-size-medium);
+}
 
 h1, h2, h3{
   font-family: var(--main-font);

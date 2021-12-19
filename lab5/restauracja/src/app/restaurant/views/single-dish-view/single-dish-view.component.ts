@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {DishListService} from "../../services/dish-list.service";
 import {CheckoutAndCurrenciesService} from "../../services/checkout-and-currencies.service";
@@ -13,11 +13,10 @@ import {DataService} from "../../services/data.service";
   templateUrl: './single-dish-view.component.html',
   styleUrls: ['./single-dish-view.component.css']
 })
-export class SingleDishViewComponent implements OnInit, OnChanges {
+export class SingleDishViewComponent implements OnInit {
   dishId: number = -1
   //@ts-ignore
   reviewForm: FormGroup
-  myDishes: any = [];
   myReviews: Review[] = []
 
   constructor(private formBuilder: FormBuilder,
@@ -28,8 +27,6 @@ export class SingleDishViewComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.dataService.dishList
-      .subscribe((e) => this.myDishes = e);
     this.dishId = parseInt(<string>this.route.snapshot.paramMap.get('id'))
     this.reviewForm = this.formBuilder.group({
       'nick': ['', [Validators.required, Validators.minLength(3)]],
@@ -40,14 +37,11 @@ export class SingleDishViewComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnChanges() {
-    this.dataService.dishList
-      .subscribe((e) => this.myDishes = e);
-  }
+
 
   getMyDish() {
     let tmp: Dish
-    this.myDishes.forEach((dish: Dish) => {
+    this.dishService.myDishes.forEach((dish: Dish) => {
       if (dish.id === this.dishId) {
         tmp = dish
       }
@@ -102,6 +96,5 @@ export class SingleDishViewComponent implements OnInit, OnChanges {
     )
     this.myReviews.push(newReview)
     this.reviewForm.reset()
-    //  to be continued
   }
 }

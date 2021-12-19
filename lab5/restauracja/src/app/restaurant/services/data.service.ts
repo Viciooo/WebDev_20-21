@@ -26,13 +26,6 @@ export class DataService {
       })
     }));
   }
-  // getSnap(){
-  //   return this.db.list('dishList').snapshotChanges();
-  // }
-
-  // getDishList(){
-  //   return this.db.list('dishList').valueChanges();
-  // }
 
   getDishTypes() {
     return  this.db.list('dishTypes').valueChanges();

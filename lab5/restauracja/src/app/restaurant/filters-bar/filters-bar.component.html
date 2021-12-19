@@ -29,11 +29,11 @@
   </div>
 
   <div class="item prices">
-    <h1>Select the price</h1>
+    <h1>Select the price {{dishesService.prices}}</h1>
     <h2>Price is in <span>{{moneyItemHandler.currency}}</span></h2>
     <ng5-slider   [(value)]="dishesService.prices[2]" [(highValue)]="dishesService.prices[3]" [options]="{
-    floor: dishesService.prices[0],
-    ceil: dishesService.prices[1]
+    floor: dishesService.prices[0] + 0,
+    ceil:  dishesService.prices[1] + 0
     }"></ng5-slider>
     <button class="reset" type="reset" (click)="resetAllCheckboxes()">Clear all filters</button>
   </div>

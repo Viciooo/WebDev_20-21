@@ -9,7 +9,9 @@ import {DishListService} from "../../services/dish-list.service";
 })
 export class CheckoutViewComponent implements OnInit {
 
-  constructor(public moneyItemHandler: CheckoutAndCurrenciesService,public dishesService:DishListService,public checkoutService:CheckoutAndCurrenciesService) { }
+  constructor(public moneyItemHandler: CheckoutAndCurrenciesService,
+              public dishesService:DishListService,
+              public checkoutService:CheckoutAndCurrenciesService) { }
 
   ngOnInit(): void {
   }

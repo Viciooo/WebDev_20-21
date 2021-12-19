@@ -1,7 +1,20 @@
-<div id="container">
-  <div class = "section clickable" (click) = paginationService.pageFirst()>&#8810;</div>
-  <div class = "section clickable" (click) = paginationService.pagePrev()>&#60;</div>
-  <div class = "section">{{paginationService.currentPage}}/{{paginationService.getMaxPage()}}</div>
-  <div class = "section clickable" (click) = paginationService.pageNext()>&#62;</div>
-  <div class = "section clickable" (click) = paginationService.pageLast()>&#8811;</div>
+<div class="container">
+  <div class = "option" (click) = paginationService.pageFirst()>
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+  </div>
+  <div class = "option" (click) = paginationService.pagePrev()>
+    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+  </div>
+  <div class = "option">
+    {{paginationService.currentPage}}
+    <i class="fa fa-arrows-h" aria-hidden="true"></i>
+    {{paginationService.getMaxPage()}}</div>
+  <div class = "option" (click) = paginationService.pageNext()>
+    <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+  </div>
+  <div class = "option" (click) = paginationService.pageLast()>
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </div>
 </div>

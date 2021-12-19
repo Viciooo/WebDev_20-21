@@ -1,6 +1,6 @@
 
 
-import {Component, OnChanges, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Dish} from "../interfaces/dish.module";
 import { DishListService } from "../services/dish-list.service"
 import {CheckoutAndCurrenciesService} from "../services/checkout-and-currencies.service";
@@ -14,62 +14,13 @@ import {PaginationService} from "../services/pagination.service";
   templateUrl: './dishes.component.html',
   styleUrls: ['./dishes.component.css'],
 })
-export class DishesComponent implements OnInit,OnChanges{
-  // myDishes: any = [];
-  // myDishTypes: any = [];
-  // myCuisineTypes: any = [];
-  // dishTypesSelected: any = []
-  // cuisineTypesSelected: any = []
-  // starsSelected: any = []
-  // priceList: any = []
-  // prices: any = []
-  // displayFilters: any
-  //
-  // t:any
+export class DishesComponent{
 
   constructor(public paginationService:PaginationService,
               private router:Router,
               private dataService:DataService,
               public dishesService: DishListService,
-              public moneyItemHandler: CheckoutAndCurrenciesService) {
-
-  }
-
-  ngOnInit(): void {
-
-    // this.myDishes = this.paginationService.filteredDishes
-    // this.dataService.dishList
-    //   .subscribe((e) => this.myDishes = e);
-    // this.dataService.dishTypes
-    //   .subscribe((e) => this.myDishTypes = e);
-    // this.dataService.cuisineTypes
-    //   .subscribe((e) => this.myCuisineTypes = e);
-    //
-    // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
-    // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
-    // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
-    // this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
-    // this.dishesService.getPrices().subscribe(e=> this.prices = e)
-    // this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
-
-    // this.dataService.getSnap().subscribe(e=> this.t = e)
-  }
-
-  ngOnChanges() {
-    // this.myDishes = this.paginationService.filteredDishes
-    // this.dataService.getDishList()
-    //   .subscribe((e) => this.myDishes = e);
-    // this.dataService.getDishTypes()
-    //   .subscribe((e) => this.myDishTypes = e);
-    // this.dataService.getCuisineTypes()
-    //   .subscribe((e) => this.myCuisineTypes = e);
-    // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
-    // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
-    // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
-    // this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
-    // this.dishesService.getPrices().subscribe(e=> this.prices = e)
-    // this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
-  }
+              public moneyItemHandler: CheckoutAndCurrenciesService) {}
 
   takeItem(myDish: Dish) {
     this.dataService.amountChange(myDish.key, myDish.amount - 1)
@@ -85,11 +36,11 @@ export class DishesComponent implements OnInit,OnChanges{
       this.moneyItemHandler.checkoutList[idx].value += myDish.price
     }
   }
-  //
+
   getIdxInCheckoutList(myDish: Dish){
     return this.moneyItemHandler.checkoutList.findIndex((element) => element.id === myDish.id)
   }
-  //
+
   returnItem(myDish: Dish) {
     this.dataService.amountChange(myDish.key, myDish.amount + 1)
     this.moneyItemHandler.basketItems--
@@ -167,8 +118,6 @@ export class DishesComponent implements OnInit,OnChanges{
     }
 
   }
-
-
 
   goToDetails(id:number){
     this.router.navigate(['/menu',id])

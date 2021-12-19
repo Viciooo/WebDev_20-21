@@ -33,6 +33,7 @@ export class PaginationService {
 
 
   setDishes(){
+    console.log("aaa")
     const dishTypePipe = new FilterDishesPipe()
     const cuisineTypePipe = new FilterCuisinesPipe()
     const pricePipe = new PricePipe()
