@@ -4,7 +4,7 @@
   | filterCuisinesPipe : dishesService.cuisineTypes:dishesService.cuisineTypesSelected : dishesService.sum(dishesService.cuisineTypesSelected)
   | starsPipe : dishesService.starsSelected:dishesService.sum(dishesService.starsSelected)
   | pricePipe : dishesService.prices[2]:dishesService.prices[3]
-  | slice:(paginationService.currentPage-1)*paginationService.itemsAtOneTime:paginationService.currentPage*paginationService.itemsAtOneTime"
+  | slice:(paginationService.currentPage-1)*paginationService.itemsPerPage:paginationService.currentPage*paginationService.itemsPerPage"
 >
 
     <div class="delete-btn">
@@ -85,5 +85,5 @@
       </div>
     </div>
     </div>
-  <button (click)="paginationService.setDishes()">test</button>
+<!--  <button (click)="paginationService.setDishes()">test</button>-->
 </div>

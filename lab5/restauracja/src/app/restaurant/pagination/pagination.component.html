@@ -20,7 +20,7 @@
   <div class = "option">
     <form>
       <input #pagesNumber type="number" name="" id="pagesNumber" value="6">
-      <button type="submit" (click)="paginationService.itemsAtOneTime = +pagesNumber.value" >change pages number</button>
+      <button type="submit" (click)="paginationService.itemsPerPage = +pagesNumber.value" >change pages number</button>
     </form>
   </div>
 </div>

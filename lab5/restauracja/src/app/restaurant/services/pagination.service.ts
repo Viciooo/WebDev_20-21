@@ -12,7 +12,7 @@ import {DishListService} from "./dish-list.service";
 })
 export class PaginationService {
   currentPage: number = 1;
-  itemsAtOneTime: number = 6;
+  itemsPerPage: number = 6;
   filteredDishes: any[] = []
   availableDishes: any
   allDishes: any
@@ -63,7 +63,7 @@ export class PaginationService {
   }
 
   getMaxPage(){
-    return Math.ceil(this.availableDishes/this.itemsAtOneTime);
+    return Math.ceil(this.availableDishes/this.itemsPerPage);
   }
 
   pageNext(){
