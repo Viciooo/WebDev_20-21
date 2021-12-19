@@ -15,9 +15,9 @@ import {PaginationService} from "../services/pagination.service";
   styleUrls: ['./dishes.component.css'],
 })
 export class DishesComponent implements OnInit,OnChanges{
-  myDishes: any = [];
-  myDishTypes: any = [];
-  myCuisineTypes: any = [];
+  // myDishes: any = [];
+  // myDishTypes: any = [];
+  // myCuisineTypes: any = [];
   // dishTypesSelected: any = []
   // cuisineTypesSelected: any = []
   // starsSelected: any = []
@@ -27,17 +27,24 @@ export class DishesComponent implements OnInit,OnChanges{
   //
   // t:any
 
-  constructor(private paginationService:PaginationService,private router:Router,private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
+  constructor(public paginationService:PaginationService,
+              private router:Router,
+              private dataService:DataService,
+              public dishesService: DishListService,
+              public moneyItemHandler: CheckoutAndCurrenciesService) {
+
+  }
 
   ngOnInit(): void {
-    this.myDishes = this.paginationService.filteredDishes
+
+    // this.myDishes = this.paginationService.filteredDishes
     // this.dataService.dishList
     //   .subscribe((e) => this.myDishes = e);
-    this.dataService.dishTypes
-      .subscribe((e) => this.myDishTypes = e);
-    this.dataService.cuisineTypes
-      .subscribe((e) => this.myCuisineTypes = e);
-
+    // this.dataService.dishTypes
+    //   .subscribe((e) => this.myDishTypes = e);
+    // this.dataService.cuisineTypes
+    //   .subscribe((e) => this.myCuisineTypes = e);
+    //
     // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
     // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
     // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
@@ -49,13 +56,13 @@ export class DishesComponent implements OnInit,OnChanges{
   }
 
   ngOnChanges() {
-    this.myDishes = this.paginationService.filteredDishes
+    // this.myDishes = this.paginationService.filteredDishes
     // this.dataService.getDishList()
     //   .subscribe((e) => this.myDishes = e);
-    this.dataService.getDishTypes()
-      .subscribe((e) => this.myDishTypes = e);
-    this.dataService.getCuisineTypes()
-      .subscribe((e) => this.myCuisineTypes = e);
+    // this.dataService.getDishTypes()
+    //   .subscribe((e) => this.myDishTypes = e);
+    // this.dataService.getCuisineTypes()
+    //   .subscribe((e) => this.myCuisineTypes = e);
     // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
     // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
     // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
@@ -129,19 +136,19 @@ export class DishesComponent implements OnInit,OnChanges{
       this.dishesService.prices[1] = this.dishesService.calcMax()
       this.dishesService.prices[3] = this.dishesService.prices[1]
     }
-    this.myDishes.forEach((e: Dish)=>{
+    this.dishesService.myDishes.forEach((e: Dish)=>{
       if(e.dishType.toLowerCase() === thisDishType.toLowerCase()) itsLastDishOfThisType = false
       if(e.cuisine.toLowerCase() === thisCuisineType.toLowerCase()) itsLastCuisineOfThisType = false
     })
 
     if(itsLastDishOfThisType){
-      let idx = this.myDishTypes.indexOf(thisDishType)
+      let idx = this.dishesService.dishTypes.indexOf(thisDishType)
       this.dataService.removeDishType(thisDishType)
       // this.dishesService.dishTypesSelected.splice(idx, 1);
     }
 
     if(itsLastCuisineOfThisType){
-      let idx = this.myCuisineTypes.indexOf(thisCuisineType)
+      let idx = this.dishesService.cuisineTypes.indexOf(thisCuisineType)
       this.dataService.removeCuisineType(thisCuisineType);
       // this.dishesService.cuisineTypesSelected.splice(idx, 1);
     }
@@ -168,6 +175,6 @@ export class DishesComponent implements OnInit,OnChanges{
   }
 
   test() {
-    console.log(this.dishesService.prices)
+    // console.log(this.paginationService.filteredDishes)
   }
 }
