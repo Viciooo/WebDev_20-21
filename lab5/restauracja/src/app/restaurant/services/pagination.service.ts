@@ -59,12 +59,11 @@ export class PaginationService {
     } else if (this.currentPage <= 0 && this.getMaxPage() > 0){
       this.currentPage = 1;
     }
-    console.log("aaa",this.getMaxPage(),this.currentPage,this.filteredDishes,this.availableDishes)
 
   }
 
   getMaxPage(){
-    return Math.ceil(this.availableDishes/6);
+    return Math.ceil(this.availableDishes/this.itemsAtOneTime);
   }
 
   pageNext(){

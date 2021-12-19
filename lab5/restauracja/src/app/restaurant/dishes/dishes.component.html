@@ -44,19 +44,9 @@
       <div class="price">
         <h2>
           Price
-          <span *ngIf="getIdxInPriceList(myDish.id,myDish.price) === 0" [style.color]="'green'">
+          <span>
           {{ moneyItemHandler.getRealPrice(myDish.price) }}
         </span>
-
-          <span *ngIf="getIdxInPriceList(myDish.id,myDish.price) !== 0 && getIdxInPriceList(myDish.id,myDish.price) !== dishesService.myDishes.length"
-                [style.color]="'yellow'">
-          {{ moneyItemHandler.getRealPrice(myDish.price) }}
-        </span>
-
-          <span *ngIf="getIdxInPriceList(myDish.id,myDish.price) === dishesService.myDishes.length" [style.color]="'red'">
-          {{ moneyItemHandler.getRealPrice(myDish.price) }}
-        </span>
-
           {{moneyItemHandler.currency }}
         </h2>
 

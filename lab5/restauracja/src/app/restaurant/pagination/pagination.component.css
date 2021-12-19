@@ -23,4 +23,18 @@ i{
   transform: scale(1.2);
 }
 
+input{
+  font-size: var(--font-size-medium);
+  font-family: var(--main-font);
+  width: 2rem;
+  font-weight: bold;
+  color: var(--span-color);
+  margin-right: 1rem;
+}
+
+button{
+  font-size: var(--font-size-medium);
+  font-family: var(--main-font);
+  border-radius: var(--medium-border-radious);
+}
 
