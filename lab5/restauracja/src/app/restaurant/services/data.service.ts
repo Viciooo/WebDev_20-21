@@ -26,9 +26,9 @@ export class DataService {
       })
     }));
   }
-  getSnap(){
-    return this.db.list('dishList').snapshotChanges();
-  }
+  // getSnap(){
+  //   return this.db.list('dishList').snapshotChanges();
+  // }
 
   // getDishList(){
   //   return this.db.list('dishList').valueChanges();

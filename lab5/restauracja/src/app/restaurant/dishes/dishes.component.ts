@@ -29,11 +29,11 @@ export class DishesComponent implements OnInit,OnChanges{
   constructor(private router:Router,private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
 
   ngOnInit(): void {
-    this.dataService.getDishList()
+    this.dataService.dishList
       .subscribe((e) => this.myDishes = e);
-    this.dataService.getDishTypes()
+    this.dataService.dishTypes
       .subscribe((e) => this.myDishTypes = e);
-    this.dataService.getCuisineTypes()
+    this.dataService.cuisineTypes
       .subscribe((e) => this.myCuisineTypes = e);
 
     // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)

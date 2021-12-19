@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-slider/ngx-slider": "^2.0.3",
     "@angular/animations": "~13.0.0",
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
@@ -24,6 +25,7 @@
     "leaflet": "^1.7.1",
     "ng-multiselect-dropdown": "^0.3.7",
     "ng5-slider": "^1.2.6",
+    "ngx-pagination": "^5.1.1",
     "rxjs-compat": "^6.6.7",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"

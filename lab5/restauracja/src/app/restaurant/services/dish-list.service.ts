@@ -39,6 +39,7 @@ export class DishListService{
     this.db.getDishTypes().subscribe(e=> {
       this.dishTypes = e
       this.cuisineTypesSelected = Array(e.length).fill(0)
+
     })
     this.db.getCuisineTypes().subscribe(e=> {
       this.cuisineTypes = e

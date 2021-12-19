@@ -28,7 +28,7 @@ export class SingleDishViewComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.dataService.getDishList()
+    this.dataService.dishList
       .subscribe((e) => this.myDishes = e);
     this.dishId = parseInt(<string>this.route.snapshot.paramMap.get('id'))
     this.reviewForm = this.formBuilder.group({
@@ -41,7 +41,7 @@ export class SingleDishViewComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    this.dataService.getDishList()
+    this.dataService.dishList
       .subscribe((e) => this.myDishes = e);
   }
 

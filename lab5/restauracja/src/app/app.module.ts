@@ -31,6 +31,7 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire/compat";
 import {DataService} from "./restaurant/services/data.service";
+import { PaginationComponent } from './restaurant/pagination/pagination.component'
 
 const appRoutes: Routes = [
   {path: '',component:HomeViewComponent},
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     MapComponent,
     PageNotFoundComponent,
     SingleDishViewComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +75,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   //potential problem
   providers: [DishListService,CheckoutAndCurrenciesService,FilterDishesPipe,DataService],
