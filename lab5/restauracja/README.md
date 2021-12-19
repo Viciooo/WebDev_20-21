@@ -4,17 +4,20 @@
 
 ## Zad3
 - formularz recenzji
-  - obsługa błędów 
-    - jest na udemy
+  - obsługa błędów !!!
 
 ## Zad4
-- poszukać popytać kto ma kto wie
+- last minute to gotowe rozwiązanie jest na yt gdzieś
 
 ## Zad5
 - no info
 
 ## Zad6
-  - dishes
-  - single component
-- formularz do dodawania 
-- 
+  - kolory cen się nie zmieniają
+  - slider nie działa 
+  - nie wiadomo czy w filter bar prices działają git
+  - 
+  
+
+# odśmiecanie
+# rzeczy się nie skaluja perfekcyjnie

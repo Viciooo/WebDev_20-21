@@ -3,6 +3,7 @@ import {DishListService} from "../services/dish-list.service";
 import { CheckoutAndCurrenciesService } from "../services/checkout-and-currencies.service";
 import {DataService} from "../services/data.service";
 import {Dish} from "../interfaces/dish.module";
+import {Options} from "ng5-slider";
 
 @Component({
   selector: 'app-filters-bar',
@@ -21,7 +22,7 @@ export class FiltersBarComponent implements OnInit {
   prices: any = []
   displayFilters: any = "flex"
 
-  constructor(private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
+  constructor(private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) {}
 
   ngOnInit(): void {
     this.dataService.getDishList()
@@ -31,12 +32,13 @@ export class FiltersBarComponent implements OnInit {
     this.dataService.getCuisineTypes()
       .subscribe((e) => this.myCuisineTypes = e);
 
-    this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
-    this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
-    this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
-    this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
-    this.dishesService.getPrices().subscribe(e=> this.prices = e)
-    this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
+    // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
+    // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
+    // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
+    // this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
+    // this.dishesService.getPrices().subscribe(e=> this.prices = e)
+    // this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
+
   }
 
   ngOnChanges() {
@@ -47,14 +49,15 @@ export class FiltersBarComponent implements OnInit {
     this.dataService.getCuisineTypes()
       .subscribe((e) => this.myCuisineTypes = e);
 
-    this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
-    this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
-    this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
-    this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
-    this.dishesService.getPrices().subscribe(e=> this.prices = e)
-    this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
+    // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
+    // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
+    // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
+    // this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
+    // this.dishesService.getPrices().subscribe(e=> this.prices = e)
+    // this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
   }
   resetAllCheckboxes() {
+    console.log(this.dishesService.prices)
     this.dishesService.cuisineTypesSelected = Array(this.dishesService.cuisineTypesSelected.length).fill(0)
     this.dishesService.dishTypesSelected = Array(this.dishesService.dishTypesSelected.length).fill(0)
     this.dishesService.starsSelected = Array(6).fill(0)

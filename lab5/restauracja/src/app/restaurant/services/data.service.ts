@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Dish} from "../interfaces/dish.module";
 
 @Injectable({
@@ -16,13 +16,23 @@ export class DataService {
     this.cuisineTypes = this.getCuisineTypes()
   }
 
+  getDishList(){
+    return this.db.list('dishList').snapshotChanges().pipe(map(actions => {
+      return actions.map(a => {
+        const key = a.payload.key;
+        const data = a.payload.val();
+        // @ts-ignore
+        return new Dish(key,data.rating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath)
+      })
+    }));
+  }
   getSnap(){
     return this.db.list('dishList').snapshotChanges();
   }
 
-  getDishList(){
-    return this.db.list('dishList').valueChanges();
-  }
+  // getDishList(){
+  //   return this.db.list('dishList').valueChanges();
+  // }
 
   getDishTypes() {
     return  this.db.list('dishTypes').valueChanges();

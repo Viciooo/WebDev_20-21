@@ -1,3 +1,5 @@
+
+
 import {Component, OnChanges, OnInit} from '@angular/core';
 import {Dish} from "../interfaces/dish.module";
 import { DishListService } from "../services/dish-list.service"
@@ -34,14 +36,14 @@ export class DishesComponent implements OnInit,OnChanges{
     this.dataService.getCuisineTypes()
       .subscribe((e) => this.myCuisineTypes = e);
 
-    this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
-    this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
-    this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
-    this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
-    this.dishesService.getPrices().subscribe(e=> this.prices = e)
-    this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
+    // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
+    // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
+    // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
+    // this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
+    // this.dishesService.getPrices().subscribe(e=> this.prices = e)
+    // this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
 
-    this.dataService.getSnap().subscribe(e=> this.t = e)
+    // this.dataService.getSnap().subscribe(e=> this.t = e)
   }
 
   ngOnChanges() {
@@ -51,12 +53,12 @@ export class DishesComponent implements OnInit,OnChanges{
       .subscribe((e) => this.myDishTypes = e);
     this.dataService.getCuisineTypes()
       .subscribe((e) => this.myCuisineTypes = e);
-    this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
-    this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
-    this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
-    this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
-    this.dishesService.getPrices().subscribe(e=> this.prices = e)
-    this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
+    // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
+    // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
+    // this.dishesService.getStarsSelected().subscribe(e=> this.starsSelected = e)
+    // this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
+    // this.dishesService.getPrices().subscribe(e=> this.prices = e)
+    // this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
   }
 
   takeItem(myDish: Dish) {
@@ -98,7 +100,6 @@ export class DishesComponent implements OnInit,OnChanges{
     let thisCuisineType = myDish.cuisine
     let itsLastDishOfThisType = true
     let itsLastCuisineOfThisType = true
-    console.log(myDish.name)
     //if the price is max typeOfPrice = 1  in between its 0 min its -1
     let typeOfPrice = 0
     if(myDish.price === this.prices[0]) typeOfPrice = -1
@@ -112,7 +113,7 @@ export class DishesComponent implements OnInit,OnChanges{
     }
 
 
-    this.dataService.removeDish(myDish.name)
+    this.dataService.removeDish(myDish.key)
 
     let idxToRemove = this.getIdxInPriceList(myDish.id,myDish.price)
     // this.dishesService.priceList.splice(idxToRemove, 1);
@@ -164,7 +165,6 @@ export class DishesComponent implements OnInit,OnChanges{
     })
     return x
   }
-
   sum(arr:number[]){
     let tmp = 0
     arr.forEach(e=>{
@@ -172,11 +172,12 @@ export class DishesComponent implements OnInit,OnChanges{
     })
     return tmp
   }
+
   goToDetails(id:number){
     this.router.navigate(['/menu',id])
   }
 
   test() {
-    // console.log(this.t.)
+    console.log(this.dishesService.myDishes)
   }
 }

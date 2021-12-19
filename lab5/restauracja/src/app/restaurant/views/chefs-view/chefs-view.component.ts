@@ -42,7 +42,7 @@ export class ChefsViewComponent implements OnInit{
   }
   onSubmit() {
     let newDish = new Dish(
-      [],
+      "",
       1,
       this.dishesService.newId,
       (<FormArray>this.dishForm.get('maxAmt')).value,

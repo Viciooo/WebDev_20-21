@@ -119,6 +119,7 @@ h4{
   justify-content: center;
   align-items: center;
   z-index: 2;
+  cursor: pointer;
 }
 
 .delete-btn i{

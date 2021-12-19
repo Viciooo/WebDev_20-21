@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Dish} from "../interfaces/dish.module";
 import {DataService} from "./data.service";
 import {Observable, of} from "rxjs";
+import {Options} from "ng5-slider";
 @Injectable({
   providedIn: 'root'
 })
@@ -12,13 +13,28 @@ export class DishListService{
   dishTypesSelected: any
   cuisineTypesSelected: any
   newId: number = 0
-
-
-  // priceList: any
+  priceList: any[] = []
+  prices: any[] = []
+  // value: any
+  // highValue: any
+  // options: any
   constructor(private db: DataService) {
     this.db.getDishList().subscribe(e=> {
       this.myDishes = e
       this.newId = e.length + 1
+      this.priceList = this.populatePriceList()
+      this.prices = [
+        this.calcMin(),
+        this.calcMax(),
+        this.calcMin(),
+        this.calcMax()
+      ]
+      // this.value = this.prices[2];
+      // this.highValue= this.prices[3];
+      // this.options = {
+      //   floor: this.prices[0],
+      //   ceil: this.prices[1]
+      // };
     })
     this.db.getDishTypes().subscribe(e=> {
       this.dishTypes = e
@@ -43,49 +59,43 @@ export class DishListService{
     return tmp
   }
 
-  priceList = this.populatePriceList()
+
 
   calcMax(){
-    // let val = -1
-    // this.priceList.forEach(e=>{
-    //   val = Math.max(val,e[1])
-    // })
-    return 1000
+    let val = -1
+    this.priceList.forEach(e=>{
+      val = Math.max(val,e[1])
+    })
+    return val
   }
 
   calcMin(){
-    // let val = 1000000
-    // this.priceList.forEach(e=>{
-    //   val = Math.min(val,e[1])
-    // })
-    return 1
+    let val = 1000000
+    this.priceList.forEach(e=>{
+      val = Math.min(val,e[1])
+    })
+    return val
   }
 
-  prices = [
-    this.calcMin(),
-    this.calcMax(),
-    this.calcMin(),
-    this.calcMax()
-  ]
 
-  getDishTypesSelected(): Observable<any>{
-    return of(this.dishTypesSelected)
-  }
-  getCuisineTypesSelected(): Observable<any>{
-    return of(this.cuisineTypesSelected)
-  }
-  getStarsSelected(): Observable<any>{
-    return of(this.starsSelected)
-  }
-  getPrices(): Observable<any>{
-    return of(this.prices)
-  }
-  getPriceList(): Observable<any>{
-    return of(this.priceList)
-  }
-  getDisplayFilters(): Observable<any>{
-    return of(this.displayFilters)
-  }
+  // getDishTypesSelected(): Observable<any>{
+  //   return of(this.dishTypesSelected)
+  // }
+  // getCuisineTypesSelected(): Observable<any>{
+  //   return of(this.cuisineTypesSelected)
+  // }
+  // getStarsSelected(): Observable<any>{
+  //   return of(this.starsSelected)
+  // }
+  // getPrices(): Observable<any>{
+  //   return of(this.prices)
+  // }
+  // getPriceList(): Observable<any>{
+  //   return of(this.priceList)
+  // }
+  // getDisplayFilters(): Observable<any>{
+  //   return of(this.displayFilters)
+  // }
   changeDishTypesSelected(x:number){
     this.dishTypesSelected[x] = (this.dishTypesSelected[x] + 1) % 2
   }

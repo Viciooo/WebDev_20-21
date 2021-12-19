@@ -1,10 +1,8 @@
 <div class="container">
-<!--  ( selected: number[],dishes: Dish[],dishList: string[],sumOfSelected: number)-->
-  <div class="box" *ngFor="let myDish of this.myDishes
-    | filterDishes : dishesService.dishTypes: dishesService.dishTypesSelected:sum(dishesService.dishTypesSelected)
-    | filterCuisinesPipe : dishesService.cuisineTypes:dishesService.cuisineTypesSelected : sum(dishesService.cuisineTypesSelected)
-    | starsPipe : dishesService.starsSelected:sum(dishesService.starsSelected)
-    | pricePipe :dishesService.prices[2]:dishesService.prices[3]
+  <div class="box" *ngFor="let myDish of dishesService.myDishes
+ | filterDishes : dishesService.dishTypes: dishesService.dishTypesSelected:sum(dishesService.dishTypesSelected)
+  | filterCuisinesPipe : dishesService.cuisineTypes:dishesService.cuisineTypesSelected : sum(dishesService.cuisineTypesSelected)
+  | starsPipe : dishesService.starsSelected:sum(dishesService.starsSelected)
 ">
 
     <div class="delete-btn">
