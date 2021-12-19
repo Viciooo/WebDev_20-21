@@ -73,37 +73,34 @@ export class DataService {
   }
 
   //modify data functions
-  reviewChange(dishName:string,review:string[]){
-    this.db.list('dishList').update(dishName,{review:review})
+  ratingChange(key:string,rating:number){
+    this.db.list('dishList').update(key,{rating:rating})
   }
-  ratingChange(dishName:string,rating:number){
-    this.db.list('dishList').update(dishName,{rating:rating})
+  maxAmtChange(key:string,maxAmt:number){
+    this.db.list('dishList').update(key,{maxAmt:maxAmt})
   }
-  maxAmtChange(dishName:string,maxAmt:number){
-    this.db.list('dishList').update(dishName,{maxAmt:maxAmt})
+  nameChange(key:string,name:string){
+    this.db.list('dishList').update(key,{name:name})
   }
-  nameChange(dishName:string,name:string){
-    this.db.list('dishList').update(dishName,{name:name})
+  cuisineChange(key:string,cuisine:string){
+    this.db.list('dishList').update(key,{cuisine:cuisine})
   }
-  cuisineChange(dishName:string,cuisine:string){
-    this.db.list('dishList').update(dishName,{cuisine:cuisine})
+  dishTypeChange(key:string,dishType:string){
+    this.db.list('dishList').update(key,{dishType:dishType})
   }
-  dishTypeChange(dishName:string,dishType:string){
-    this.db.list('dishList').update(dishName,{dishType:dishType})
+  ingredientsChange(key:string,ingredients:string[]){
+    this.db.list('dishList').update(key,{ingredients:ingredients})
   }
-  ingredientsChange(dishName:string,ingredients:string[]){
-    this.db.list('dishList').update(dishName,{ingredients:ingredients})
+  amountChange(key:string,amount:number){
+    this.db.list('dishList').update(key,{amount:amount})
   }
-  amountChange(dishName:string,amount:number){
-    this.db.list('dishList').update(dishName,{amount:amount})
+  priceChange(key:string,price:number){
+    this.db.list('dishList').update(key,{price:price})
   }
-  priceChange(dishName:string,price:number){
-    this.db.list('dishList').update(dishName,{price:price})
+  descriptionChange(key:string,description:string){
+    this.db.list('dishList').update(key,{description:description})
   }
-  descriptionChange(dishName:string,description:string){
-    this.db.list('dishList').update(dishName,{description:description})
-  }
-  imgPathChange(dishName:string,imgPath:string[]){
-    this.db.list('dishList').update(dishName,{imgPath:imgPath})
+  imgPathChange(key:string,imgPath:string[]){
+    this.db.list('dishList').update(key,{imgPath:imgPath})
   }
 }

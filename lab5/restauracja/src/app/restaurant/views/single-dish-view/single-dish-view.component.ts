@@ -62,7 +62,7 @@ export class SingleDishViewComponent implements OnInit, OnChanges {
   }
 
   takeItem(myDish: Dish) {
-    this.dataService.amountChange(myDish.name, myDish.amount - 1)
+    this.dataService.amountChange(myDish.key, myDish.amount - 1)
     this.moneyItemHandler.basketItems++
     this.moneyItemHandler.basketValue += myDish.price
 
@@ -81,7 +81,7 @@ export class SingleDishViewComponent implements OnInit, OnChanges {
   }
 
   returnItem(myDish: Dish) {
-    this.dataService.amountChange(myDish.name, myDish.amount + 1)
+    this.dataService.amountChange(myDish.key, myDish.amount + 1)
     this.moneyItemHandler.basketItems--
     this.moneyItemHandler.basketValue -= myDish.price
 

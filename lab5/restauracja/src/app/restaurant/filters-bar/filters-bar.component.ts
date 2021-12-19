@@ -15,14 +15,15 @@ export class FiltersBarComponent implements OnInit {
   myDishTypes: any = [];
   myCuisineTypes: any = [];
 
-  dishTypesSelected: any = []
-  cuisineTypesSelected: any = []
-  starsSelected: any = []
-  priceList: any = []
-  prices: any = []
-  displayFilters: any = "flex"
+  // dishTypesSelected: any = []
+  // cuisineTypesSelected: any = []
+  // starsSelected: any = []
+  // priceList: any = []
+  // prices: any = []
+  // displayFilters: any = "flex"
 
   constructor(private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) {}
+
 
   ngOnInit(): void {
     this.dataService.getDishList()
@@ -31,6 +32,7 @@ export class FiltersBarComponent implements OnInit {
       .subscribe((e) => this.myDishTypes = e);
     this.dataService.getCuisineTypes()
       .subscribe((e) => this.myCuisineTypes = e);
+
 
     // this.dishesService.getDishTypesSelected().subscribe(e=> this.dishTypesSelected = e)
     // this.dishesService.getCuisineTypesSelected().subscribe(e=> this.cuisineTypesSelected = e)
@@ -64,5 +66,10 @@ export class FiltersBarComponent implements OnInit {
     this.dishesService.prices[2] = this.dishesService.prices[0]
     this.dishesService.prices[3] = this.dishesService.prices[1]
   }
+
+  test(){
+    console.log(this.dishesService.prices)
+  }
+
 
 }

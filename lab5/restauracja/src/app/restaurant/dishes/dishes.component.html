@@ -3,6 +3,7 @@
  | filterDishes : dishesService.dishTypes: dishesService.dishTypesSelected:sum(dishesService.dishTypesSelected)
   | filterCuisinesPipe : dishesService.cuisineTypes:dishesService.cuisineTypesSelected : sum(dishesService.cuisineTypesSelected)
   | starsPipe : dishesService.starsSelected:sum(dishesService.starsSelected)
+  | pricePipe : dishesService.prices[2]:dishesService.prices[3]
 ">
 
     <div class="delete-btn">

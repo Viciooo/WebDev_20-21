@@ -15,8 +15,7 @@
 ## Zad6
   - kolory cen się nie zmieniają
   - slider nie działa 
-  - nie wiadomo czy w filter bar prices działają git
-  - 
+  
   
 
 # odśmiecanie

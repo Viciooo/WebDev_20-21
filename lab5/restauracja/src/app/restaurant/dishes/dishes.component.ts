@@ -17,14 +17,14 @@ export class DishesComponent implements OnInit,OnChanges{
   myDishes: any = [];
   myDishTypes: any = [];
   myCuisineTypes: any = [];
-  dishTypesSelected: any = []
-  cuisineTypesSelected: any = []
-  starsSelected: any = []
-  priceList: any = []
-  prices: any = []
-  displayFilters: any
-
-  t:any
+  // dishTypesSelected: any = []
+  // cuisineTypesSelected: any = []
+  // starsSelected: any = []
+  // priceList: any = []
+  // prices: any = []
+  // displayFilters: any
+  //
+  // t:any
 
   constructor(private router:Router,private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
 
@@ -62,7 +62,7 @@ export class DishesComponent implements OnInit,OnChanges{
   }
 
   takeItem(myDish: Dish) {
-    this.dataService.amountChange(myDish.name, myDish.amount - 1)
+    this.dataService.amountChange(myDish.key, myDish.amount - 1)
     this.moneyItemHandler.basketItems++
     this.moneyItemHandler.basketValue += myDish.price
 
@@ -81,7 +81,7 @@ export class DishesComponent implements OnInit,OnChanges{
   }
   //
   returnItem(myDish: Dish) {
-    this.dataService.amountChange(myDish.name, myDish.amount + 1)
+    this.dataService.amountChange(myDish.key, myDish.amount + 1)
     this.moneyItemHandler.basketItems--
     this.moneyItemHandler.basketValue -= myDish.price
 
@@ -102,8 +102,8 @@ export class DishesComponent implements OnInit,OnChanges{
     let itsLastCuisineOfThisType = true
     //if the price is max typeOfPrice = 1  in between its 0 min its -1
     let typeOfPrice = 0
-    if(myDish.price === this.prices[0]) typeOfPrice = -1
-    if(myDish.price === this.prices[1]) typeOfPrice = 1
+    if(myDish.price === this.dishesService.prices[0]) typeOfPrice = -1
+    if(myDish.price === this.dishesService.prices[1]) typeOfPrice = 1
 
     let idx = this.getIdxInCheckoutList(myDish)
     if(idx !== -1){
@@ -119,12 +119,12 @@ export class DishesComponent implements OnInit,OnChanges{
     // this.dishesService.priceList.splice(idxToRemove, 1);
 
     if(typeOfPrice === -1){
-      this.prices[0] = this.dishesService.calcMin()
-      this.prices[2] = this.prices[0]
+      this.dishesService.prices[0] = this.dishesService.calcMin()
+      this.dishesService.prices[2] = this.dishesService.prices[0]
     }
     else if(typeOfPrice === 1){
-      this.prices[1] = this.dishesService.calcMax()
-      this.prices[3] = this.prices[1]
+      this.dishesService.prices[1] = this.dishesService.calcMax()
+      this.dishesService.prices[3] = this.dishesService.prices[1]
     }
     this.myDishes.forEach((e: Dish)=>{
       if(e.dishType.toLowerCase() === thisDishType.toLowerCase()) itsLastDishOfThisType = false
@@ -148,23 +148,16 @@ export class DishesComponent implements OnInit,OnChanges{
 
   getIdxInPriceList(idxInMyDishes:number,priceInMyDishes:number){
     if(this.moneyItemHandler.currency === "$"){
-      return this.priceList.findIndex(
+      return this.dishesService.priceList.findIndex(
         (element: { toString: () => string; }) =>element.toString() === [idxInMyDishes,priceInMyDishes].toString())
     }
     else{
-      return this.priceList.findIndex(
+      return this.dishesService.priceList.findIndex(
         (element: { toString: () => string; }) =>element.toString() === [idxInMyDishes,priceInMyDishes/this.moneyItemHandler.exchangeRate].toString())
     }
 
   }
 
-  c(arr:any[]){
-    let x = new Array(0)
-    arr.forEach(e=>{
-      x.push(e)
-    })
-    return x
-  }
   sum(arr:number[]){
     let tmp = 0
     arr.forEach(e=>{
@@ -178,6 +171,6 @@ export class DishesComponent implements OnInit,OnChanges{
   }
 
   test() {
-    console.log(this.dishesService.myDishes)
+    console.log(this.dishesService.prices)
   }
 }
