@@ -3,7 +3,7 @@
     <h1>Type of dish</h1>
     <div class="box" *ngFor="let dishType of dishesService.dishTypes;let x = index">
       <input type="checkbox" value="{{dishType}}" id="{{dishType}}"
-             (change) = "dishesService.changeDishTypesSelected(x)">
+             (change) = "dishesService.changeDishTypesSelected(x)" (change)="paginationService.setDishes()">
       <label for="{{dishType}}">{{dishType}}</label>
     </div>
   </div>
@@ -12,7 +12,7 @@
     <h1>Type of cuisine</h1>
     <div class="box" *ngFor="let cuisineType of dishesService.cuisineTypes;let x = index">
       <input type="checkbox" value="{{cuisineType}}" id="{{cuisineType}}"
-             (change) = "dishesService.changeCuisineTypesSelected(x)">
+             (change) = "dishesService.changeCuisineTypesSelected(x)" (change)="paginationService.setDishes()">
       <label for="{{cuisineType}}">{{cuisineType}}</label>
     </div>
   </div>
@@ -21,7 +21,7 @@
     <h1>Rating in stars</h1>
     <div class="box" *ngFor="let item of [].constructor(5); let x = index">
       <input type="checkbox" value="{{x}}" id="{{x}}"
-             (change) = "dishesService.changeStarsSelected(x)">
+             (change) = "dishesService.changeStarsSelected(x)" (change)="paginationService.setDishes()">
       <label for="{{x}}">
         <i class="fa fa-star" aria-hidden="true" *ngFor="let item of [].constructor(x+1)"></i>
       </label>
@@ -29,17 +29,21 @@
   </div>
 
   <div class="item prices">
-    <h1>Select the price {{dishesService.prices}}</h1>
+    <h1>Select the price</h1>
     <h2>Price is in <span>{{moneyItemHandler.currency}}</span></h2>
-    <ng5-slider   [(value)]="dishesService.prices[2]" [(highValue)]="dishesService.prices[3]" [options]="{
-    floor: dishesService.prices[0] + 0,
-    ceil:  dishesService.prices[1] + 0
+    <ng5-slider  (valueChange)="paginationService.setDishes()"
+                 (highValueChange) = "paginationService.setDishes()"
+                 [(value)]="dishesService.prices[2]"
+                 [(highValue)]="dishesService.prices[3]" [options]="{
+
+    floor: +dishesService.prices[0],
+    ceil:  +dishesService.prices[1]
+
     }"></ng5-slider>
-    <button class="reset" type="reset" (click)="resetAllCheckboxes()">Clear all filters</button>
+    <button class="reset" type="reset" (click)="resetAllCheckboxes()" (click)="paginationService.setDishes()">Clear all filters</button>
   </div>
 
   <div class="hideAll" (click)="dishesService.changeDisplayFilters()">
     <i class="fa fa-chevron-up" aria-hidden="true"></i>
   </div>
-<!--  <button type="button" (click)="test()">test</button>-->
 </form>

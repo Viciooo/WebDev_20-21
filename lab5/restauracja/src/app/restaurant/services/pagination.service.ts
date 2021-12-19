@@ -15,6 +15,7 @@ export class PaginationService {
   itemsAtOneTime: number = 6;
   filteredDishes: any[] = []
   availableDishes: any
+  allDishes: any
   constructor(public dishService: DishListService,
               public dataService: DataService,
               public moneyItemHandler: CheckoutAndCurrenciesService,
@@ -22,48 +23,44 @@ export class PaginationService {
               public cuisineTypePipe:FilterCuisinesPipe,
               public pricePipe: PricePipe,
               public starsPipe: StarsPipe) {
-    this.dataService.dishList.subscribe(e=> {
-      this.filteredDishes = e
-      this.availableDishes = this.filteredDishes.length
-    })
-
+    this.updateFunc()
   }
-
-
-
-
+  updateFunc(){
+    this.dataService.dishList.subscribe(e=> {
+      this.allDishes = e
+      this.availableDishes = this.allDishes.length
+    })
+  }
   setDishes(){
-    console.log("aaa")
+    this.filteredDishes = this.allDishes
     const dishTypePipe = new FilterDishesPipe()
     const cuisineTypePipe = new FilterCuisinesPipe()
     const pricePipe = new PricePipe()
     const starsPipe = new StarsPipe()
 
-    this.filteredDishes = dishTypePipe.transform(
+    let tmp = dishTypePipe.transform(
       this.filteredDishes,
       this.dishService.dishTypes,
       this.dishService.dishTypesSelected,
       this.dishService.sum(this.dishService.dishTypesSelected)
       )
-    this.filteredDishes = cuisineTypePipe.transform(
-      this.filteredDishes,
+    tmp = cuisineTypePipe.transform(
+        tmp,
       this.dishService.cuisineTypes,
       this.dishService.cuisineTypesSelected,
       this.dishService.sum(this.dishService.cuisineTypesSelected)
     )
-    this.filteredDishes = pricePipe.transform(this.filteredDishes,this.dishService.prices[2],this.dishService.prices[3])
-    this.filteredDishes = starsPipe.transform(this.dishService.myDishes,this.dishService.starsSelected,this.dishService.sum(this.dishService.starsSelected))
-
+    tmp = pricePipe.transform(tmp,this.dishService.prices[2],this.dishService.prices[3])
+    tmp = starsPipe.transform(tmp,this.dishService.starsSelected,this.dishService.sum(this.dishService.starsSelected))
+    this.filteredDishes = tmp
     this.availableDishes = this.filteredDishes.length;
     if (this.getMaxPage() < this.currentPage){
       this.currentPage = this.getMaxPage();
     } else if (this.currentPage <= 0 && this.getMaxPage() > 0){
       this.currentPage = 1;
     }
-  }
+    console.log("aaa",this.getMaxPage(),this.currentPage,this.filteredDishes,this.availableDishes)
 
-  sliderChange(value: any){
-    console.log(value);
   }
 
   getMaxPage(){

@@ -55,6 +55,7 @@ export class DishesComponent{
   }
   //
   deleteElement(myDish:Dish) {
+    this.paginationService.setDishes()
     // @ts-ignore
     let f
     let thisDishType = myDish.dishType
@@ -124,6 +125,6 @@ export class DishesComponent{
   }
 
   test() {
-    // console.log(this.paginationService.filteredDishes)
+    console.log(this.paginationService.availableDishes,"aaaa")
   }
 }

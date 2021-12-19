@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {DishListService} from "../services/dish-list.service";
 import { CheckoutAndCurrenciesService } from "../services/checkout-and-currencies.service";
+import {PaginationService} from "../services/pagination.service";
 
 
 @Component({
@@ -10,7 +11,8 @@ import { CheckoutAndCurrenciesService } from "../services/checkout-and-currencie
 })
 export class FiltersBarComponent{
   constructor(public dishesService: DishListService,
-              public moneyItemHandler: CheckoutAndCurrenciesService) {}
+              public moneyItemHandler: CheckoutAndCurrenciesService,
+              public paginationService: PaginationService) {}
 
 
   resetAllCheckboxes() {
