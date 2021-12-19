@@ -5,7 +5,7 @@ import {Dish} from "../interfaces/dish.module";
   name: 'filterCuisinesPipe'
 })
 export class FilterCuisinesPipe implements PipeTransform {
-  transform (dishes: Dish[], selected: number[],cuisineList: string[],sumOfSelected:number): Dish[]{
+  transform (dishes: Dish[],cuisineList: string[], selected: number[],sumOfSelected:number): Dish[]{
     if(sumOfSelected === 0) return dishes.filter(dish=> true)
     return dishes.filter(dish => selected[cuisineList.indexOf(dish.cuisine)] === 1);
   }

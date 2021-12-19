@@ -14,29 +14,4 @@ export class MenuHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  swap() {
-    if(this.moneyItemHandler.currency ==='$') {
-      this.moneyItemHandler.currency = '€'
-      this.moneyItemHandler.basketValue *= this.moneyItemHandler.exchangeRate
-      this.dishesService.myDishes.forEach((element)=>{
-        element.price *= this.moneyItemHandler.exchangeRate
-      })
-      this.moneyItemHandler.checkoutList.forEach((element)=>{
-        element.value *= this.moneyItemHandler.exchangeRate
-        element.value = +element.value.toFixed(2)
-      })
-    }
-        else {
-      this.moneyItemHandler.currency = '$'
-      this.moneyItemHandler.basketValue /= this.moneyItemHandler.exchangeRate
-      this.dishesService.myDishes.forEach((element)=>{
-        element.price /= this.moneyItemHandler.exchangeRate
-      })
-      this.moneyItemHandler.checkoutList.forEach((element)=>{
-        element.value /= this.moneyItemHandler.exchangeRate
-        element.value = +element.value.toFixed(2)
-      })
-    }
-  }
-
 }

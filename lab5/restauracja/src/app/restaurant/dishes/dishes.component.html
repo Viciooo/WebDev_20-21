@@ -1,10 +1,12 @@
 <div class="container">
+<!--  ( selected: number[],dishes: Dish[],dishList: string[],sumOfSelected: number)-->
   <div class="box" *ngFor="let myDish of this.myDishes
-    | filterDishes :c(dishesService.dishTypesSelected):myDishTypes:sum(dishesService.dishTypesSelected)
-    | filterCuisinesPipe :c(dishesService.cuisineTypesSelected) : myCuisineTypes: sum(dishesService.cuisineTypesSelected)
-    | starsPipe :c(dishesService.starsSelected):sum(dishesService.starsSelected)
+    | filterDishes : dishesService.dishTypes: dishesService.dishTypesSelected:sum(dishesService.dishTypesSelected)
+    | filterCuisinesPipe : dishesService.cuisineTypes:dishesService.cuisineTypesSelected : sum(dishesService.cuisineTypesSelected)
+    | starsPipe : dishesService.starsSelected:sum(dishesService.starsSelected)
+    | pricePipe :dishesService.prices[2]:dishesService.prices[3]
 ">
-<!--    | pricePipe :dishesService.prices[2]:dishesService.prices[3]-->
+
     <div class="delete-btn">
       <i class="fa fa-times" aria-hidden="true" (click)="deleteElement(myDish)"></i>
     </div>
@@ -43,16 +45,16 @@
         <h2>
           Price
           <span *ngIf="getIdxInPriceList(myDish.id,myDish.price)<=0.2*dishesService.myDishes.length" [style.color]="'green'">
-          {{ myDish.price }}
+          {{ moneyItemHandler.getRealPrice(myDish.price) }}
         </span>
 
           <span *ngIf="getIdxInPriceList(myDish.id,myDish.price) > 0.2*dishesService.myDishes.length && getIdxInPriceList(myDish.id,myDish.price) <= 0.7*dishesService.myDishes.length"
                 [style.color]="'yellow'">
-          {{ myDish.price }}
+          {{ moneyItemHandler.getRealPrice(myDish.price) }}
         </span>
 
           <span *ngIf="getIdxInPriceList(myDish.id,myDish.price)>0.7*dishesService.myDishes.length" [style.color]="'red'">
-          {{ myDish.price }}
+          {{ moneyItemHandler.getRealPrice(myDish.price) }}
         </span>
 
           {{moneyItemHandler.currency }}

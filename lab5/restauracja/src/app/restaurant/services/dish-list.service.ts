@@ -9,17 +9,31 @@ export class DishListService{
   myDishes: any[] = [];
   dishTypes: any[] = [];
   cuisineTypes: any[] = [];
+  dishTypesSelected: any
+  cuisineTypesSelected: any
+  newId: number = 0
+
+
+  // priceList: any
   constructor(private db: DataService) {
-    this.db.getDishList().subscribe(e=>this.myDishes = e)
-    this.db.getDishTypes().subscribe(e=>this.dishTypes = e)
-    this.db.getCuisineTypes().subscribe(e=>this.cuisineTypes = e)
+    this.db.getDishList().subscribe(e=> {
+      this.myDishes = e
+      this.newId = e.length + 1
+    })
+    this.db.getDishTypes().subscribe(e=> {
+      this.dishTypes = e
+      this.cuisineTypesSelected = Array(e.length).fill(0)
+    })
+    this.db.getCuisineTypes().subscribe(e=> {
+      this.cuisineTypes = e
+      this.dishTypesSelected = Array(e.length).fill(0)
+    })
   }
-  dishTypesSelected = Array(this.dishTypes.length).fill(0)
-  cuisineTypesSelected = Array(this.cuisineTypes.length).fill(0)
   starsSelected = Array(6).fill(0)
   displayFilters = 'none'
   //potentially not true
-  newId = this.myDishes.length
+
+
   populatePriceList(){
     let i = 0
     let tmp: number[][] = []
@@ -28,6 +42,7 @@ export class DishListService{
     })
     return tmp
   }
+
   priceList = this.populatePriceList()
 
   calcMax(){

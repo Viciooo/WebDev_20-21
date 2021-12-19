@@ -1,7 +1,7 @@
 <form class="container" [style.display]="dishesService.displayFilters">
   <div class="item" >
     <h1>Type of dish</h1>
-    <div class="box" *ngFor="let dishType of myDishTypes;let x = index">
+    <div class="box" *ngFor="let dishType of dishesService.dishTypes;let x = index">
       <input type="checkbox" value="{{dishType}}" id="{{dishType}}"
              (change) = "dishesService.changeDishTypesSelected(x)">
       <label for="{{dishType}}">{{dishType}}</label>

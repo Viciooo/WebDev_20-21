@@ -17,6 +17,7 @@ export class ChefsViewComponent implements OnInit{
   myDishTypes: any = [];
   myCuisineTypes: any = [];
 
+
   constructor(private formBuilder : FormBuilder,public dishesService:DishListService,private dataService:DataService) {}
 
   ngOnInit() : void {
@@ -54,10 +55,10 @@ export class ChefsViewComponent implements OnInit{
       (<FormArray>this.dishForm.get('description')).value,
       (<FormArray>this.dishForm.get('imgPath')).value,
     )
+    this.dataService.pushDish(newDish)
     // this.dishesService.myDishes.push(newDish)
     this.dishesService.priceList.push([this.dishesService.newId,newDish.price])
     this.dishesService.priceList.sort((a, b) => a[1] > b[1] && 1 || -1)
-    this.dishesService.newId++
 
     if(this.dishesService.dishTypes.indexOf((<FormArray>this.dishForm.get('dishType')).value) === -1){
       // this.dishesService.dishTypes.push((<FormArray>this.dishForm.get('dishType')).value)
@@ -78,7 +79,6 @@ export class ChefsViewComponent implements OnInit{
       this.dishesService.prices[1] = (<FormArray>this.dishForm.get('price')).value
       this.dishesService.prices[3] = (<FormArray>this.dishForm.get('price')).value
     }
-    this.dataService.pushDish(newDish)
 
     this.dishForm.reset()
   }

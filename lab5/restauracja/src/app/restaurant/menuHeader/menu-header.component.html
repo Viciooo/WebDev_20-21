@@ -28,12 +28,12 @@
     </div>
 
     <div class="option">
-      <h2 class="basketValue">{{moneyItemHandler.basketValue.toFixed(2)}}<span>{{moneyItemHandler.currency}}</span></h2>
+      <h2 class="basketValue">{{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}<span>{{moneyItemHandler.currency}}</span></h2>
     </div>
 
     <div class="option currencies">
-      <button class="curr euro" (click)="swap()" [disabled]="moneyItemHandler.currency==='€'">€</button>
-      <button class="curr usd" (click)="swap()" [disabled]="moneyItemHandler.currency==='$'">$</button>
+      <button class="curr euro" (click)="this.moneyItemHandler.currency = '€'" [disabled]="moneyItemHandler.currency==='€'">€</button>
+      <button class="curr usd" (click)="this.moneyItemHandler.currency = '$'" [disabled]="moneyItemHandler.currency==='$'">$</button>
     </div>
 
     <div class="listOfItems">
@@ -44,9 +44,9 @@
       </div>
       <div #listOfItems class="dropDown">
         <div *ngFor="let i of moneyItemHandler.checkoutList" class="item">
-          <h1>{{i.amount}} <span>x</span> {{i.name}}  <span>{{i.value}}</span> {{moneyItemHandler.currency}} </h1>
+          <h1>{{i.amount}} <span>x</span> {{i.name}}  <span>{{moneyItemHandler.getRealPrice(i.value)}}</span> {{moneyItemHandler.currency}} </h1>
         </div>
-        <div class="item total"><span>Total</span>: {{moneyItemHandler.basketValue.toFixed(2)}}{{moneyItemHandler.currency}}</div>
+        <div class="item total"><span>Total</span>: {{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}{{moneyItemHandler.currency}}</div>
       </div>
     </div>
   </div>

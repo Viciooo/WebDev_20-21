@@ -57,7 +57,7 @@ export class FiltersBarComponent implements OnInit {
   resetAllCheckboxes() {
     this.dishesService.cuisineTypesSelected = Array(this.dishesService.cuisineTypesSelected.length).fill(0)
     this.dishesService.dishTypesSelected = Array(this.dishesService.dishTypesSelected.length).fill(0)
-    this.dishesService.starsSelected = Array(5).fill(0)
+    this.dishesService.starsSelected = Array(6).fill(0)
     this.dishesService.prices[2] = this.dishesService.prices[0]
     this.dishesService.prices[3] = this.dishesService.prices[1]
   }

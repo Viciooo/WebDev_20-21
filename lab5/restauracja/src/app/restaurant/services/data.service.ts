@@ -16,6 +16,9 @@ export class DataService {
     this.cuisineTypes = this.getCuisineTypes()
   }
 
+  getSnap(){
+    return this.db.list('dishList').snapshotChanges();
+  }
 
   getDishList(){
     return this.db.list('dishList').valueChanges();
@@ -41,7 +44,7 @@ export class DataService {
 
   pushDishType(dishType:string){
     const dishTypes = this.db.list('dishTypes')
-    dishTypes.push(dishType)
+    // dishTypes.push(dishType)
   }
 
   removeDishType(dishType:string){
@@ -51,7 +54,7 @@ export class DataService {
 
   pushCuisineType(cuisineType:string){
     const cuisineTypes = this.db.list('cuisineTypes')
-    cuisineTypes.push(cuisineType)
+    // cuisineTypes.push(cuisineType)
   }
 
   removeCuisineType(cuisineType:string){

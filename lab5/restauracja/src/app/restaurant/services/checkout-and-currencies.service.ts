@@ -13,4 +13,9 @@ export class CheckoutAndCurrenciesService {
   ]
   constructor() {
   }
+
+  getRealPrice(price:number) {
+    if(this.currency === "$") return price.toFixed(2)
+    return (price*this.exchangeRate).toFixed(2)
+  }
 }

@@ -22,6 +22,8 @@ export class DishesComponent implements OnInit,OnChanges{
   prices: any = []
   displayFilters: any
 
+  t:any
+
   constructor(private router:Router,private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
 
   ngOnInit(): void {
@@ -38,6 +40,8 @@ export class DishesComponent implements OnInit,OnChanges{
     this.dishesService.getPriceList().subscribe(e=> this.priceList = e)
     this.dishesService.getPrices().subscribe(e=> this.prices = e)
     this.dishesService.getDisplayFilters().subscribe(e=> this.displayFilters = e)
+
+    this.dataService.getSnap().subscribe(e=> this.t = e)
   }
 
   ngOnChanges() {
@@ -94,7 +98,7 @@ export class DishesComponent implements OnInit,OnChanges{
     let thisCuisineType = myDish.cuisine
     let itsLastDishOfThisType = true
     let itsLastCuisineOfThisType = true
-
+    console.log(myDish.name)
     //if the price is max typeOfPrice = 1  in between its 0 min its -1
     let typeOfPrice = 0
     if(myDish.price === this.prices[0]) typeOfPrice = -1
@@ -173,6 +177,6 @@ export class DishesComponent implements OnInit,OnChanges{
   }
 
   test() {
-    console.log(this.dishesService.priceList)
+    // console.log(this.t.)
   }
 }
