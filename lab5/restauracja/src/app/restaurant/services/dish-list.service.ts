@@ -19,7 +19,7 @@ export class DishListService{
   // highValue: any
   // options: any
   constructor(private db: DataService) {
-    this.db.getDishList().subscribe(e=> {
+    this.db.dishList.subscribe(e=> {
       this.myDishes = e
       this.newId = e.length + 1
       this.priceList = this.populatePriceList()
@@ -36,14 +36,14 @@ export class DishListService{
       //   ceil: this.prices[1]
       // };
     })
-    this.db.getDishTypes().subscribe(e=> {
+    this.db.dishTypes.subscribe(e=> {
       this.dishTypes = e
-      this.cuisineTypesSelected = Array(e.length).fill(0)
+      this.dishTypesSelected = Array(e.length).fill(0)
 
     })
-    this.db.getCuisineTypes().subscribe(e=> {
+    this.db.cuisineTypes.subscribe(e=> {
       this.cuisineTypes = e
-      this.dishTypesSelected = Array(e.length).fill(0)
+      this.cuisineTypesSelected = Array(e.length).fill(0)
     })
   }
   starsSelected = Array(6).fill(0)
@@ -78,7 +78,13 @@ export class DishListService{
     return val
   }
 
-
+  sum(arr:number[]){
+    let tmp = 0
+    arr.forEach(e=>{
+      tmp += e
+    })
+    return tmp
+  }
   // getDishTypesSelected(): Observable<any>{
   //   return of(this.dishTypesSelected)
   // }

@@ -1,1 +1,7 @@
-<p>pagination works!</p>
+<div id="container">
+  <div class = "section clickable" (click) = paginationService.pageFirst()>&#8810;</div>
+  <div class = "section clickable" (click) = paginationService.pagePrev()>&#60;</div>
+  <div class = "section">{{paginationService.currentPage}}/{{paginationService.getMaxPage()}}</div>
+  <div class = "section clickable" (click) = paginationService.pageNext()>&#62;</div>
+  <div class = "section clickable" (click) = paginationService.pageLast()>&#8811;</div>
+</div>

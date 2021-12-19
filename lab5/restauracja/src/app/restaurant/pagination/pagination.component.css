@@ -1,0 +1,25 @@
+#container {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  background-color: rgb(51, 57, 63);
+}
+
+.section {
+  color: white;
+  margin: 5px;
+}
+
+.clickable {
+  font-weight: bold;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  color: orange;
+  transform: scale(1.2);
+}

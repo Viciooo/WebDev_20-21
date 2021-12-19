@@ -7,6 +7,7 @@ import {CheckoutAndCurrenciesService} from "../services/checkout-and-currencies.
 import {checkoutItem} from '../interfaces/checkout-list.module'
 import {Router} from "@angular/router";
 import {DataService} from "../services/data.service";
+import {PaginationService} from "../services/pagination.service";
 
 @Component({
   selector: 'app-dishes',
@@ -26,11 +27,12 @@ export class DishesComponent implements OnInit,OnChanges{
   //
   // t:any
 
-  constructor(private router:Router,private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
+  constructor(private paginationService:PaginationService,private router:Router,private dataService:DataService,public dishesService: DishListService,public moneyItemHandler: CheckoutAndCurrenciesService) { }
 
   ngOnInit(): void {
-    this.dataService.dishList
-      .subscribe((e) => this.myDishes = e);
+    this.myDishes = this.paginationService.filteredDishes
+    // this.dataService.dishList
+    //   .subscribe((e) => this.myDishes = e);
     this.dataService.dishTypes
       .subscribe((e) => this.myDishTypes = e);
     this.dataService.cuisineTypes
@@ -47,8 +49,9 @@ export class DishesComponent implements OnInit,OnChanges{
   }
 
   ngOnChanges() {
-    this.dataService.getDishList()
-      .subscribe((e) => this.myDishes = e);
+    this.myDishes = this.paginationService.filteredDishes
+    // this.dataService.getDishList()
+    //   .subscribe((e) => this.myDishes = e);
     this.dataService.getDishTypes()
       .subscribe((e) => this.myDishTypes = e);
     this.dataService.getCuisineTypes()
@@ -158,13 +161,7 @@ export class DishesComponent implements OnInit,OnChanges{
 
   }
 
-  sum(arr:number[]){
-    let tmp = 0
-    arr.forEach(e=>{
-      tmp += e
-    })
-    return tmp
-  }
+
 
   goToDetails(id:number){
     this.router.navigate(['/menu',id])

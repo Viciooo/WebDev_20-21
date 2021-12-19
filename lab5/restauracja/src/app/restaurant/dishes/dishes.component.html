@@ -1,8 +1,8 @@
 <div class="container">
   <div class="box" *ngFor="let myDish of dishesService.myDishes
- | filterDishes : dishesService.dishTypes: dishesService.dishTypesSelected:sum(dishesService.dishTypesSelected)
-  | filterCuisinesPipe : dishesService.cuisineTypes:dishesService.cuisineTypesSelected : sum(dishesService.cuisineTypesSelected)
-  | starsPipe : dishesService.starsSelected:sum(dishesService.starsSelected)
+ | filterDishes : dishesService.dishTypes: dishesService.dishTypesSelected:dishesService.sum(dishesService.dishTypesSelected)
+  | filterCuisinesPipe : dishesService.cuisineTypes:dishesService.cuisineTypesSelected : dishesService.sum(dishesService.cuisineTypesSelected)
+  | starsPipe : dishesService.starsSelected:dishesService.sum(dishesService.starsSelected)
   | pricePipe : dishesService.prices[2]:dishesService.prices[3]
 ">
 
@@ -95,4 +95,4 @@
     </div>
     </div>
   <button (click)="test()">test</button>
-  </div>
+</div>

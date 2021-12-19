@@ -32,6 +32,7 @@ import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire/compat";
 import {DataService} from "./restaurant/services/data.service";
 import { PaginationComponent } from './restaurant/pagination/pagination.component'
+import {PaginationService} from "./restaurant/services/pagination.service";
 
 const appRoutes: Routes = [
   {path: '',component:HomeViewComponent},
@@ -78,7 +79,7 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   //potential problem
-  providers: [DishListService,CheckoutAndCurrenciesService,FilterDishesPipe,DataService],
+  providers: [PricePipe,StarsPipe,FilterCuisinesPipe,DishListService,CheckoutAndCurrenciesService,FilterDishesPipe,DataService,PaginationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
