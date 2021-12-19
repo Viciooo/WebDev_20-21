@@ -1,5 +1,3 @@
-import {Review} from "./review.module";
-
 export class Dish {
   constructor(public key: string,
               public rating: number,

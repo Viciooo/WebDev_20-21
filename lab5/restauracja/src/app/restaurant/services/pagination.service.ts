@@ -23,16 +23,9 @@ export class PaginationService {
               public cuisineTypePipe:FilterCuisinesPipe,
               public pricePipe: PricePipe,
               public starsPipe: StarsPipe) {
-    this.updateFunc()
-  }
-  updateFunc(){
-    this.dataService.dishList.subscribe(e=> {
-      this.allDishes = e
-      this.availableDishes = this.allDishes.length
-    })
   }
   setDishes(){
-    this.filteredDishes = this.allDishes
+    this.filteredDishes = this.dishService.myDishes
     const dishTypePipe = new FilterDishesPipe()
     const cuisineTypePipe = new FilterCuisinesPipe()
     const pricePipe = new PricePipe()
