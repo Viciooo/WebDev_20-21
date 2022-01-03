@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-grey);
+  font-size: var(--font-size-big);
+  margin: 1rem 0 1rem 0;
+}
+
+.option {
+  color: white;
+  margin: 1rem;
+}
+
+i{
+  font-size: var(--font-size-big);
+  color: var(--light-grey);
+}
+
+.option:hover i{
+  cursor: pointer;
+  color: var(--span-color);
+  transform: scale(1.2);
+}
+
+input{
+  font-size: var(--font-size-medium);
+  font-family: var(--main-font);
+  width: 2rem;
+  font-weight: bold;
+  color: var(--span-color);
+  margin-right: 1rem;
+}
+
+button{
+  font-size: var(--font-size-medium);
+  font-family: var(--main-font);
+  border-radius: var(--medium-border-radious);
+}
+

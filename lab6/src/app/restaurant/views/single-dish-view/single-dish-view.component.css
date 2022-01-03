@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3{
+  font-family: var(--main-font);
+  margin: 7px;
+  color: var(--dark-grey);
+  background-color: var(--light-grey);
+  border-radius: var(--small-border-radious);
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5vh;
+  padding: 3rem;
+}
+
+.box {
+  background: var(--dark-grey);
+  color: var(--light-grey);
+  border-radius: var(--small-border-radious);
+  box-shadow: var(--box-shadow);
+  margin: 5px;
+  display: flex;
+  width: 100%;
+}
+
+.dish-details{
+  width: 55%;
+}
+
+/*main styles*/
+p {
+  font-style: italic;
+  text-align: center;
+  font-family: var(--main-font);
+  padding: 7px;
+  font-size: var(--font-size-small);
+}
+
+h1 {
+  text-align: center;
+  font-size: var(--font-size-big);
+}
+
+h2{
+  font-size:var(--font-size-medium);
+  width: fit-content;
+  padding: 3px;
+}
+
+span{
+  color: var(--span-color);
+}
+ul{
+  display: flex;
+  margin-left: 2rem;
+  flex-direction: column;
+}
+
+li{
+  list-style-type: square;
+  font-size: var(--font-size-small);
+  font-family: var(--main-font);
+}
+
+.amount{
+  display: flex;
+  align-items: center;
+}
+
+h4,.plus,.minus{
+  font-family: var(--secondary-font);
+  font-size: var(--font-size-big);
+}
+
+h4{
+  margin-left: 3%;
+
+}
+
+.plus,.minus{
+  margin-left: 3%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--small-border-radious);
+}
+.plus{
+  margin-left: 15%;
+}
+/*main styles end*/
+
+/*price and stars*/
+.stars{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rem;
+}
+
+.stars i{
+  margin: 3px;
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  color: var(--star-color);
+}
+
+.priceAndStars{
+  display: flex;
+  align-items: center;
+}
+/*price and stars end*/
+
+/*slider*/
+picture {
+  object-fit: cover;
+}
+img {
+  height: 100%;
+}
+
+section {
+  display: flex;
+  height: 50vh;
+  border: white solid 5px;
+  width: 95%;
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+section picture {
+  flex: 1;
+  border-right: 5px white solid;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+}
+
+section picture:last-child {
+  border-right: 0;
+}
+
+section picture:hover {
+  flex-grow: 2;
+}
+
+.img-box{
+  width: 100%;
+}
+/*slider end*/
+
+/*back to menu*/
+.goBack{
+  background-color: var(--light-grey);
+  width: fit-content;
+  font-size: var(--font-size-big);
+  padding: 5px;
+  border-radius: var(--big-border-radious);
+  margin-left: 5rem;
+  margin-bottom: 3rem;
+}
+.goBack i{
+  color: var(--dark-grey);
+}
+
+.goBack i:hover{
+  color: var(--span-color);
+}
+/*back to menu end*/
+
+/*forms*/
+.forms{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forms h1{
+  font-size: 4rem;
+  color: var(--span-color);
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.input-block{
+  background-color: var(--light-grey);
+  margin-bottom: 1rem;
+  color: var(--dark-grey);
+  font-family: var(--main-font);
+  font-size: var(--font-size-big);
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: var(--medium-border-radious);
+}
+
+input{
+  font-size: var(--font-size-big);
+}
+
+textarea{
+  font-size: var(--font-size-big);
+  min-height: 15rem;
+}
+form button{
+  font-size: var(--font-size-big);
+  font-family: var(--secondary-font);
+  background-color: var(--span-color);
+  color: var(--light-grey);
+  padding: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--big-border-radious);
+  margin-bottom: 3rem;
+}
+form button:disabled{
+  opacity: 0.5;
+  cursor: default;
+}
+/*forms*/
+
+.existing-reviews{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.existing-reviews p{
+font-style: italic;
+  font-size: var(--font-size-small);
+  font-family: var(--main-font);
+}
+
+.existing-reviews h1{
+  width: fit-content;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+.existing-reviews h2{
+  text-transform: uppercase;
+  font-size: var(--font-size-medium);
+  margin-left: 2rem;
+}
+
+.review{
+  margin: 2rem;
+  background-color: var(--span-color);
+  border-radius: var(--medium-border-radious);
+  width: 80%;
+  box-shadow: var(--box-shadow);
+}

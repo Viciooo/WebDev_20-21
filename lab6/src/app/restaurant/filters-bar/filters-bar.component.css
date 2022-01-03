@@ -1,0 +1,111 @@
+.container{
+  display: flex;
+  min-height: 15rem;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  z-index: 3;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+}
+
+input{
+  display: none;
+}
+
+.item{
+  display: flex;
+align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+  border-left: 1px solid var(--hover-grey);
+}
+
+label{
+  font-size: var(--font-size-medium);
+}
+
+h1{
+  font-size: var(--font-size-big);
+  background-color: var(--span-color);
+  width: fit-content;
+  padding: 4px;
+  border-radius: var(--small-border-radious);
+  box-shadow: var(--box-shadow);
+}
+
+i{
+  color: var(--star-color);
+  font-size: var(--font-size-big);
+  margin-right: 3px;
+}
+
+.box{
+  margin-top: 7px;
+  border: 1px solid black;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--medium-border-radious);
+  box-shadow: var(--box-shadow);
+}
+
+.box:last-child{
+  margin-bottom: 2rem;
+}
+
+.box:hover{
+  background-color: var(--light-grey);
+}
+
+
+input:checked + label {
+  color: var(--span-color);
+  font-weight: 700;
+}
+
+input:checked + label i{
+  color: #83ce11;
+}
+
+label{
+  cursor: pointer;
+}
+
+ng5-slider{
+  margin: 5rem;
+}
+
+span{
+  color: var(--span-color);
+}
+
+h2{
+  margin-top: 2rem;
+}
+
+.hideAll{
+  background-color: var(--hover-grey);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hideAll i{
+  color: var(--light-grey);
+  font-size: var(--font-size-medium);
+  padding: 1px;
+}
+
+.reset{
+  font-family: var(--main-font);
+  font-size: var(--font-size-medium);
+  border-radius: var(--medium-border-radious);
+  cursor: pointer;
+  padding: 2px;
+}

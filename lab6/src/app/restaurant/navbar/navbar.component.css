@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.nav-bar{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px rgb(211, 205, 205) solid;
+  background-color: white;
+  font-family: var(--main-font);
+}
+
+
+.logo {
+  font-size: 3rem;
+  color: var(--dark-grey);
+  margin-bottom: 1.5vh;
+  font-weight: 800;
+  margin-right: auto;
+  margin-left: 2rem;
+}
+
+.option{
+  font-size: var(--font-size-big);
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+.option a{
+  color: var(--dark-grey);
+}
+
+.option a:hover{
+  color: var(--span-color);
+}
+
+span{
+  color: var(--span-color);
+}
+
+.option:last-child{
+  margin-right: 5rem;
+}
+

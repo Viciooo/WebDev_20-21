@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import '~font-awesome/css/font-awesome.css';
+:root {
+  --dark-grey: #2f2d2d;
+  --light-grey: #e3e0e0;
+  --box-shadow: 5px 5px 3px grey;
+  --main-font:'Poppins', sans-serif;
+  --secondary-font: "Agency FB", serif;
+  --small-border-radious:2px;
+  --medium-border-radious:7px;
+  --big-border-radious:15px;
+  --span-color:steelblue;
+  --font-size-big:2rem;
+  --font-size-medium:1.3rem;
+  --font-size-small:0.9rem;
+  --hover-grey:#676464;
+  --star-color:#d19f15
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.active{
+  font-weight: bold;
+}

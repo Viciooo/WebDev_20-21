@@ -15,6 +15,7 @@ import {PaginationService} from "../services/pagination.service";
   styleUrls: ['./dishes.component.css'],
 })
 export class DishesComponent{
+
   constructor(public paginationService:PaginationService,
               private router:Router,
               private dataService:DataService,

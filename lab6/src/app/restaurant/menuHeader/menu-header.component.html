@@ -1,0 +1,53 @@
+<div class="nav-bar">
+  <div class="logo">
+    <div class="name"><span>my</span>Kitchen</div>
+  </div>
+
+  <div class="nav-items">
+
+    <div class="option">
+      <a [routerLink]="['/']">
+        Home
+      </a>
+    </div>
+
+    <div class="option">
+      <a [routerLink]="['/checkout']" routerLinkActive="active">
+        Check<span>out</span>
+      </a>
+    </div>
+
+    <div class="option filter">
+      <h1 (click)="dishesService.changeDisplayFilters()"><i class="fa fa-sliders" aria-hidden="true"></i> Filters</h1>
+    </div>
+    <div class="option">
+      <div *ngIf="moneyItemHandler.basketItems>10; else elseBlock" class="amountDisplayer" [style.backgroundColor]="'steelblue'" >{{moneyItemHandler.basketItems}}</div>
+      <ng-template #elseBlock>
+        <div class="amountDisplayer" [style.backgroundColor]="'orange'" >{{moneyItemHandler.basketItems}}</div>
+      </ng-template>
+    </div>
+
+    <div class="option">
+      <h2 class="basketValue">{{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}<span>{{moneyItemHandler.currency}}</span></h2>
+    </div>
+
+    <div class="option currencies">
+      <button class="curr euro" (click)="this.moneyItemHandler.currency = '€'" [disabled]="moneyItemHandler.currency==='€'">€</button>
+      <button class="curr usd" (click)="this.moneyItemHandler.currency = '$'" [disabled]="moneyItemHandler.currency==='$'">$</button>
+    </div>
+
+    <div class="listOfItems">
+      <div class="basket"
+           (click)="listOfItems.style.display ==='none' ? listOfItems.style.display='flex' : listOfItems.style.display ='none'">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        Basket
+      </div>
+      <div #listOfItems class="dropDown">
+        <div *ngFor="let i of moneyItemHandler.checkoutList" class="item">
+          <h1>{{i.amount}} <span>x</span> {{i.name}}  <span>{{moneyItemHandler.getRealPrice(i.value)}}</span> {{moneyItemHandler.currency}} </h1>
+        </div>
+        <div class="item total"><span>Total</span>: {{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}{{moneyItemHandler.currency}}</div>
+      </div>
+    </div>
+  </div>
+</div>

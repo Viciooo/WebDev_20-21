@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 import { Ng5SliderModule } from 'ng5-slider';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DishesComponent } from './restaurant/dishes/dishes.component';
