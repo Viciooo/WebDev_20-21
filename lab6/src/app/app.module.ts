@@ -34,17 +34,6 @@ import {DataService} from "./restaurant/services/data.service";
 import { PaginationComponent } from './restaurant/pagination/pagination.component'
 import {PaginationService} from "./restaurant/services/pagination.service";
 
-const appRoutes: Routes = [
-  {path: '',component:HomeViewComponent},
-  {path: 'menu',component:MenuViewComponent},
-  {path: 'menu/:id',component:SingleDishViewComponent},
-  {path: 'checkout',component:CheckoutViewComponent},
-  {path: 'login',component:LoginViewComponent},
-  {path: 'signup',component:SignupViewComponent},
-  {path: 'chefsView',component:ChefsViewComponent},
-  { path: '**', component: PageNotFoundComponent }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,12 +62,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     Ng5SliderModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  //potential problem
   providers: [PricePipe,StarsPipe,FilterCuisinesPipe,DishListService,CheckoutAndCurrenciesService,FilterDishesPipe,DataService,PaginationService],
   bootstrap: [AppComponent]
 })

@@ -13,10 +13,6 @@ import {DataService} from "../../services/data.service";
 export class ChefsViewComponent implements OnInit{
   //@ts-ignore
   dishForm : FormGroup;
-  myDishes: any = [];
-  myDishTypes: any = [];
-  myCuisineTypes: any = [];
-
 
   constructor(private formBuilder : FormBuilder,public dishesService:DishListService,private dataService:DataService) {}
 
@@ -31,16 +27,10 @@ export class ChefsViewComponent implements OnInit{
       'imgPath': ['', [Validators.required,Validators.minLength(5)]],
       'ingredients': new FormArray([],[Validators.required,Validators.minLength(2)])
     });
-
-      this.dataService.getDishList()
-        .subscribe((e) => this.myDishes = e);
-      this.dataService.getDishTypes()
-        .subscribe((e) => this.myDishTypes = e);
-      this.dataService.getCuisineTypes()
-        .subscribe((e) => this.myCuisineTypes = e);
-
   }
+
   onSubmit() {
+    console.log(this.dishForm.controls)
     let newDish = new Dish(
       "",
       1,

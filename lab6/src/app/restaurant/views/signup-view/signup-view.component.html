@@ -1,2 +1,27 @@
 <app-navbar></app-navbar>
-<p>signup-view works!</p>
+<div class="container">
+  <div class="form-box">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <div class="box">
+        <h1>
+          Sign<span>Up</span>
+        </h1>
+      </div>
+      <div class="box">
+        <label for="email">Email:</label>
+        <input formControlName="email" type="email" name="email" id="email">
+      </div>
+      <div class="box">
+        <label for="password">Password:</label>
+        <input formControlName="password" type="password" name="password" id="password" >
+      </div>
+      <div class="box">
+        <label for="confirm_password">Repeat Password:</label>
+        <input formControlName="confirm_password" type="password" name="confirm_password" id="confirm_password">
+      </div>
+      <div class="box">
+        <button type="submit" [disabled]="!signUpForm.valid" >Register</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -13,7 +13,4 @@ export class PaginationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test() {
-    console.log(this.paginationService.getMaxPage())
-  }
 }

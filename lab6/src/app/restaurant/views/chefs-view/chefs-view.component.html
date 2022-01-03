@@ -3,7 +3,7 @@
   <form [formGroup]="dishForm" (ngSubmit)="onSubmit()" >
     <h1><span>Formularz</span> na <span>twoje</span> danie</h1>
     <label for="imgPath" >Adres URL: </label>
-    <input formControlName="imgPath" type="text" name="imgPath" id="imgPath" class="form-control">
+    <input formControlName="imgPath" type="text" name="imgPath" id="imgPath">
     <span class="error" *ngIf="!dishForm.get('imgPath')?.valid && dishForm.get('imgPath')?.touched">
     Url has to have at least 5 characters
   </span>
@@ -13,28 +13,28 @@
     Name has to have at least 2 characters
   </span>
     <label for="cuisine">Kuchnia: </label>
-    <input formControlName="cuisine" type="text" name="cuisine" id="cuisine" class="form-control" >
+    <input formControlName="cuisine" type="text" name="cuisine" id="cuisine" >
     <span class="error" *ngIf="!dishForm.get('cuisine')?.valid && dishForm.get('cuisine')?.touched">
     Cuisine has to have at least 2 characters
   </span>
     <label for="dishType">Typ dania: </label>
-    <input formControlName="dishType" type="text" name="dishType" id="dishType" class="form-control" >
+    <input formControlName="dishType" type="text" name="dishType" id="dishType" >
     <span class="error" *ngIf="!dishForm.get('dishType')?.valid && dishForm.get('dishType')?.touched">
     Dish type has to have at least 2 characters
   </span>
 
     <label for="description">Opis: </label>
-    <input formControlName="description" type="text" name="description" id="description" class="form-control" >
+    <input formControlName="description" type="text" name="description" id="description" >
     <span class="error" *ngIf="!dishForm.get('description')?.valid && dishForm.get('description')?.touched">
     Description has to have at least 2 characters
   </span>
     <label for="maxAmt">Dostępna ilość: </label>
-    <input type="number" name="maxAmt" id="maxAmt" class="form-control" formControlName="maxAmt">
+    <input type="number" name="maxAmt" id="maxAmt" formControlName="maxAmt">
     <span class="error" *ngIf="!dishForm.get('maxAmt')?.valid && dishForm.get('maxAmt')?.touched">
     Amount has to be between 1 and 1000
   </span>
     <label for="price">Cena: </label>
-    <input type="number" name="price" id="price" class="form-control" formControlName="price">
+    <input type="number" name="price" id="price" formControlName="price">
     <span class="error" *ngIf="!dishForm.get('price')?.valid && dishForm.get('price')?.touched">
     Price has to be between 1 and 1000
   </span>

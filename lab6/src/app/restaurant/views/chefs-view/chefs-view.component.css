@@ -40,6 +40,7 @@ h1{
   color: var(--span-color);
   border-radius: var(--medium-border-radious);
   margin: 2%;
+  cursor: pointer;
 }
 
 h1 {
@@ -105,3 +106,4 @@ h1, h2, h3{
   justify-content: center;
   align-items: center;
 }
+

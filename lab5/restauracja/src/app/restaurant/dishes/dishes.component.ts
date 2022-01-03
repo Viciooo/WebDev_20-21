@@ -123,7 +123,4 @@ export class DishesComponent{
     this.router.navigate(['/menu',id])
   }
 
-  test() {
-    console.log(this.paginationService.availableDishes,"aaaa")
-  }
 }

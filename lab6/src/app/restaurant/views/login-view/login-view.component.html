@@ -1,2 +1,23 @@
 <app-navbar></app-navbar>
-<p>login-view works!</p>
+<div class="container">
+  <div class="form-box">
+    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+      <div class="box">
+        <h1>
+          Sign<span>Up</span>
+        </h1>
+      </div>
+      <div class="box">
+        <label for="email">Email:</label>
+        <input formControlName="email" type="email" name="email" id="email">
+      </div>
+      <div class="box">
+        <label for="password">Password:</label>
+        <input formControlName="password" type="password" name="password" id="password" >
+      </div>
+      <div class="box">
+      <button type="submit" [disabled]="!logInForm.valid" >Register</button>
+      </div>
+    </form>
+  </div>
+</div>
