@@ -12,7 +12,7 @@
     </div>
 
     <div class="option">
-      <a [routerLink]="['/checkout']" routerLinkActive="active">
+      <a [routerLink]="['/checkout']" routerLinkActive="active" *ngIf="isAuthenticated">
         Check<span>out</span>
       </a>
     </div>
@@ -48,6 +48,21 @@
         </div>
         <div class="item total"><span>Total</span>: {{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}{{moneyItemHandler.currency}}</div>
       </div>
+    </div>
+    <div class="option auth" *ngIf="!isAuthenticated">
+      <a  [routerLink]="['/login']" routerLinkActive="active">
+        Log<span>In</span>
+      </a>
+    </div>
+    <div class="option auth" *ngIf="!isAuthenticated">
+      <a [routerLink]="['/signup']" routerLinkActive="active">
+        Sign<span>Up</span>
+      </a>
+    </div>
+    <div class="option auth" *ngIf="isAuthenticated" >
+      <a (click)="onLogout()">
+        Log<span>Out</span>
+      </a>
     </div>
   </div>
 </div>

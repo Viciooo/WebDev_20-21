@@ -32,6 +32,7 @@
 }
 .option{
   margin-right: 2rem;
+  cursor: pointer;
 }
 
 span {
@@ -205,4 +206,9 @@ i {
 
 .option a:hover{
   color: var(--hover-grey);
+}
+
+.auth{
+  margin-left: 1rem;
+  margin-right: 1rem;
 }

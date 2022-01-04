@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {map, Observable} from "rxjs";
 import {Dish} from "../interfaces/dish.module";
+import {dbUser} from "../interfaces/db.user.module";
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,22 @@ export class DataService {
   dishList: Observable<any>
   dishTypes: Observable<any>
   cuisineTypes: Observable<any>
+  userList: Observable<any>
   constructor(private db: AngularFireDatabase) {
     this.dishList = this.getDishList()
     this.dishTypes = this.getDishTypes()
     this.cuisineTypes = this.getCuisineTypes()
+    this.userList = this.getUserList()
+  }
+  getUserList(){
+    return this.db.list('users').snapshotChanges().pipe(map(actions => {
+      return actions.map(a => {
+        const key = a.payload.key;
+        const data = a.payload.val();
+        // @ts-ignore
+        return new dbUser(key,data.nick,data.roles,data.orders)
+      })
+    }));
   }
 
   getDishList(){
@@ -22,7 +35,9 @@ export class DataService {
         const key = a.payload.key;
         const data = a.payload.val();
         // @ts-ignore
-        return new Dish(key,data.rating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath)
+        const avgRating = Math.ceil(data.rating.reduce((ratingSum:number,current:number) => ratingSum + current,0) / Math.max(data.rating.length-1,1))
+        // @ts-ignore
+        return new Dish(key,avgRating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath)
       })
     }));
   }
@@ -33,6 +48,10 @@ export class DataService {
 
   getCuisineTypes() {
     return this.db.list('cuisineTypes').valueChanges();
+  }
+
+  pushUser(user:dbUser){
+    this.db.database.ref('users').child(user.UID).set(user)
   }
 
   pushDish(myDish:Dish){
@@ -47,7 +66,7 @@ export class DataService {
 
   pushDishType(dishType:string){
     const dishTypes = this.db.list('dishTypes')
-    // dishTypes.push(dishType)
+    dishTypes.push(dishType)
   }
 
   removeDishType(dishType:string){
@@ -57,7 +76,7 @@ export class DataService {
 
   pushCuisineType(cuisineType:string){
     const cuisineTypes = this.db.list('cuisineTypes')
-    // cuisineTypes.push(cuisineType)
+    cuisineTypes.push(cuisineType)
   }
 
   removeCuisineType(cuisineType:string){

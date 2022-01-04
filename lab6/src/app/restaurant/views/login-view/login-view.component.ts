@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../interfaces/user.module";
-import {AuthResponseData, AuthService} from "../../services/auth.service";
+import {AuthResponseData, AuthService} from "../../auth/auth.service";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 

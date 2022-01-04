@@ -12,24 +12,38 @@
       Menu
     </a>
   </div>
-  <div class="option">
+  <div class="option" *ngIf="isAuthenticated">
+    <a [routerLink]="['/adminView']" routerLinkActive="active">
+      AdminView
+    </a>
+  </div>
+  <div class="option" *ngIf="isAuthenticated">
     <a [routerLink]="['/chefsView']" routerLinkActive="active">
       ChefsView
     </a>
   </div>
-  <div class="option">
+  <div class="option" *ngIf="isAuthenticated">
     <a [routerLink]="['/checkout']" routerLinkActive="active">
       Check<span>out</span>
     </a>
   </div>
-  <div class="option">
+  <div class="option" *ngIf="!isAuthenticated">
     <a [routerLink]="['/login']" routerLinkActive="active">
       Log<span>In</span>
     </a>
   </div>
-  <div class="option">
+  <div class="option" *ngIf="!isAuthenticated">
     <a [routerLink]="['/signup']" routerLinkActive="active">
       Sign<span>Up</span>
+    </a>
+  </div>
+  <div class="option" *ngIf="isAuthenticated">
+    <a (click)="onLogout()">
+      Log<span>Out</span>
+    </a>
+  </div>
+  <div class="option" *ngIf="isAuthenticated">
+    <a>
     </a>
   </div>
 </div>

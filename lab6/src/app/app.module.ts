@@ -22,7 +22,7 @@ import { ChefsViewComponent } from './restaurant/views/chefs-view/chefs-view.com
 import { CheckoutViewComponent } from './restaurant/views/checkout-view/checkout-view.component';
 import { LoginViewComponent } from './restaurant/views/login-view/login-view.component';
 import { SignupViewComponent } from './restaurant/views/signup-view/signup-view.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './restaurant/navbar/navbar.component';
 import { MapComponent } from './restaurant/map/map.component';
 import { PageNotFoundComponent } from './restaurant/views/page-not-found-view/page-not-found.component';
@@ -34,6 +34,8 @@ import {DataService} from "./restaurant/services/data.service";
 import { PaginationComponent } from './restaurant/pagination/pagination.component'
 import {PaginationService} from "./restaurant/services/pagination.service";
 import {LoadingSpinnerComponent} from "./restaurant/loading-spinner/loading-spinner.component";
+import {AuthInterceptorService} from "./restaurant/auth/auth-interceptor.service";
+import { AdminViewComponent } from './restaurant/views/admin-view/admin-view.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import {LoadingSpinnerComponent} from "./restaurant/loading-spinner/loading-spin
     PageNotFoundComponent,
     SingleDishViewComponent,
     PaginationComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AdminViewComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,17 @@ import {LoadingSpinnerComponent} from "./restaurant/loading-spinner/loading-spin
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [PricePipe,StarsPipe,FilterCuisinesPipe,DishListService,CheckoutAndCurrenciesService,FilterDishesPipe,DataService,PaginationService],
+  providers: [PricePipe,StarsPipe,
+    FilterCuisinesPipe,
+    DishListService,
+    CheckoutAndCurrenciesService,
+    FilterDishesPipe,DataService,
+    PaginationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:AuthInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

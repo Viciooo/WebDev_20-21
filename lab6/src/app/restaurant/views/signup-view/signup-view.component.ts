@@ -6,7 +6,7 @@ import {
   Validators
 } from "@angular/forms";
 import {ConfirmedValidator} from "./passwordValidator";
-import {AuthResponseData, AuthService} from "../../services/auth.service";
+import {AuthResponseData, AuthService} from "../../auth/auth.service";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
 
@@ -29,6 +29,7 @@ export class SignupViewComponent implements OnInit {
   ngOnInit(): void {
 
     this.signUpForm = this.formBuilder.group({
+      'nick':['', [Validators.required, Validators.minLength]],
       'email': ['', [Validators.required, Validators.email]],
       'password': ['', [Validators.required, Validators.minLength(8)]],
       'confirm_password': ['']
@@ -51,12 +52,10 @@ export class SignupViewComponent implements OnInit {
 
     authObs.subscribe(
       resData => {
-        console.log(resData);
         this.isLoading = false;
         this.router.navigate(['/menu']);
       },
       errorMessage => {
-        console.log(errorMessage);
         this.error = errorMessage;
         this.isLoading = false;
       }

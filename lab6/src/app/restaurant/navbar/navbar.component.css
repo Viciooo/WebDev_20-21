@@ -35,6 +35,7 @@
 
 .option a:hover{
   color: var(--span-color);
+  cursor: pointer;
 }
 
 span{
