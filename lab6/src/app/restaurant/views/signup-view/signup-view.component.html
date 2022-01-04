@@ -1,7 +1,13 @@
 <app-navbar></app-navbar>
 <div class="container">
+  <div class="error-display" *ngIf="error!=null">
+    {{error}}
+  </div>
   <div class="form-box">
-    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="isLoading" style="text-align: center">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
       <div class="box">
         <h1>
           Sign<span>Up</span>

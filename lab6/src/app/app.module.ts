@@ -33,6 +33,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {DataService} from "./restaurant/services/data.service";
 import { PaginationComponent } from './restaurant/pagination/pagination.component'
 import {PaginationService} from "./restaurant/services/pagination.service";
+import {LoadingSpinnerComponent} from "./restaurant/loading-spinner/loading-spinner.component";
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {PaginationService} from "./restaurant/services/pagination.service";
     PageNotFoundComponent,
     SingleDishViewComponent,
     PaginationComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
