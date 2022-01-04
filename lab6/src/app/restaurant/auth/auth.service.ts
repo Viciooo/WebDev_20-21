@@ -5,6 +5,8 @@ import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 
 import { User} from "../interfaces/user.module";
+import {DataService} from "../services/data.service";
+import {dbUser, Roles} from "../interfaces/db.user.module";
 
 export interface AuthResponseData {
   kind: string;
@@ -22,12 +24,14 @@ export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient,
+              private router: Router,
+              private dataService:DataService) {}
 
-  signup(email: string, password: string) {
+  signup(email: string, password: string, nick:string) {
     return this.http
       .post<AuthResponseData>(
-        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyDb0xTaRAoxyCgvaDF3kk5VYOsTwB_3o7Y',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC_YNAlfVbRecyrhjNBaKO9Pc6ZpHD_UNg',
         {
           email: email,
           password: password,
@@ -37,11 +41,12 @@ export class AuthService {
       .pipe(
         catchError(AuthService.handleError),
         tap(resData => {
-          this.handleAuthentication(
+          this.handleAuthenticationSignUp(
             resData.email,
             resData.localId,
             resData.idToken,
-            +resData.expiresIn
+            +resData.expiresIn,
+            nick
           );
         })
       );
@@ -50,7 +55,7 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDb0xTaRAoxyCgvaDF3kk5VYOsTwB_3o7Y',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC_YNAlfVbRecyrhjNBaKO9Pc6ZpHD_UNg',
         {
           email: email,
           password: password,
@@ -100,7 +105,7 @@ export class AuthService {
   logout() {
     // @ts-ignore
     this.user.next(null);
-    this.router.navigate(['/auth']);
+    this.router.navigate(['']);
     localStorage.removeItem('userData');
     if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);
@@ -113,6 +118,23 @@ export class AuthService {
       this.logout();
     }, expirationDuration);
   }
+
+
+  private handleAuthenticationSignUp(
+    email: string,
+    userId: string,
+    token: string,
+    expiresIn: number,
+    nick:string
+  ) {
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+    const user = new User(email, userId, token, expirationDate);
+    this.user.next(user);
+    this.autoLogout(expiresIn * 1000);
+    localStorage.setItem('userData', JSON.stringify(user));
+    this.dataService.pushUser(new dbUser(userId,nick,new Roles(true,false,false,false),[]))
+  }
+
 
   private handleAuthentication(
     email: string,

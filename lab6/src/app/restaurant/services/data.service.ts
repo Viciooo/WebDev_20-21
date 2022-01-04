@@ -34,8 +34,9 @@ export class DataService {
       return actions.map(a => {
         const key = a.payload.key;
         const data = a.payload.val();
-        // @ts-ignore
-        const avgRating = Math.ceil(data.rating.reduce((ratingSum:number,current:number) => ratingSum + current,0) / Math.max(data.rating.length-1,1))
+
+          // @ts-ignore
+          const avgRating = Math.ceil(data.rating.reduce((ratingSum:number,current:number) => ratingSum + current,0) / Math.max(data.rating.length-1,1))
         // @ts-ignore
         return new Dish(key,avgRating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath)
       })

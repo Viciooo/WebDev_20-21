@@ -43,12 +43,13 @@ export class SignupViewComponent implements OnInit {
     if (!this.signUpForm.valid) return
     const email = (<FormArray>this.signUpForm.get('email')).value
     const password = (<FormArray>this.signUpForm.get('password')).value
+    const nick = (<FormArray>this.signUpForm.get('nick')).value
 
     let authObs: Observable<AuthResponseData>;
 
     this.isLoading = true;
 
-    authObs = this.authService.signup(email, password);
+    authObs = this.authService.signup(email, password, nick);
 
     authObs.subscribe(
       resData => {

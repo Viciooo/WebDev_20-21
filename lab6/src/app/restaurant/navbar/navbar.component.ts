@@ -1,6 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../auth/auth.service";
 import {Subscription} from "rxjs";
+import {DataService} from "../services/data.service";
+import {dbUser} from "../interfaces/db.user.module";
+import {UserListService} from "../services/user-list.service";
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +13,10 @@ import {Subscription} from "rxjs";
 export class NavbarComponent implements OnInit,OnDestroy {
   isAuthenticated = false
   // @ts-ignore
-  userNick:string
-  // @ts-ignore
   private userSub: Subscription
 
-
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService,
+              public userList:UserListService) { }
 
   ngOnInit(): void {
     this.userSub = this.authService.user.subscribe(user =>{

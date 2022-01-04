@@ -1,16 +1,6 @@
 {
   "users": {
-    "test": {
-      "UID": "Bm6wHCvUB9QS7VJ8XJCP7wRYWn93",
-      "nick": "testing",
-      "roles": {
-        "user": true,
-        "manager": true,
-        "admin": true,
-        "banned": false
-      },
-      "orders": [""]
-    }
+
   },
   "cuisineTypes": [
     "Polska",
