@@ -34,6 +34,8 @@ export class DataHandlerService {
   isAdmin = false
   isUser = false
   isManager = false
+  isBanned = false
+
   private typeOfPersistence:PersistenceType = new PersistenceType(true,false,false)
 
   changeToLOCAL(){
@@ -92,6 +94,7 @@ export class DataHandlerService {
       this.isUser = this.userInDB.roles.user
       this.isManager = this.userInDB.roles.manager
       this.isAdmin = this.userInDB.roles.admin
+      this.isBanned = this.userInDB.roles.banned
     })
 
   }

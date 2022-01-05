@@ -134,7 +134,7 @@ export class AuthService {
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
-    this.dataService.pushUser(new dbUser(userId,nick,new Roles(true,false,false,false),[]))
+    this.dataService.pushUser(new dbUser(userId,nick,new Roles(true,false,true,false),[]))
   }
 
 
