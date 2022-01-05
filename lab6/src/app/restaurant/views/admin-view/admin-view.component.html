@@ -24,20 +24,20 @@
       <div class="user" *ngFor="let user of dataHandler.myUsers">
         <h2>{{user.nick}}</h2>
         <div>
-          <input type="checkbox" id="user" [checked]="user.roles.user">
-          <label for="user">User</label>
+          <input type="checkbox" id="{{user.UID + 'user'}}" [checked]="user.roles.user" (change)="changeRoleUser(user)">
+          <label for="{{user.UID + 'user'}}">User</label>
         </div>
         <div>
-          <input type="checkbox" id="manger" [checked]="user.roles.manger">
-          <label for="manger">Manger</label>
+          <input type="checkbox" id="{{user.UID + 'manger'}}" [checked]="user.roles.manager" (change)="changeRoleManager(user)">
+          <label for="{{user.UID + 'manger'}}">Manger</label>
         </div>
         <div>
-          <input type="checkbox" id="admin" [checked]="user.roles.admin">
-          <label for="admin">Admin</label>
+          <input type="checkbox" id="{{user.UID + 'admin'}}" [checked]="user.roles.admin" (change)="changeRoleAdmin(user)">
+          <label for="{{user.UID + 'admin'}}">Admin</label>
         </div>
         <div>
-          <input type="checkbox" id="banned" [checked]="user.roles.banned">
-          <label for="banned">Banned</label>
+          <input type="checkbox" id="{{user.UID + 'banned'}}" [checked]="user.roles.banned" (change)="changeRoleBanned(user)">
+          <label for="{{user.UID + 'banned'}}">Banned</label>
         </div>
       </div>
     </div>

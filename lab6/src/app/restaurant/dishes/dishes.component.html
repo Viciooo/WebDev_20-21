@@ -7,9 +7,6 @@
   | slice:(paginationService.currentPage-1)*paginationService.itemsPerPage:paginationService.currentPage*paginationService.itemsPerPage"
 >
 
-    <div class="delete-btn">
-      <i class="fa fa-times" aria-hidden="true" (click)="deleteElement(myDish)"></i>
-    </div>
     <div class="img-box">
       <img
         src="{{myDish.imgPath[0]}}"
@@ -36,8 +33,8 @@
       <h4 *ngIf="myDish.amount >= 10" [style.color]="'green'">
         {{myDish.amount}}
       </h4>
-      <button class="plus" (click)="takeItem(myDish)" [disabled]="myDish.amount===0">+</button>
-      <button class="minus" (click)="returnItem(myDish)" [disabled]="myDish.amount===myDish.maxAmt">-</button>
+      <button class="plus" (click)="takeItem(myDish)" [disabled]="myDish.amount===0 || !dishesService.userInDB.roles.user">+</button>
+      <button class="minus" (click)="returnItem(myDish)" [disabled]="myDish.amount===myDish.maxAmt || !dishesService.userInDB.roles.user">-</button>
     </div>
 
     <div class="priceAndStars">

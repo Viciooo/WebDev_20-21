@@ -4,53 +4,53 @@
     <div>
       <h1>Dish list editor</h1>
     </div>
-    <div class="dish" *ngFor="let dish of dataHandler.myDishes">
+    <div class="dish" *ngFor="let dish of dishesService.myDishes">
       <div class="trash">
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteElement(dish)"></i>
       </div>
       <div>
         <label for="nameEditor">Name: </label>
-        <input type="text" name="nameEditor" id="nameEditor" [value]="dish.name">
+        <input type="text" name="nameEditor" id="nameEditor" [value]="dish.name" (input)="changeName($event,dish)">
       </div>
 
       <div>
         <label for="maxAmtEditor">MaxAmt: </label>
-        <input type="number" name="maxAmtEditor" id="maxAmtEditor" [value]="dish.maxAmt">
+        <input type="number" name="maxAmtEditor" id="maxAmtEditor" [value]="dish.maxAmt" (input)="changeMaxAmt($event,dish)">
       </div>
 
       <div>
         <label for="cuisineEditor">Cuisine: </label>
-        <input type="text" name="cuisineEditor" id="cuisineEditor" [value]="dish.cuisine">
+        <input type="text" name="cuisineEditor" id="cuisineEditor" [value]="dish.cuisine" (input)="changeCuisine($event,dish)">
       </div>
 
       <div>
         <label for="dishTypeEditor">DishType: </label>
-        <input type="text" name="dishTypeEditor" id="dishTypeEditor" [value]="dish.dishType">
+        <input type="text" name="dishTypeEditor" id="dishTypeEditor" [value]="dish.dishType" (input)="changeDishType($event,dish)">
       </div>
 
       <div>
         <label for="ingredientsEditor">Ingredients: </label>
-        <input type="text" name="ingredientsEditor" id="ingredientsEditor" [value]="dish.ingredients.toString()">
+        <input type="text" name="ingredientsEditor" id="ingredientsEditor" [value]="dish.ingredients.toString()" (input)="changeIngredients($event,dish)">
       </div>
 
       <div>
         <label for="amountEditor">Amount: </label>
-        <input type="number" name="amountEditor" id="amountEditor" [value]="dish.amount">
+        <input type="number" name="amountEditor" id="amountEditor" [value]="dish.amount" (input)="changeAmount($event,dish)">
       </div>
 
       <div>
         <label for="priceEditor">Price: </label>
-        <input type="number" name="priceEditor" id="priceEditor" [value]="dish.price">
+        <input type="number" name="priceEditor" id="priceEditor" [value]="dish.price" (input)="changePrice($event,dish)">
       </div>
 
       <div>
         <label for="descriptionEditor">Description: </label>
-        <input type="text" name="descriptionEditor" id="descriptionEditor" [value]="dish.description">
+        <input type="text" name="descriptionEditor" id="descriptionEditor" [value]="dish.description" (input)="changeDescription($event,dish)">
       </div>
 
       <div>
         <label for="imgPathEditor">ImgPath: </label>
-        <input type="text" name="imgPathEditor" id="imgPathEditor" [value]="dish.imgPath.toString()">
+        <input type="text" name="imgPathEditor" id="imgPathEditor" [value]="dish.imgPath.toString()" (input)="changeImgPath($event,dish)">
       </div>
     </div>
   </div>

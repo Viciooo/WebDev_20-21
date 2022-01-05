@@ -12,17 +12,17 @@
       Menu
     </a>
   </div>
-  <div class="option" *ngIf="dataHandler.isAuthenticated">
+  <div class="option" *ngIf="dataHandler.isAuthenticated && dataHandler.isAdmin">
     <a [routerLink]="['/adminView']" routerLinkActive="active">
       AdminView
     </a>
   </div>
-  <div class="option" *ngIf="dataHandler.isAuthenticated">
+  <div class="option" *ngIf="dataHandler.isAuthenticated && (dataHandler.isManager ||dataHandler.isAdmin)">
     <a [routerLink]="['/chefsView']" routerLinkActive="active">
       ChefsView
     </a>
   </div>
-  <div class="option" *ngIf="dataHandler.isAuthenticated">
+  <div class="option" *ngIf="dataHandler.isAuthenticated && dataHandler.isUser">
     <a [routerLink]="['/checkout']" routerLinkActive="active">
       Check<span>out</span>
     </a>

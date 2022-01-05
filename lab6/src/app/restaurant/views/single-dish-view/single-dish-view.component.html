@@ -48,8 +48,8 @@
             {{getMyDish().amount}}
           </h4>
 
-          <button class="plus" (click)="takeItem(getMyDish())" [disabled]="getMyDish().amount===0">+</button>
-          <button class="minus" (click)="returnItem(getMyDish())" [disabled]="getMyDish().amount=== getMyDish().maxAmt">-</button>
+          <button class="plus" (click)="takeItem(getMyDish())" [disabled]="getMyDish().amount===0 || !dishService.userInDB.roles.user">+</button>
+          <button class="minus" (click)="returnItem(getMyDish())" [disabled]="getMyDish().amount=== getMyDish().maxAmt || !dishService.userInDB.roles.user">-</button>
 
         </div>
 

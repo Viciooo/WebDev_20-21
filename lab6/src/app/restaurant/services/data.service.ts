@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {map, Observable} from "rxjs";
 import {Dish} from "../interfaces/dish.module";
-import {dbUser} from "../interfaces/db.user.module";
+import {dbUser, Roles} from "../interfaces/db.user.module";
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +41,10 @@ export class DataService {
         return new Dish(key,avgRating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath)
       })
     }));
+  }
+
+  changeUserRoles(key:string,roles:Roles){
+    this.db.list('users').update(key,{roles:roles})
   }
 
   getDishTypes() {

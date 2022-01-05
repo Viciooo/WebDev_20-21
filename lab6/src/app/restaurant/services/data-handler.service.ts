@@ -31,6 +31,9 @@ export class DataHandlerService {
   isAuthenticated: boolean
   // @ts-ignore
   userInDB:dbUser
+  isAdmin = false
+  isUser = false
+  isManager = false
   private typeOfPersistence:PersistenceType = new PersistenceType(true,false,false)
 
   changeToLOCAL(){
@@ -86,6 +89,9 @@ export class DataHandlerService {
       this.myUsers.forEach((user1:dbUser)=>{
         if(user1.UID === this.user.id) this.userInDB = user1
       })
+      this.isUser = this.userInDB.roles.user
+      this.isManager = this.userInDB.roles.manager
+      this.isAdmin = this.userInDB.roles.admin
     })
 
   }
