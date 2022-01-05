@@ -5,6 +5,9 @@
       <h1>Dish list editor</h1>
     </div>
     <div class="dish" *ngFor="let dish of dataHandler.myDishes">
+      <div class="trash">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+      </div>
       <div>
         <label for="nameEditor">Name: </label>
         <input type="text" name="nameEditor" id="nameEditor" [value]="dish.name">

@@ -125,3 +125,21 @@ h1, h2, h3{
   font-size: var(--font-size-medium);
   font-family: var(--main-font);
 }
+
+.dish div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.trash{
+  background-color: var(--span-color);
+  color: white;
+  padding: 3px 5px;
+  border-radius: var(--medium-border-radious);
+  font-size: var(--font-size-big);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
