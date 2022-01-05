@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, Validators} from "@angular/forms";
-import {DishListService} from "../../services/dish-list.service";
+import {DataHandlerService} from "../../services/data-handler.service";
 import {Dish} from "../../interfaces/dish.module";
 import {DataService} from "../../services/data.service";
 
@@ -14,7 +14,9 @@ export class ChefsViewComponent implements OnInit{
   //@ts-ignore
   dishForm : FormGroup;
 
-  constructor(private formBuilder : FormBuilder,public dishesService:DishListService,private dataService:DataService) {}
+  constructor(private formBuilder : FormBuilder,
+              public dataHandler:DataHandlerService,
+              private dataService:DataService) {}
 
   ngOnInit() : void {
     this.dishForm = this.formBuilder.group({
@@ -34,7 +36,7 @@ export class ChefsViewComponent implements OnInit{
     let newDish = new Dish(
       "",
       1,
-      this.dishesService.newId,
+      this.dataHandler.newId,
       (<FormArray>this.dishForm.get('maxAmt')).value,
       (<FormArray>this.dishForm.get('name')).value,
       (<FormArray>this.dishForm.get('cuisine')).value,
@@ -47,27 +49,27 @@ export class ChefsViewComponent implements OnInit{
     )
     this.dataService.pushDish(newDish)
     // this.dishesService.myDishes.push(newDish)
-    this.dishesService.priceList.push([this.dishesService.newId,newDish.price])
-    this.dishesService.priceList.sort((a, b) => a[1] > b[1] && 1 || -1)
+    this.dataHandler.priceList.push([this.dataHandler.newId,newDish.price])
+    this.dataHandler.priceList.sort((a, b) => a[1] > b[1] && 1 || -1)
 
-    if(this.dishesService.dishTypes.indexOf((<FormArray>this.dishForm.get('dishType')).value) === -1){
+    if(this.dataHandler.dishTypes.indexOf((<FormArray>this.dishForm.get('dishType')).value) === -1){
       // this.dishesService.dishTypes.push((<FormArray>this.dishForm.get('dishType')).value)
       this.dataService.pushDishType((<FormArray>this.dishForm.get('dishType')).value)
-      this.dishesService.dishTypesSelected.push(0)
+      this.dataHandler.dishTypesSelected.push(0)
     }
-    if(this.dishesService.cuisineTypes.indexOf((<FormArray>this.dishForm.get('cuisine')).value) === -1){
+    if(this.dataHandler.cuisineTypes.indexOf((<FormArray>this.dishForm.get('cuisine')).value) === -1){
       // this.dishesService.cuisineTypes.push((<FormArray>this.dishForm.get('cuisine')).value)
       this.dataService.pushCuisineType((<FormArray>this.dishForm.get('cuisine')).value)
-      this.dishesService.cuisineTypesSelected.push(0)
+      this.dataHandler.cuisineTypesSelected.push(0)
     }
 
-    if(this.dishesService.prices[0] > (<FormArray>this.dishForm.get('price')).value){
-      this.dishesService.prices[0] = (<FormArray>this.dishForm.get('price')).value
-      this.dishesService.prices[2] = (<FormArray>this.dishForm.get('price')).value
+    if(this.dataHandler.prices[0] > (<FormArray>this.dishForm.get('price')).value){
+      this.dataHandler.prices[0] = (<FormArray>this.dishForm.get('price')).value
+      this.dataHandler.prices[2] = (<FormArray>this.dishForm.get('price')).value
     }
-    if(this.dishesService.prices[1] < (<FormArray>this.dishForm.get('price')).value){
-      this.dishesService.prices[1] = (<FormArray>this.dishForm.get('price')).value
-      this.dishesService.prices[3] = (<FormArray>this.dishForm.get('price')).value
+    if(this.dataHandler.prices[1] < (<FormArray>this.dishForm.get('price')).value){
+      this.dataHandler.prices[1] = (<FormArray>this.dishForm.get('price')).value
+      this.dataHandler.prices[3] = (<FormArray>this.dishForm.get('price')).value
     }
 
     this.dishForm.reset()

@@ -5,7 +5,7 @@ import {FilterCuisinesPipe} from "../pipes/filter-cuisines.pipe";
 import {FilterDishesPipe} from "../pipes/filter-dishes.pipe";
 import {PricePipe} from "../pipes/price.pipe";
 import {StarsPipe} from "../pipes/stars.pipe";
-import {DishListService} from "./dish-list.service";
+import {DataHandlerService} from "./data-handler.service";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class PaginationService {
   filteredDishes: any[] = []
   availableDishes: any
   allDishes: any
-  constructor(public dishService: DishListService,
+  constructor(public dishService: DataHandlerService,
               public dataService: DataService,
               public moneyItemHandler: CheckoutAndCurrenciesService,
               public dishTypePipe:FilterDishesPipe,

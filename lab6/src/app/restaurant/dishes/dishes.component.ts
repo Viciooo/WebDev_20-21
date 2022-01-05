@@ -2,7 +2,7 @@
 
 import {Component} from '@angular/core';
 import {Dish} from "../interfaces/dish.module";
-import { DishListService } from "../services/dish-list.service"
+import { DataHandlerService } from "../services/data-handler.service"
 import {CheckoutAndCurrenciesService} from "../services/checkout-and-currencies.service";
 import {checkoutItem} from '../interfaces/checkout-list.module'
 import {Router} from "@angular/router";
@@ -19,7 +19,7 @@ export class DishesComponent{
   constructor(public paginationService:PaginationService,
               private router:Router,
               private dataService:DataService,
-              public dishesService: DishListService,
+              public dishesService: DataHandlerService,
               public moneyItemHandler: CheckoutAndCurrenciesService) {}
 
   takeItem(myDish: Dish) {

@@ -26,12 +26,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 2rem;
-  margin-left: 3rem;
+  margin-right: 1rem;
+  margin-left: 2rem;
 
 }
 .option{
-  margin-right: 2rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 
@@ -210,5 +210,16 @@ i {
 
 .auth{
   margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.nick{
+  border-right: black solid 1px;
+  padding-left: 1rem;
+  padding-right: 2rem;
+}
+
+.logout{
+  margin-left: 2rem;
   margin-right: 1rem;
 }

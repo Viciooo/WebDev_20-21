@@ -3,46 +3,64 @@
     <div class="name"><span>my</span>Kitchen</div>
   </div>
   <div class="option">
-    <a [routerLink]="['/']"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
       Home
     </a>
   </div>
   <div class="option">
-    <a [routerLink]="['/menu']" routerLinkActive="active" >
+    <a [routerLink]="['/menu']" routerLinkActive="active">
       Menu
     </a>
   </div>
-  <div class="option" *ngIf="isAuthenticated">
+  <div class="option" *ngIf="dataHandler.isAuthenticated">
     <a [routerLink]="['/adminView']" routerLinkActive="active">
       AdminView
     </a>
   </div>
-  <div class="option" *ngIf="isAuthenticated">
+  <div class="option" *ngIf="dataHandler.isAuthenticated">
     <a [routerLink]="['/chefsView']" routerLinkActive="active">
       ChefsView
     </a>
   </div>
-  <div class="option" *ngIf="isAuthenticated">
+  <div class="option" *ngIf="dataHandler.isAuthenticated">
     <a [routerLink]="['/checkout']" routerLinkActive="active">
       Check<span>out</span>
     </a>
   </div>
-  <div class="option" *ngIf="!isAuthenticated">
+  <div class="option" *ngIf="!dataHandler.isAuthenticated">
     <a [routerLink]="['/login']" routerLinkActive="active">
       Log<span>In</span>
     </a>
   </div>
-  <div class="option" *ngIf="!isAuthenticated">
+  <div class="option" *ngIf="!dataHandler.isAuthenticated">
     <a [routerLink]="['/signup']" routerLinkActive="active">
       Sign<span>Up</span>
     </a>
   </div>
-  <div class="option" *ngIf="isAuthenticated">
+  <div class="option" *ngIf="dataHandler.isAuthenticated">
     <a (click)="onLogout()">
       Log<span>Out</span>
     </a>
   </div>
-  <div class="option" *ngIf="isAuthenticated">
-    <h1>{{userList.userNick}} aaaa</h1>
+  <div class="option" *ngIf="
+  dataHandler.isAuthenticated &&
+   dataHandler.userInDB.roles.admin">
+    <i class="fa fa-star" aria-hidden="true"> ADMIN</i>
+  </div>
+  <div class="option" *ngIf="
+  dataHandler.isAuthenticated &&
+   !dataHandler.userInDB.roles.admin &&
+    dataHandler.userInDB.roles.manager">
+    <i class="fa fa-star-half-o" aria-hidden="true"> MANAGER</i>
+  </div>
+  <div class="option"
+       *ngIf="dataHandler.isAuthenticated &&
+        !dataHandler.userInDB.roles.admin &&
+         !dataHandler.userInDB.roles.manager &&
+          dataHandler.userInDB.roles.user">
+    <i class="fa fa-star-o" aria-hidden="true"> USER</i>
+  </div>
+  <div class="option" *ngIf="dataHandler.isAuthenticated">
+    <i class="fa fa-user" aria-hidden="true"> {{dataHandler.userInDB.nick}}</i>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataHandlerService} from "../../services/data-handler.service";
 
 @Component({
   selector: 'app-admin-view',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dataHandler:DataHandlerService) { }
 
   ngOnInit(): void {
   }

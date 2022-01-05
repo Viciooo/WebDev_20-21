@@ -22,6 +22,8 @@ export interface AuthResponseData {
 export class AuthService {
   // @ts-ignore
   user = new BehaviorSubject<User>(null);
+  // @ts-ignore
+
   private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient,

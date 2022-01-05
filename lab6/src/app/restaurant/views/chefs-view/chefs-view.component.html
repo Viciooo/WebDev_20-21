@@ -1,91 +1,145 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <form [formGroup]="dishForm" (ngSubmit)="onSubmit()" >
-    <h1><span>Formularz</span> na <span>twoje</span> danie</h1>
-    <label for="imgPath" >Adres URL: </label>
-    <input formControlName="imgPath" type="text" name="imgPath" id="imgPath">
-    <span class="error" *ngIf="!dishForm.get('imgPath')?.valid && dishForm.get('imgPath')?.touched">
+  <div class="box">
+    <div>
+      <h1>Dish list editor</h1>
+    </div>
+    <div class="dish" *ngFor="let dish of dataHandler.myDishes">
+      <div>
+        <label for="nameEditor">Name: </label>
+        <input type="text" name="nameEditor" id="nameEditor" [value]="dish.name">
+      </div>
+
+      <div>
+        <label for="maxAmtEditor">MaxAmt: </label>
+        <input type="number" name="maxAmtEditor" id="maxAmtEditor" [value]="dish.maxAmt">
+      </div>
+
+      <div>
+        <label for="cuisineEditor">Cuisine: </label>
+        <input type="text" name="cuisineEditor" id="cuisineEditor" [value]="dish.cuisine">
+      </div>
+
+      <div>
+        <label for="dishTypeEditor">DishType: </label>
+        <input type="text" name="dishTypeEditor" id="dishTypeEditor" [value]="dish.dishType">
+      </div>
+
+      <div>
+        <label for="ingredientsEditor">Ingredients: </label>
+        <input type="text" name="ingredientsEditor" id="ingredientsEditor" [value]="dish.ingredients.toString()">
+      </div>
+
+      <div>
+        <label for="amountEditor">Amount: </label>
+        <input type="number" name="amountEditor" id="amountEditor" [value]="dish.amount">
+      </div>
+
+      <div>
+        <label for="priceEditor">Price: </label>
+        <input type="number" name="priceEditor" id="priceEditor" [value]="dish.price">
+      </div>
+
+      <div>
+        <label for="descriptionEditor">Description: </label>
+        <input type="text" name="descriptionEditor" id="descriptionEditor" [value]="dish.description">
+      </div>
+
+      <div>
+        <label for="imgPathEditor">ImgPath: </label>
+        <input type="text" name="imgPathEditor" id="imgPathEditor" [value]="dish.imgPath.toString()">
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <form [formGroup]="dishForm" (ngSubmit)="onSubmit()">
+      <h1><span>Formularz</span> na <span>twoje</span> danie</h1>
+      <label for="imgPath">Adres URL: </label>
+      <input formControlName="imgPath" type="text" name="imgPath" id="imgPath">
+      <span class="error" *ngIf="!dishForm.get('imgPath')?.valid && dishForm.get('imgPath')?.touched">
     Url has to have at least 5 characters
   </span>
-    <label for="name">Nazwa: </label>
-    <input formControlName="name" type="text" name="name" id="name">
-    <span class="error" *ngIf="!dishForm.get('name')?.valid && dishForm.get('name')?.touched">
+      <label for="name">Nazwa: </label>
+      <input formControlName="name" type="text" name="name" id="name">
+      <span class="error" *ngIf="!dishForm.get('name')?.valid && dishForm.get('name')?.touched">
     Name has to have at least 2 characters
   </span>
-    <label for="cuisine">Kuchnia: </label>
-    <input formControlName="cuisine" type="text" name="cuisine" id="cuisine" >
-    <span class="error" *ngIf="!dishForm.get('cuisine')?.valid && dishForm.get('cuisine')?.touched">
+      <label for="cuisine">Kuchnia: </label>
+      <input formControlName="cuisine" type="text" name="cuisine" id="cuisine">
+      <span class="error" *ngIf="!dishForm.get('cuisine')?.valid && dishForm.get('cuisine')?.touched">
     Cuisine has to have at least 2 characters
   </span>
-    <label for="dishType">Typ dania: </label>
-    <input formControlName="dishType" type="text" name="dishType" id="dishType" >
-    <span class="error" *ngIf="!dishForm.get('dishType')?.valid && dishForm.get('dishType')?.touched">
+      <label for="dishType">Typ dania: </label>
+      <input formControlName="dishType" type="text" name="dishType" id="dishType">
+      <span class="error" *ngIf="!dishForm.get('dishType')?.valid && dishForm.get('dishType')?.touched">
     Dish type has to have at least 2 characters
   </span>
 
-    <label for="description">Opis: </label>
-    <input formControlName="description" type="text" name="description" id="description" >
-    <span class="error" *ngIf="!dishForm.get('description')?.valid && dishForm.get('description')?.touched">
+      <label for="description">Opis: </label>
+      <input formControlName="description" type="text" name="description" id="description">
+      <span class="error" *ngIf="!dishForm.get('description')?.valid && dishForm.get('description')?.touched">
     Description has to have at least 2 characters
   </span>
-    <label for="maxAmt">Dostępna ilość: </label>
-    <input type="number" name="maxAmt" id="maxAmt" formControlName="maxAmt">
-    <span class="error" *ngIf="!dishForm.get('maxAmt')?.valid && dishForm.get('maxAmt')?.touched">
+      <label for="maxAmt">Dostępna ilość: </label>
+      <input type="number" name="maxAmt" id="maxAmt" formControlName="maxAmt">
+      <span class="error" *ngIf="!dishForm.get('maxAmt')?.valid && dishForm.get('maxAmt')?.touched">
     Amount has to be between 1 and 1000
   </span>
-    <label for="price">Cena: </label>
-    <input type="number" name="price" id="price" formControlName="price">
-    <span class="error" *ngIf="!dishForm.get('price')?.valid && dishForm.get('price')?.touched">
+      <label for="price">Cena: </label>
+      <input type="number" name="price" id="price" formControlName="price">
+      <span class="error" *ngIf="!dishForm.get('price')?.valid && dishForm.get('price')?.touched">
     Price has to be between 1 and 1000
   </span>
 
-    <div formArrayName="ingredients" class="ingredients">
-      <label>List of ingredients (min two)</label>
-      <button type="button" class="add-ingredient" (click)="addIngredient()"><span>Add</span> new</button>
-      <div *ngFor="let i of getControls();let j = index" class="ingredient">
-        <div class="item">
-          <input type="text" [formControlName]="j">
-          <button type="button" class="delete-ingredient" (click)="deleteIngredient(j)">-</button>
-        </div>
+      <div formArrayName="ingredients" class="ingredients">
+        <label>List of ingredients (min two)</label>
+        <button type="button" class="add-ingredient" (click)="addIngredient()"><span>Add</span> new</button>
+        <div *ngFor="let i of getControls();let j = index" class="ingredient">
+          <div class="item">
+            <input type="text" [formControlName]="j">
+            <button type="button" class="delete-ingredient" (click)="deleteIngredient(j)">-</button>
+          </div>
 
-        <span class="error" class="validator" *ngIf="!getControlAtIndex(j)?.valid && getControlAtIndex(j)?.touched">
+          <span class="error" class="validator" *ngIf="!getControlAtIndex(j)?.valid && getControlAtIndex(j)?.touched">
     Enter a valid ingredient
   </span>
 
+        </div>
       </div>
-    </div>
-    <div class="errorDisplayer">
+      <div class="errorDisplayer">
       <span class="error" *ngIf="!dishForm.get('imgPath')?.valid">
     Url has to have at least 5 characters
         <br>
       </span>
-      <span class="error" *ngIf="!dishForm.get('name')?.valid">
+        <span class="error" *ngIf="!dishForm.get('name')?.valid">
     Name has to have at least 2 characters
         <br>
   </span>
-      <span class="error" *ngIf="!dishForm.get('cuisine')?.valid">
+        <span class="error" *ngIf="!dishForm.get('cuisine')?.valid">
     Cuisine has to have at least 2 characters
         <br>
   </span>
-      <span class="error" *ngIf="!dishForm.get('dishType')?.valid">
+        <span class="error" *ngIf="!dishForm.get('dishType')?.valid">
     Dish type has to have at least 2 characters
         <br>
   </span>
-      <span class="error" *ngIf="!dishForm.get('description')?.valid">
+        <span class="error" *ngIf="!dishForm.get('description')?.valid">
     Description has to have at least 2 characters
         <br>
   </span>
-      <span class="error" *ngIf="!dishForm.get('maxAmt')?.valid">
+        <span class="error" *ngIf="!dishForm.get('maxAmt')?.valid">
     Amount has to be between 1 and 1000
         <br>
   </span>
-      <span class="error" *ngIf="!dishForm.get('price')?.valid">
+        <span class="error" *ngIf="!dishForm.get('price')?.valid">
     Price has to be between 1 and 1000
         <br>
   </span>
 
-    </div>
-    <button type="submit" class="submit" [disabled]="!dishForm.valid" >Submit</button>
-  </form>
+      </div>
+      <button type="submit" class="submit" [disabled]="!dishForm.valid">Submit</button>
+    </form>
+  </div>
 </div>
 

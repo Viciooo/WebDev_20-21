@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DishesComponent } from './restaurant/dishes/dishes.component';
 import { MenuHeaderComponent } from './restaurant/menuHeader/menu-header.component';
-import { DishListService } from './restaurant/services/dish-list.service'
+import { DataHandlerService } from './restaurant/services/data-handler.service'
 import { CheckoutAndCurrenciesService } from "./restaurant/services/checkout-and-currencies.service";
 import { FiltersBarComponent } from './restaurant/filters-bar/filters-bar.component';
 import { FilterDishesPipe } from './restaurant/pipes/filter-dishes.pipe';
@@ -73,7 +73,7 @@ import { AdminViewComponent } from './restaurant/views/admin-view/admin-view.com
   ],
   providers: [PricePipe,StarsPipe,
     FilterCuisinesPipe,
-    DishListService,
+    DataHandlerService,
     CheckoutAndCurrenciesService,
     FilterDishesPipe,DataService,
     PaginationService,

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DishListService} from "../services/dish-list.service";
+import {DataHandlerService} from "../services/data-handler.service";
 import { CheckoutAndCurrenciesService } from "../services/checkout-and-currencies.service";
 import {PaginationService} from "../services/pagination.service";
 
@@ -10,7 +10,7 @@ import {PaginationService} from "../services/pagination.service";
   styleUrls: ['./filters-bar.component.css']
 })
 export class FiltersBarComponent{
-  constructor(public dishesService: DishListService,
+  constructor(public dishesService: DataHandlerService,
               public moneyItemHandler: CheckoutAndCurrenciesService,
               public paginationService: PaginationService) {}
 

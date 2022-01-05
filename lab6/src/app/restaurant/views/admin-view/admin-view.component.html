@@ -1,11 +1,45 @@
 <app-navbar></app-navbar>
 <div class="container">
   <div class="box">
-    <h1>Change logout options</h1>
+    <h1>Logout option</h1>
+    <div>
+      <input type="radio" id="LOCAL" name="persistence" value="LOCAL"
+             checked (click)="dataHandler.changeToLOCAL()">
+      <label for="LOCAL">LOCAL</label>
+    </div>
+    <div>
+      <input type="radio" id="SESSION" name="persistence" value="SESSION"
+             (click)="dataHandler.changeToSESSION()">
+      <label for="SESSION">SESSION</label>
+    </div>
+    <div>
+      <input type="radio" id="NONE" name="persistence" value="NONE"
+             (click)="dataHandler.changeToNONE()">
+      <label for="NONE">NONE</label>
+    </div>
   </div>
   <div class="box">
-    <h1>List of all users</h1>
-    <div class="user">
+    <div class="list-of-users">
+      <h1>List of all users</h1>
+      <div class="user" *ngFor="let user of dataHandler.myUsers">
+        <h2>{{user.nick}}</h2>
+        <div>
+          <input type="checkbox" id="user" [checked]="user.roles.user">
+          <label for="user">User</label>
+        </div>
+        <div>
+          <input type="checkbox" id="manger" [checked]="user.roles.manger">
+          <label for="manger">Manger</label>
+        </div>
+        <div>
+          <input type="checkbox" id="admin" [checked]="user.roles.admin">
+          <label for="admin">Admin</label>
+        </div>
+        <div>
+          <input type="checkbox" id="banned" [checked]="user.roles.banned">
+          <label for="banned">Banned</label>
+        </div>
+      </div>
     </div>
   </div>
 </div>

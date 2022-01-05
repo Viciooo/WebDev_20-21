@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {DishListService} from "../../services/dish-list.service";
+import {DataHandlerService} from "../../services/data-handler.service";
 import {CheckoutAndCurrenciesService} from "../../services/checkout-and-currencies.service";
 import {Dish} from "../../interfaces/dish.module";
 import {checkoutItem} from "../../interfaces/checkout-list.module";
@@ -21,7 +21,7 @@ export class SingleDishViewComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
-              public dishService: DishListService,
+              public dishService: DataHandlerService,
               public moneyItemHandler: CheckoutAndCurrenciesService,
               private dataService: DataService) {
   }

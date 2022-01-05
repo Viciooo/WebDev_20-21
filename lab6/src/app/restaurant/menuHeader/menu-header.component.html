@@ -12,28 +12,34 @@
     </div>
 
     <div class="option">
-      <a [routerLink]="['/checkout']" routerLinkActive="active" *ngIf="isAuthenticated">
+      <a [routerLink]="['/checkout']" routerLinkActive="active" *ngIf="dataHandler.isAuthenticated">
         Check<span>out</span>
       </a>
     </div>
 
     <div class="option filter">
-      <h1 (click)="dishesService.changeDisplayFilters()"><i class="fa fa-sliders" aria-hidden="true"></i> Filters</h1>
+      <h1 (click)="dataHandler.changeDisplayFilters()"><i class="fa fa-sliders" aria-hidden="true"></i> Filters</h1>
     </div>
     <div class="option">
-      <div *ngIf="moneyItemHandler.basketItems>10; else elseBlock" class="amountDisplayer" [style.backgroundColor]="'steelblue'" >{{moneyItemHandler.basketItems}}</div>
+      <div *ngIf="moneyItemHandler.basketItems>10; else elseBlock" class="amountDisplayer"
+           [style.backgroundColor]="'steelblue'">{{moneyItemHandler.basketItems}}</div>
       <ng-template #elseBlock>
-        <div class="amountDisplayer" [style.backgroundColor]="'orange'" >{{moneyItemHandler.basketItems}}</div>
+        <div class="amountDisplayer" [style.backgroundColor]="'orange'">{{moneyItemHandler.basketItems}}</div>
       </ng-template>
     </div>
 
     <div class="option">
-      <h2 class="basketValue">{{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}<span>{{moneyItemHandler.currency}}</span></h2>
+      <h2 class="basketValue">{{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}
+        <span>{{moneyItemHandler.currency}}</span></h2>
     </div>
 
     <div class="option currencies">
-      <button class="curr euro" (click)="this.moneyItemHandler.currency = '€'" [disabled]="moneyItemHandler.currency==='€'">€</button>
-      <button class="curr usd" (click)="this.moneyItemHandler.currency = '$'" [disabled]="moneyItemHandler.currency==='$'">$</button>
+      <button class="curr euro" (click)="this.moneyItemHandler.currency = '€'"
+              [disabled]="moneyItemHandler.currency==='€'">€
+      </button>
+      <button class="curr usd" (click)="this.moneyItemHandler.currency = '$'"
+              [disabled]="moneyItemHandler.currency==='$'">$
+      </button>
     </div>
 
     <div class="listOfItems">
@@ -44,23 +50,45 @@
       </div>
       <div #listOfItems class="dropDown">
         <div *ngFor="let i of moneyItemHandler.checkoutList" class="item">
-          <h1>{{i.amount}} <span>x</span> {{i.name}}  <span>{{moneyItemHandler.getRealPrice(i.value)}}</span> {{moneyItemHandler.currency}} </h1>
+          <h1>{{i.amount}} <span>x</span> {{i.name}}
+            <span>{{moneyItemHandler.getRealPrice(i.value)}}</span> {{moneyItemHandler.currency}} </h1>
         </div>
-        <div class="item total"><span>Total</span>: {{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}{{moneyItemHandler.currency}}</div>
+        <div class="item total">
+          <span>Total</span>: {{moneyItemHandler.getRealPrice(moneyItemHandler.basketValue)}}{{moneyItemHandler.currency}}
+        </div>
       </div>
     </div>
-    <div class="option auth" *ngIf="!isAuthenticated">
-      <a  [routerLink]="['/login']" routerLinkActive="active">
+    <div class="option auth" *ngIf="!dataHandler.isAuthenticated">
+      <a [routerLink]="['/login']" routerLinkActive="active">
         Log<span>In</span>
       </a>
     </div>
-    <div class="option auth" *ngIf="!isAuthenticated">
+    <div class="option auth" *ngIf="!dataHandler.isAuthenticated">
       <a [routerLink]="['/signup']" routerLinkActive="active">
         Sign<span>Up</span>
       </a>
     </div>
-    <div class="option auth" *ngIf="isAuthenticated" >
-      <a (click)="onLogout()">
+    <div class="option auth" *ngIf="
+  dataHandler.isAuthenticated &&
+   dataHandler.userInDB.roles.admin">
+      <i class="fa fa-star" aria-hidden="true"> ADMIN</i>
+    </div>
+    <div class="option auth" *ngIf="
+  dataHandler.isAuthenticated &&
+   !dataHandler.userInDB.roles.admin &&
+    dataHandler.userInDB.roles.manager">
+      <i class="fa fa-star-half-o" aria-hidden="true"> MANAGER</i>
+    </div>
+    <div class="option auth"
+         *ngIf="dataHandler.isAuthenticated &&
+        !dataHandler.userInDB.roles.admin &&
+         !dataHandler.userInDB.roles.manager &&
+          dataHandler.userInDB.roles.user">
+      <i class="fa fa-star-o" aria-hidden="true"> USER</i>
+    </div>
+    <div class="option auth" *ngIf="dataHandler.isAuthenticated">
+      <i class="fa fa-user nick" aria-hidden="true"> {{dataHandler.userInDB.nick}}</i>
+      <a (click)="onLogout()" class="logout">
         Log<span>Out</span>
       </a>
     </div>
