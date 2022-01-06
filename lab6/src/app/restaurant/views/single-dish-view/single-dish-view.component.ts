@@ -7,6 +7,7 @@ import {checkoutItem} from "../../interfaces/checkout-list.module";
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Review} from "../../interfaces/review.module";
 import {DataService} from "../../services/data.service";
+import {OrderedDish} from "../../interfaces/db.user.module";
 
 @Component({
   selector: 'app-single-dish-view',
@@ -51,8 +52,15 @@ export class SingleDishViewComponent implements OnInit {
   }
 
   changeRating(i: number, myDish: Dish) {
-    // myDish.rating = i
-    this.dataService.ratingChange(myDish.name, i)
+    let newOrders: OrderedDish[] = []
+    let ratingInDishDB = 0
+    this.dishService.userInDB.orders.forEach((order)=>{
+      if(order.name === myDish.name){
+        if(order.rating != 0) ratingInDishDB = order.rating
+        newOrders.push(new OrderedDish(order.name,order.amount,i,order.price,order.currency))
+      }
+      newOrders.push(order)
+    })
   }
 
   takeItem(myDish: Dish) {

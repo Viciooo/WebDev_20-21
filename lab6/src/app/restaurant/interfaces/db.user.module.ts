@@ -1,7 +1,10 @@
 export class OrderedDish {
   constructor(
     public name: string,
+    public amount:number,
     public rating: number,
+    public price:number,
+    public currency:string
   ) {
   }
 }

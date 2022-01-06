@@ -7,19 +7,25 @@
       <h2>Cost: {{myDish.value}} <span>{{moneyItemHandler.currency}}</span></h2>
     </div>
     <div class="photos">
-        <img
-          src="{{dishesService.myDishes[myDish.id].imgPath}}"
-          alt="1"
-        />
+      <img
+        src="{{dishesService.myDishes[myDish.id].imgPath}}"
+        alt="1"
+      />
     </div>
 
-</div>
-<div class="buyBox">
-  <div class="overview">
-    <h1>You have got  <span>{{checkoutService.basketItems}}</span> items in your cart</h1>
-    <h1>Together to be paid: {{checkoutService.basketValue}} <span>{{moneyItemHandler.currency}}</span></h1>
   </div>
-<!--  <div class="paymentMethods"><\works in progress></div>-->
-  <button type="button" [disabled]="checkoutService.basketValue === 0" >Buy</button>
-</div>
+  <div class="buyBox">
+    <div class="overview">
+      <h1>You have got <span>{{checkoutService.basketItems}}</span> items in your cart</h1>
+      <h1>Together to be paid: {{checkoutService.basketValue}} <span>{{moneyItemHandler.currency}}</span></h1>
+    </div>
+    <button type="button" [disabled]="checkoutService.basketValue === 0" (click)="buyDishes()">Buy</button>
+  </div>
+  <div class="order-hist" *ngIf="dishesService.isAuthenticated && dishesService.isUser">
+    <h1>Order history</h1>
+    <div class="order" *ngFor="let order of dishesService.userInDB.orders">
+      <h2>{{order.name}} was bought {{order.amount}} times for {{order.price}} {{order.currency}}</h2>
+      <p>Rating: {{order.rating}}</p>
+    </div>
+  </div>
 </div>

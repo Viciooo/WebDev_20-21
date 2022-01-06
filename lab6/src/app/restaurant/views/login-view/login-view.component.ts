@@ -4,6 +4,7 @@ import {User} from "../../interfaces/user.module";
 import {AuthResponseData, AuthService} from "../../auth/auth.service";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
+import {PaginationService} from "../../services/pagination.service";
 
 @Component({
   selector: 'app-login-view',
@@ -18,7 +19,8 @@ export class LoginViewComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
-              private router: Router) {
+              private router: Router,
+              public paginationService:PaginationService) {
   }
 
   ngOnInit(): void {

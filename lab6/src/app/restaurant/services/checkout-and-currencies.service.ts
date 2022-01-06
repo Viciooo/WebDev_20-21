@@ -18,4 +18,10 @@ export class CheckoutAndCurrenciesService {
     if(this.currency === "$") return price.toFixed(2)
     return (price*this.exchangeRate).toFixed(2)
   }
+
+  clearAll(){
+    this.checkoutList = []
+    this.basketItems = 0
+    this.basketValue = 0
+  }
 }

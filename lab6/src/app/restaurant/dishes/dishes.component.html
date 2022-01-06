@@ -33,8 +33,8 @@
       <h4 *ngIf="myDish.amount >= 10" [style.color]="'green'">
         {{myDish.amount}}
       </h4>
-      <button class="plus" (click)="takeItem(myDish)" [disabled]="myDish.amount===0 || !dishesService.userInDB.roles.user">+</button>
-      <button class="minus" (click)="returnItem(myDish)" [disabled]="myDish.amount===myDish.maxAmt || !dishesService.userInDB.roles.user">-</button>
+      <button class="plus" (click)="takeItem(myDish)" [disabled]="myDish.amount===0 || !dishesService.isUser">+</button>
+      <button class="minus" (click)="returnItem(myDish)" [disabled]="myDish.amount===myDish.maxAmt || !dishesService.isUser">-</button>
     </div>
 
     <div class="priceAndStars">

@@ -44,23 +44,23 @@
   </div>
   <div class="option" *ngIf="
   dataHandler.isAuthenticated &&
-   dataHandler.userInDB.roles.admin">
+   dataHandler.isAdmin">
     <i class="fa fa-star" aria-hidden="true"> ADMIN</i>
   </div>
   <div class="option" *ngIf="
   dataHandler.isAuthenticated &&
-   !dataHandler.userInDB.roles.admin &&
-    dataHandler.userInDB.roles.manager">
+   !dataHandler.isAdmin &&
+    dataHandler.isManager">
     <i class="fa fa-star-half-o" aria-hidden="true"> MANAGER</i>
   </div>
   <div class="option"
        *ngIf="dataHandler.isAuthenticated &&
-        !dataHandler.userInDB.roles.admin &&
-         !dataHandler.userInDB.roles.manager &&
-          dataHandler.userInDB.roles.user">
+        !dataHandler.isAdmin &&
+         !dataHandler.isManager &&
+          dataHandler.isUser">
     <i class="fa fa-star-o" aria-hidden="true"> USER</i>
   </div>
   <div class="option" *ngIf="dataHandler.isAuthenticated">
-    <i class="fa fa-user" aria-hidden="true"> {{dataHandler.userInDB.nick}}</i>
+    <i class="fa fa-user" aria-hidden="true"> {{dataHandler.nick}}</i>
   </div>
 </div>

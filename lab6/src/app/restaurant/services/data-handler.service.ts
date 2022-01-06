@@ -3,12 +3,13 @@ import {Dish} from "../interfaces/dish.module";
 import {DataService} from "./data.service";
 import {AuthService} from "../auth/auth.service";
 import {User} from "../interfaces/user.module";
-import {dbUser} from "../interfaces/db.user.module";
+import {dbUser, OrderedDish} from "../interfaces/db.user.module";
 
-export class PersistenceType{
-  constructor(public LOCAL:boolean,
-              public SESSION:boolean,
-              public NONE:boolean) {}
+export class PersistenceType {
+  constructor(public LOCAL: boolean,
+              public SESSION: boolean,
+              public NONE: boolean) {
+  }
 }
 
 
@@ -27,41 +28,43 @@ export class DataHandlerService {
   prices: any[] = []
   // @ts-ignore
   user: User
+  isAuthenticated = false
   // @ts-ignore
-  isAuthenticated: boolean
-  // @ts-ignore
-  userInDB:dbUser
+  userInDB: dbUser
   isAdmin = false
   isUser = false
   isManager = false
   isBanned = false
+  nick = ""
+  private typeOfPersistence: PersistenceType = new PersistenceType(true, false, false)
 
-  private typeOfPersistence:PersistenceType = new PersistenceType(true,false,false)
-
-  changeToLOCAL(){
+  changeToLOCAL() {
     this.typeOfPersistence.LOCAL = true
     this.typeOfPersistence.SESSION = false
     this.typeOfPersistence.NONE = false
   }
-  changeToSESSION(){
+
+  changeToSESSION() {
     this.typeOfPersistence.LOCAL = false
     this.typeOfPersistence.SESSION = true
     this.typeOfPersistence.NONE = false
   }
-  changeToNONE(){
+
+  changeToNONE() {
     this.typeOfPersistence.LOCAL = false
     this.typeOfPersistence.SESSION = false
     this.typeOfPersistence.NONE = true
   }
-  getPersistence(){
-    if(this.typeOfPersistence.LOCAL) return "LOCAL"
-    else if(this.typeOfPersistence.SESSION) return "SESSION"
+
+  getPersistence() {
+    if (this.typeOfPersistence.LOCAL) return "LOCAL"
+    else if (this.typeOfPersistence.SESSION) return "SESSION"
     else return "NONE"
   }
 
   constructor(private db: DataService,
               private auth: AuthService) {
-    this.db.userList.subscribe((e:dbUser[]) => {
+    this.db.userList.subscribe((e: dbUser[]) => {
       this.myUsers = e
     })
 
@@ -86,16 +89,22 @@ export class DataHandlerService {
       this.cuisineTypesSelected = Array(e.length).fill(0)
     })
     this.auth.user.subscribe((user: User) => {
-      this.user = user
-      this.isAuthenticated = !!user
-      this.myUsers.forEach((user1:dbUser)=>{
-        if(user1.UID === this.user.id) this.userInDB = user1
-      })
-      this.isUser = this.userInDB.roles.user
-      this.isManager = this.userInDB.roles.manager
-      this.isAdmin = this.userInDB.roles.admin
-      this.isBanned = this.userInDB.roles.banned
-    })
+        this.user = user
+        if (user != null) {
+          this.myUsers.forEach((user1: dbUser) => {
+            if (user1.UID === this.user.id) this.userInDB = user1
+          })
+          if(this.userInDB != null){
+            this.isUser = this.userInDB.roles.user
+            this.isManager = this.userInDB.roles.manager
+            this.isAdmin = this.userInDB.roles.admin
+            this.isBanned = this.userInDB.roles.banned
+            this.nick = this.userInDB.nick
+            this.isAuthenticated = !!user
+          }
+        }
+      }
+    )
 
   }
 
@@ -139,24 +148,6 @@ export class DataHandlerService {
     return tmp
   }
 
-  // getDishTypesSelected(): Observable<any>{
-  //   return of(this.dishTypesSelected)
-  // }
-  // getCuisineTypesSelected(): Observable<any>{
-  //   return of(this.cuisineTypesSelected)
-  // }
-  // getStarsSelected(): Observable<any>{
-  //   return of(this.starsSelected)
-  // }
-  // getPrices(): Observable<any>{
-  //   return of(this.prices)
-  // }
-  // getPriceList(): Observable<any>{
-  //   return of(this.priceList)
-  // }
-  // getDisplayFilters(): Observable<any>{
-  //   return of(this.displayFilters)
-  // }
   changeDishTypesSelected(x: number) {
     this.dishTypesSelected[x] = (this.dishTypesSelected[x] + 1) % 2
   }

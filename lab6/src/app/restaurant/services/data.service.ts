@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {map, Observable} from "rxjs";
 import {Dish} from "../interfaces/dish.module";
-import {dbUser, Roles} from "../interfaces/db.user.module";
+import {dbUser, OrderedDish, Roles} from "../interfaces/db.user.module";
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +41,14 @@ export class DataService {
         return new Dish(key,avgRating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath)
       })
     }));
+  }
+
+  addOrder(key:string,newOrders:OrderedDish[]){
+    this.db.list('users').update(key,{orders:newOrders})
+  }
+
+  addRating(key:string,newRating:number[]){
+    this.db.list('users').update(key,{rating:newRating})
   }
 
   changeUserRoles(key:string,roles:Roles){
@@ -89,10 +97,9 @@ export class DataService {
     cuisineTypes.remove(cuisineType);
   }
 
+
   //modify data functions
-  ratingChange(key:string,rating:number){
-    this.db.list('dishList').update(key,{rating:rating})
-  }
+
   maxAmtChange(key:string,maxAmt:number){
     this.db.list('dishList').update(key,{maxAmt:maxAmt})
   }

@@ -8,8 +8,10 @@ import {LoginViewComponent} from "./restaurant/views/login-view/login-view.compo
 import {SignupViewComponent} from "./restaurant/views/signup-view/signup-view.component";
 import {ChefsViewComponent} from "./restaurant/views/chefs-view/chefs-view.component";
 import {PageNotFoundComponent} from "./restaurant/views/page-not-found-view/page-not-found.component";
-import {AuthGuard} from "./restaurant/auth/auth.guard";
+import {chefsViewAuthGuard} from "./restaurant/auth/chefs-view-auth-guard.service";
 import {AdminViewComponent} from "./restaurant/views/admin-view/admin-view.component";
+import {AdminViewAuthGuardGuard} from "./restaurant/auth/admin-view-auth-guard.guard";
+import {UserAuthGuard} from "./restaurant/auth/user-auth.guard";
 
 const appRoutes: Routes = [
   {path: '', component: HomeViewComponent},
@@ -18,19 +20,19 @@ const appRoutes: Routes = [
   {
     path: 'checkout',
     component: CheckoutViewComponent,
-    canActivate: [AuthGuard]
+    canActivate: [UserAuthGuard]
   },
   {path: 'login', component: LoginViewComponent},
   {path: 'signup', component: SignupViewComponent},
   {
     path: 'chefsView',
     component: ChefsViewComponent,
-    canActivate: [AuthGuard]
+    canActivate: [chefsViewAuthGuard]
   },
   {
     path: 'adminView',
     component: AdminViewComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AdminViewAuthGuardGuard]
   },
   {path: '**', component: PageNotFoundComponent}
 ];

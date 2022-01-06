@@ -49,9 +49,9 @@
           </h4>
 
           <button class="plus" (click)="takeItem(getMyDish())"
-                  [disabled]="getMyDish().amount===0 || !dishService.userInDB.roles.user">+</button>
+                  [disabled]="getMyDish().amount===0 || !dishService.isUser">+</button>
           <button class="minus" (click)="returnItem(getMyDish())"
-                  [disabled]="getMyDish().amount=== getMyDish().maxAmt || !dishService.userInDB.roles.user">-</button>
+                  [disabled]="getMyDish().amount=== getMyDish().maxAmt || !dishService.isUser">-</button>
 
         </div>
 
@@ -70,7 +70,6 @@
           </div>
 
           <div class="stars" *ngIf="dishService.isUser">
-<!--            <div class="stars" >-->
               <i *ngIf="getMyDish().rating < 1;else fullStar1"
                  class="fa fa-star-o" aria-hidden="true" (click)="changeRating(1,getMyDish())"></i>
               <ng-template #fullStar1>
@@ -101,7 +100,6 @@
               <ng-template #fullStar5>
                 <i class="fa fa-star" aria-hidden="true" (click)="changeRating(5,getMyDish())"></i>
               </ng-template>
-<!--            </div>-->
           </div>
         </div>
       </div>
