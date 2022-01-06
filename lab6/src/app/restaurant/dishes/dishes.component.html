@@ -25,13 +25,13 @@
     <div class="amount">
       <h2>Dostępna ilość:</h2>
       <h4 *ngIf="myDish.amount <=3 " [style.color]="'red'">
-        {{myDish.amount}}
+        {{myDish.amount - moneyItemHandler.getAmountInChecklist(myDish)}}
       </h4>
       <h4 *ngIf="myDish.amount < 10 && myDish.amount > 3" [style.color]="'yellow'">
-        {{myDish.amount}}
+        {{myDish.amount - moneyItemHandler.getAmountInChecklist(myDish)}}
       </h4>
       <h4 *ngIf="myDish.amount >= 10" [style.color]="'green'">
-        {{myDish.amount}}
+        {{myDish.amount - moneyItemHandler.getAmountInChecklist(myDish)}}
       </h4>
       <button class="plus" (click)="takeItem(myDish)" [disabled]="myDish.amount===0 || !dishesService.isUser">+</button>
       <button class="minus" (click)="returnItem(myDish)" [disabled]="myDish.amount===myDish.maxAmt || !dishesService.isUser">-</button>

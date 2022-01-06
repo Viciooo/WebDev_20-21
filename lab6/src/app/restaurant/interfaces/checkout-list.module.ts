@@ -1,5 +1,9 @@
 
 export class checkoutItem {
-  constructor(public id:number,public name:string,public amount:number,public value:number) {
+  constructor(public key:string,
+              public id:number,
+              public name:string,
+              public amount:number,
+              public value:number) {
   }
 }

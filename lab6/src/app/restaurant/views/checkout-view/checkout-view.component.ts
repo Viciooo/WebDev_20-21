@@ -30,6 +30,13 @@ buyDishes() {
   this.moneyItemHandler.checkoutList.forEach((item) => {
       newOrders.push(new OrderedDish(item.name, item.amount, 0, item.value,this.moneyItemHandler.currency))
       this.dataService.addOrder(this.dishesService.userInDB.UID, newOrders)
+      const amountOfDish:number = this.dishesService.myDishes.find((element) => {
+        return element.key === item.key
+      }).amount
+      this.dataService.amountChange(item.key,
+        amountOfDish-item.amount)
+    this.dataService.maxAmtChange(item.key,
+      amountOfDish-item.amount)
     })
     this.moneyItemHandler.clearAll()
   }

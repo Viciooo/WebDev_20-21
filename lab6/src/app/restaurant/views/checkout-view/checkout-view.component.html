@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <div class="item" *ngFor="let myDish of checkoutService.checkoutList">
+  <div class="item" *ngFor="let myDish of moneyItemHandler.checkoutList">
     <div class="info">
       <h1>{{myDish.name}}</h1>
       <h2>Amount chosen: {{myDish.amount}}</h2>

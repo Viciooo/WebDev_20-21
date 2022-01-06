@@ -23,13 +23,12 @@ export class DishesComponent{
               public moneyItemHandler: CheckoutAndCurrenciesService) {}
 
   takeItem(myDish: Dish) {
-    this.dataService.amountChange(myDish.key, myDish.amount - 1)
     this.moneyItemHandler.basketItems++
     this.moneyItemHandler.basketValue += myDish.price
 
-    let idx = this.getIdxInCheckoutList(myDish)
+    let idx = this.moneyItemHandler.getIdxInCheckoutList(myDish)
     if(idx === -1){
-      const item = new checkoutItem(myDish.id,myDish.name,1,myDish.price)
+      const item = new checkoutItem(myDish.key,myDish.id,myDish.name,1,myDish.price)
       this.moneyItemHandler.checkoutList.push(item)
     }else{
       this.moneyItemHandler.checkoutList[idx].amount++
@@ -37,16 +36,12 @@ export class DishesComponent{
     }
   }
 
-  getIdxInCheckoutList(myDish: Dish){
-    return this.moneyItemHandler.checkoutList.findIndex((element) => element.id === myDish.id)
-  }
 
   returnItem(myDish: Dish) {
-    this.dataService.amountChange(myDish.key, myDish.amount + 1)
     this.moneyItemHandler.basketItems--
     this.moneyItemHandler.basketValue -= myDish.price
 
-    let idx = this.getIdxInCheckoutList(myDish)
+    let idx = this.moneyItemHandler.getIdxInCheckoutList(myDish)
     this.moneyItemHandler.checkoutList[idx].amount--
     this.moneyItemHandler.checkoutList[idx].value -= myDish.price
     if(this.moneyItemHandler.checkoutList[idx].amount === 0){
@@ -59,7 +54,5 @@ export class DishesComponent{
     this.router.navigate(['/menu',id])
   }
 
-  test() {
-    console.log(this.paginationService.availableDishes,"aaaa")
-  }
+
 }
