@@ -18,7 +18,9 @@
     </div>
 
     <div class="option filter">
-      <h1 (click)="dataHandler.changeDisplayFilters()"><i class="fa fa-sliders" aria-hidden="true"></i> Filters</h1>
+      <h1 (click)="dataHandler.changeDisplayFilters()">
+        <i class="fa fa-sliders" aria-hidden="true"></i> Filters
+      </h1>
     </div>
     <div class="option">
       <div *ngIf="moneyItemHandler.basketItems>10; else elseBlock" class="amountDisplayer"
@@ -71,23 +73,23 @@
     <div class="option auth" *ngIf="
   dataHandler.isAuthenticated &&
    dataHandler.isAdmin">
-      <i class="fa fa-star" aria-hidden="true"> ADMIN</i>
+      <i class="fa fa-star credentials" aria-hidden="true"> ADMIN</i>
     </div>
     <div class="option auth" *ngIf="
   dataHandler.isAuthenticated &&
    !dataHandler.isAdmin &&
     dataHandler.isManager">
-      <i class="fa fa-star-half-o" aria-hidden="true"> MANAGER</i>
+      <i class="fa fa-star-half-o credentials" aria-hidden="true"> MANAGER</i>
     </div>
     <div class="option auth"
          *ngIf="dataHandler.isAuthenticated &&
         !dataHandler.isAdmin &&
          !dataHandler.isManager &&
           dataHandler.isUser">
-      <i class="fa fa-star-o" aria-hidden="true"> USER</i>
+      <i class="fa fa-star-o credentials" aria-hidden="true"> USER</i>
     </div>
-    <div class="option auth" *ngIf="dataHandler.isAuthenticated">
-      <i class="fa fa-user nick" aria-hidden="true"> {{dataHandler.nick}}</i>
+    <div class="option nick-logout-box" *ngIf="dataHandler.isAuthenticated">
+      <i class="fa fa-user credentials" aria-hidden="true"> {{dataHandler.nick}}</i>
       <a (click)="onLogout()" class="logout">
         Log<span>Out</span>
       </a>

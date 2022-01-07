@@ -25,7 +25,7 @@
 
 .option{
   font-size: var(--font-size-big);
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-right: 1rem;
 }
 
@@ -42,7 +42,5 @@ span{
   color: var(--span-color);
 }
 
-.option:last-child{
-  margin-right: 5rem;
-}
+
 

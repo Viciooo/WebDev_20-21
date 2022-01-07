@@ -32,7 +32,6 @@
 }
 .option{
   margin-right: 1rem;
-  cursor: pointer;
 }
 
 span {
@@ -40,7 +39,7 @@ span {
 }
 
 i {
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-medium);
 }
 .basket{
   cursor: pointer;
@@ -55,8 +54,7 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-medium);
   font-family: var(--secondary-font);
 }
 
@@ -73,7 +71,7 @@ i {
   display: block;
   justify-content: center;
   align-items: center;
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-medium);
   width: 100%;
   height: 100%;
   background: none;
@@ -93,9 +91,9 @@ i {
   border: 2px solid var(--dark-grey);
   border-radius: var(--medium-border-radious);
   font-family: var(--secondary-font);
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-medium);
   font-weight: 700;
-  width: 3rem;
+  width: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,7 +141,7 @@ i {
 }
 .total{
   font-weight: 600;
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-medium);
 }
 
 
@@ -155,8 +153,7 @@ i {
   align-items: center;
   border-left: 2px solid black;
   border-right: 2px solid black;
-  padding: 0 7px;
-  width: 15rem;
+  padding: 0 1rem;
 }
 
 .filter h1:hover{
@@ -165,6 +162,7 @@ i {
 
 .filter h1{
   margin-right: 5px;
+  font-size: var(--font-size-medium);
 }
 
 .filter-list{
@@ -198,7 +196,7 @@ i {
 }
 
 .option a{
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-medium);
   text-decoration: none;
   color: black;
   font-weight: 600;
@@ -213,13 +211,20 @@ i {
   margin-right: 1rem;
 }
 
-.nick{
-  border-right: black solid 1px;
-  padding-left: 1rem;
-  padding-right: 2rem;
+.credentials{
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .logout{
   margin-left: 2rem;
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+.nick-logout-box{
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  border-left: 2px solid black;
 }
