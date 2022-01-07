@@ -6,33 +6,33 @@
           <section>
             <picture>
               <img
-                src="{{getMyDish().imgPath[0]}}"
+                src="{{getMyDish() != null ? getMyDish().imgPath[0] : null}}"
                 alt="1"
               />
             </picture>
             <picture>
               <img
-                src="{{getMyDish().imgPath[0]}}"
+                src="{{getMyDish() != null ? getMyDish().imgPath[0] : null}}"
                 alt="2"
               />
             </picture>
             <picture>
               <img
-                src="{{getMyDish().imgPath[0]}}"
+                src="{{getMyDish() != null ? getMyDish().imgPath[0] : null}}"
                 alt="3"
               />
             </picture>
           </section>
         </div>
         <div class="generalInfo">
-          <h1>{{getMyDish().name | uppercase}}</h1>
-          <h2>Kuchnia: {{getMyDish().cuisine | uppercase}}</h2>
-          <h2>Rodzaj dania: {{getMyDish().dishType | lowercase}}</h2>
+          <h1>{{getMyDish() != null ? getMyDish().name : null | uppercase}}</h1>
+          <h2>Kuchnia: {{getMyDish() != null ? getMyDish().cuisine : null | uppercase}}</h2>
+          <h2>Rodzaj dania: {{getMyDish() != null ? getMyDish().dishType : null | lowercase}}</h2>
         </div>
         <div class="ingredients">
           <h2>Skła<span>dniki</span></h2>
           <ul>
-            <li *ngFor="let item of getMyDish().ingredients">{{item}}</li>
+            <li *ngFor="let item of getMyDish() != null ? getMyDish().ingredients : null">{{item}}</li>
           </ul>
         </div>
         <div class="info">
@@ -40,18 +40,18 @@
         </div>
         <div class="description">
           <h2>OPIS</h2>
-          <p>"{{getMyDish().description}}"</p>
+          <p>"{{getMyDish() != null ? getMyDish().description : null}}"</p>
         </div>
         <div class="amount">
           <h2>Dostępna ilość:</h2>
           <h4>
-            {{getMyDish().amount - moneyItemHandler.getAmountInChecklist(getMyDish())}}
+            {{getMyDish() != null ? getMyDish().amount : 0 - moneyItemHandler.getAmountInChecklist(getMyDish())}}
           </h4>
 
           <button class="plus" (click)="takeItem(getMyDish())"
-                  [disabled]="getMyDish().amount===0 || !dishService.isUser">+</button>
+                  [disabled]="(getMyDish() != null ? getMyDish().amount : null)===0 || !dishService.isUser">+</button>
           <button class="minus" (click)="returnItem(getMyDish())"
-                  [disabled]="getMyDish().amount=== getMyDish().maxAmt || !dishService.isUser">-</button>
+                  [disabled]="(getMyDish() != null ? getMyDish().amount : null)=== (getMyDish() != null ? getMyDish().maxAmt : null) || !dishService.isUser">-</button>
 
         </div>
 
@@ -60,7 +60,7 @@
             <h2>
               Price
               <span>
-          {{ moneyItemHandler.getRealPrice(getMyDish().price) }}
+          {{ moneyItemHandler.getRealPrice(getMyDish() != null ? getMyDish().price : 0) }}
         </span>
 
 

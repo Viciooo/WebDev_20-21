@@ -32,6 +32,7 @@ export class LoginViewComponent implements OnInit {
   }
 
   onSubmit() {
+    alert("Strona wymaga wyjścia i wejścia w celu zobaczenia zmian takich jak zakup czy możliwość oceny - trwają prace nad naprawą tej niedogodności")
     if (!this.logInForm.valid) return
     const email = (<FormArray>this.logInForm.get('email')).value
     const password = (<FormArray>this.logInForm.get('password')).value

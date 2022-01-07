@@ -28,7 +28,7 @@ export class DishesComponent{
 
     let idx = this.moneyItemHandler.getIdxInCheckoutList(myDish)
     if(idx === -1){
-      const item = new checkoutItem(myDish.key,myDish.id,myDish.name,1,myDish.price)
+      const item = new checkoutItem(myDish.key,myDish.id,myDish.name,1,myDish.price,myDish.imgPath[0])
       this.moneyItemHandler.checkoutList.push(item)
     }else{
       this.moneyItemHandler.checkoutList[idx].amount++

@@ -4,6 +4,7 @@ export class checkoutItem {
               public id:number,
               public name:string,
               public amount:number,
-              public value:number) {
+              public value:number,
+              public imgPath:string) {
   }
 }

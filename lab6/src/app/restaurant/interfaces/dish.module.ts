@@ -10,5 +10,6 @@ export class Dish {
               public amount: number,
               public price: number,
               public description: string,
-              public imgPath: string[]) {}
+              public imgPath: string[],
+              public allRatings: number[]) {}
 }

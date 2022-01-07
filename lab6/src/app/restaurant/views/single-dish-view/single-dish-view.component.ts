@@ -42,11 +42,13 @@ export class SingleDishViewComponent implements OnInit {
 
   getMyDish() {
     let tmp: Dish
-    this.dishService.myDishes.forEach((dish: Dish) => {
-      if (dish.id === this.dishId) {
-        tmp = dish
-      }
-    })
+    if(this.dishService.myDishes!=undefined){
+      this.dishService.myDishes.forEach((dish: Dish) => {
+        if (dish.id === this.dishId) {
+          tmp = dish
+        }
+      })
+    }
     // @ts-ignore
     return tmp
   }
@@ -54,13 +56,35 @@ export class SingleDishViewComponent implements OnInit {
   changeRating(i: number, myDish: Dish) {
     let newOrders: OrderedDish[] = []
     let ratingInDishDB = 0
-    this.dishService.userInDB.orders.forEach((order)=>{
-      if(order.name === myDish.name){
-        if(order.rating != 0) ratingInDishDB = order.rating
-        newOrders.push(new OrderedDish(order.name,order.amount,i,order.price,order.currency))
+    let orderedThisDish = false
+    if(this.dishService.userInDB != undefined && this.dishService.userInDB.orders != undefined){
+      this.dishService.userInDB.orders.forEach((order)=>{
+        if(order.name === myDish.name){
+          orderedThisDish = true
+          if(order.rating != 0) ratingInDishDB = order.rating
+          newOrders.push(new OrderedDish(order.name,order.amount,i,order.price,order.currency))
+        }else{
+          newOrders.push(order)
+        }
+      })
+    }
+    if(orderedThisDish){
+      let newRating:number[] = myDish.allRatings
+      if(ratingInDishDB === 0){
+        newRating.push(i)
+      }else{
+        const idx = newRating.indexOf(ratingInDishDB)
+        newRating.splice(idx,1)
+        newRating.push(i)
       }
-      newOrders.push(order)
-    })
+      this.dataService.addDishRating(myDish.key,newRating)
+      if(this.dishService.userInDB!=undefined && this.dishService.userInDB.UID!=undefined){
+        this.dataService.addOrder(this.dishService.userInDB.UID,newOrders)
+        alert("You just rated!")
+      }
+    }else{
+      alert("Buy it before u rate it!")
+    }
   }
 
   takeItem(myDish: Dish) {
@@ -69,7 +93,7 @@ export class SingleDishViewComponent implements OnInit {
 
     let idx = this.moneyItemHandler.getIdxInCheckoutList(myDish)
     if (idx === -1) {
-      const item = new checkoutItem(myDish.key,myDish.id,myDish.name,1,myDish.price)
+      const item = new checkoutItem(myDish.key,myDish.id,myDish.name,1,myDish.price,myDish.imgPath[0])
       this.moneyItemHandler.checkoutList.push(item)
     } else {
       this.moneyItemHandler.checkoutList[idx].amount++

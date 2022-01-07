@@ -40,7 +40,7 @@ export class ChefsViewComponent implements OnInit{
     console.log(this.dishForm.controls)
     let newDish = new Dish(
       "",
-      1,
+      0,
       this.dishesService.newId,
       (<FormArray>this.dishForm.get('maxAmt')).value,
       (<FormArray>this.dishForm.get('name')).value,
@@ -51,6 +51,7 @@ export class ChefsViewComponent implements OnInit{
       (<FormArray>this.dishForm.get('price')).value,
       (<FormArray>this.dishForm.get('description')).value,
       (<FormArray>this.dishForm.get('imgPath')).value,
+      [0]
     )
     this.dataService.pushDish(newDish)
     this.dishesService.priceList.push([this.dishesService.newId,newDish.price])

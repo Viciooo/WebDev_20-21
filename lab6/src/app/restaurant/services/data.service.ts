@@ -38,17 +38,22 @@ export class DataService {
           // @ts-ignore
           const avgRating = Math.ceil(data.rating.reduce((ratingSum:number,current:number) => ratingSum + current,0) / Math.max(data.rating.length-1,1))
         // @ts-ignore
-        return new Dish(key,avgRating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath)
+        return new Dish(key,avgRating,data.id,data.maxAmt,data.name,data.cuisine,data.dishType,data.ingredients,data.amount,data.price,data.description,data.imgPath,data.rating)
       })
     }));
   }
+
 
   addOrder(key:string,newOrders:OrderedDish[]){
     this.db.list('users').update(key,{orders:newOrders})
   }
 
-  addRating(key:string,newRating:number[]){
+  addUserRating(key:string,newRating:number[]){
     this.db.list('users').update(key,{rating:newRating})
+  }
+
+  addDishRating(key:string,newRating:number[]){
+    this.db.list('dishList').update(key,{rating:newRating})
   }
 
   changeUserRoles(key:string,roles:Roles){
@@ -69,7 +74,22 @@ export class DataService {
 
   pushDish(myDish:Dish){
     const dishList = this.db.list('dishList')
-    dishList.push(myDish)
+    dishList.push(
+      {
+        key:myDish.key,
+        rating:[0],
+        id:myDish.id,
+        maxAmt:myDish.maxAmt,
+        name:myDish.name,
+        cuisine:myDish.cuisine,
+        dishType:myDish.dishType,
+        ingredients:myDish.ingredients,
+        amount:myDish.amount,
+        price:myDish.price,
+        description:myDish.description,
+        imgPath:myDish.imgPath,
+      }
+    )
   }
 
   removeDish(dish:string){
@@ -96,8 +116,6 @@ export class DataService {
     const cuisineTypes = this.db.list('cuisineTypes')
     cuisineTypes.remove(cuisineType);
   }
-
-
   //modify data functions
 
   maxAmtChange(key:string,maxAmt:number){

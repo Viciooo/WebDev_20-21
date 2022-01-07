@@ -100,7 +100,7 @@ export class DataHandlerService {
             this.isAdmin = this.userInDB.roles.admin
             this.isBanned = this.userInDB.roles.banned
             this.nick = this.userInDB.nick
-            this.isAuthenticated = !!user
+            this.isAuthenticated = !!this.user
           }
         }
       }
@@ -142,9 +142,12 @@ export class DataHandlerService {
 
   sum(arr: number[]) {
     let tmp = 0
-    arr.forEach(e => {
-      tmp += e
-    })
+    if(arr != null){
+      arr.forEach(e => {
+        tmp += e
+      })
+    }
+
     return tmp
   }
 
