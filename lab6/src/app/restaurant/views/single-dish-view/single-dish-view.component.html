@@ -49,9 +49,12 @@
           </h4>
 
           <button class="plus" (click)="takeItem(getMyDish())"
-                  [disabled]="(getMyDish() != null ? getMyDish().amount : null)===0 || !dishService.isUser">+</button>
+                  [disabled]="(getMyDish() != null ? getMyDish().amount : null)===0 || !dishService.isUser">+
+          </button>
           <button class="minus" (click)="returnItem(getMyDish())"
-                  [disabled]="(getMyDish() != null ? getMyDish().amount : null)=== (getMyDish() != null ? getMyDish().maxAmt : null) || !dishService.isUser">-</button>
+                  [disabled]="(getMyDish() != null ? getMyDish().amount : null)=== (getMyDish() != null ? getMyDish().maxAmt : null) || !dishService.isUser">
+            -
+          </button>
 
         </div>
 
@@ -69,37 +72,37 @@
 
           </div>
 
-          <div class="stars" *ngIf="dishService.isUser">
-              <i *ngIf="getMyDish().rating < 1;else fullStar1"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(1,getMyDish())"></i>
-              <ng-template #fullStar1>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(1,getMyDish())"></i>
-              </ng-template>
+          <div class="stars" *ngIf="dishService.isUser && !dishService.isBanned">
+            <i *ngIf="getMyDish().rating < 1;else fullStar1"
+               class="fa fa-star-o" aria-hidden="true" (click)="changeRating(1,getMyDish())"></i>
+            <ng-template #fullStar1>
+              <i class="fa fa-star" aria-hidden="true" (click)="changeRating(1,getMyDish())"></i>
+            </ng-template>
 
-              <i *ngIf="getMyDish().rating < 2;else fullStar2"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(2,getMyDish())"></i>
-              <ng-template #fullStar2>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(2,getMyDish())"></i>
-              </ng-template>
+            <i *ngIf="getMyDish().rating < 2;else fullStar2"
+               class="fa fa-star-o" aria-hidden="true" (click)="changeRating(2,getMyDish())"></i>
+            <ng-template #fullStar2>
+              <i class="fa fa-star" aria-hidden="true" (click)="changeRating(2,getMyDish())"></i>
+            </ng-template>
 
-              <i *ngIf="getMyDish().rating < 3;else fullStar3"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(3,getMyDish())"></i>
-              <ng-template #fullStar3>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(3,getMyDish())"></i>
-              </ng-template>
+            <i *ngIf="getMyDish().rating < 3;else fullStar3"
+               class="fa fa-star-o" aria-hidden="true" (click)="changeRating(3,getMyDish())"></i>
+            <ng-template #fullStar3>
+              <i class="fa fa-star" aria-hidden="true" (click)="changeRating(3,getMyDish())"></i>
+            </ng-template>
 
 
-              <i *ngIf="getMyDish().rating < 4;else fullStar4"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(4,getMyDish())"></i>
-              <ng-template #fullStar4>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(4,getMyDish())"></i>
-              </ng-template>
+            <i *ngIf="getMyDish().rating < 4;else fullStar4"
+               class="fa fa-star-o" aria-hidden="true" (click)="changeRating(4,getMyDish())"></i>
+            <ng-template #fullStar4>
+              <i class="fa fa-star" aria-hidden="true" (click)="changeRating(4,getMyDish())"></i>
+            </ng-template>
 
-              <i *ngIf="getMyDish().rating < 5;else fullStar5"
-                 class="fa fa-star-o" aria-hidden="true" (click)="changeRating(5,getMyDish())"></i>
-              <ng-template #fullStar5>
-                <i class="fa fa-star" aria-hidden="true" (click)="changeRating(5,getMyDish())"></i>
-              </ng-template>
+            <i *ngIf="getMyDish().rating < 5;else fullStar5"
+               class="fa fa-star-o" aria-hidden="true" (click)="changeRating(5,getMyDish())"></i>
+            <ng-template #fullStar5>
+              <i class="fa fa-star" aria-hidden="true" (click)="changeRating(5,getMyDish())"></i>
+            </ng-template>
           </div>
         </div>
       </div>
@@ -119,17 +122,24 @@
 
           <div class="input-block">
             <label>Content: </label>
-            <textarea formControlName="content" ></textarea>
+            <textarea formControlName="content"></textarea>
           </div>
 
           <div class="input-block">
             <label for="date">Date of buying </label>
             <input formControlName="date" type="date" name="date" id="date">
           </div>
-          <button type="submit" [disabled]="!reviewForm.valid">Submit</button>
+          <button type="submit"
+                  [disabled]="!reviewForm.valid ||
+                   (!dishService.isUser && !dishService.isManager) ||
+                    dishService.isBanned">
+            Submit
+          </button>
         </form>
+        <div *ngIf="!dishService.isUser && !dishService.isManager" class="error-display">You are neither User nor Manager</div>
+        <div *ngIf="(dishService.isUser || dishService.isManager) && dishService.isBanned" class="error-display">You are banned</div>
       </div>
-      </div>
+    </div>
 
   </div>
 

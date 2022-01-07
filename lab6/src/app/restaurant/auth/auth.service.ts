@@ -134,7 +134,6 @@ export class AuthService {
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
-    console.log(user)
     localStorage.setItem('userData', JSON.stringify(user));
     this.dataService.pushUser(new dbUser(userId,nick,new Roles(true,false,true,false),[]))
   }

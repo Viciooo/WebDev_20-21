@@ -37,11 +37,6 @@
       Sign<span>Up</span>
     </a>
   </div>
-  <div class="option" *ngIf="dataHandler.isAuthenticated">
-    <a (click)="onLogout()">
-      Log<span>Out</span>
-    </a>
-  </div>
   <div class="option" *ngIf="
   dataHandler.isAuthenticated &&
    dataHandler.isAdmin">
@@ -62,5 +57,10 @@
   </div>
   <div class="option" *ngIf="dataHandler.isAuthenticated">
     <i class="fa fa-user" aria-hidden="true"> {{dataHandler.nick}}</i>
+  </div>
+  <div class="option" *ngIf="dataHandler.isAuthenticated">
+    <a (click)="onLogout()">
+      Log<span>Out</span>
+    </a>
   </div>
 </div>

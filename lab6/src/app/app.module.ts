@@ -15,7 +15,6 @@ import { FilterDishesPipe } from './restaurant/pipes/filter-dishes.pipe';
 import { FilterCuisinesPipe } from './restaurant/pipes/filter-cuisines.pipe';
 import { StarsPipe } from './restaurant/pipes/stars.pipe';
 import { PricePipe } from './restaurant/pipes/price.pipe';
-import {RouterModule, Routes} from "@angular/router";
 import { HomeViewComponent } from './restaurant/views/home-view/home-view.component';
 import { MenuViewComponent } from './restaurant/views/menu-view/menu-view.component';
 import { ChefsViewComponent } from './restaurant/views/chefs-view/chefs-view.component';
